@@ -14,12 +14,24 @@ namespace QLDSV_HTC
         public frmMain()
         {
             InitializeComponent();
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmDangNhap f = new frmDangNhap();
-            f.Show();
+ 
         }
+
+        private void barButtonItemDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            /*Program.frmMain.Close();
+            Program.frmMain = new frmMain();
+            Program.frmMain.Show();*/
+            Program.frmMain.Enabled = false;
+
+            Program.frmDangNhap.Visible = true;
+        }
+
+
     }
 }

@@ -2,6 +2,8 @@
 using DevExpress.UserSkins;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,12 +14,100 @@ namespace QLDSV_HTC
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
+        public static SqlConnection Conn = new SqlConnection();
+        public static string Connstr = "";
+        public static string Connstr_pub = "Data Source=QUYNH;Initial Catalog=QLDSV_HTC;Integrated Security=True";
+
+
+        public static SqlDataReader myReader;
+        public static string userName = "";
+        public static string mHoTen = "";
+        public static string mGroup = "";
+        public static string ServerName = "";
+        public static string DataBase = "QLDSV_HTC";
+        public static string MLogin = "";
+        public static string MPass = "";
+        public static int MKhoa;
+
+
+        public static String MLoginDN = string.Empty;
+        public static String MPasswordDN = string.Empty;
+
+
+        public static BindingSource bds_dspm = new BindingSource(); // luu ds pm
+
+
+        public static frmMain frmMain;
+        public static frmDangNhap frmDangNhap;
+
+
+        public static SqlDataReader ExecSqlDataReader(String strLenh)
+        {
+            SqlDataReader myReader;
+            SqlCommand sqlcmd = new SqlCommand(strLenh, Program.Conn);
+
+            //xác định kiểu lệnh cho sqlcmd là kiểu text.
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandTimeout = 600;
+            if (Program.Conn.State == ConnectionState.Closed) Program.Conn.Open();
+            try
+            {
+                myReader = sqlcmd.ExecuteReader();
+                return myReader;
+            }
+            catch (SqlException ex)
+            {
+                Program.Conn.Close();
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public static DataTable ExecSqlDataTable(String cmd)
+        {
+            DataTable dt = new DataTable();
+            if (Program.Conn.State == ConnectionState.Closed) Program.Conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd, Conn);
+            da.Fill(dt);
+            Conn.Close();
+            return dt;
+        }
+
+        public static int KetNoi()
+        {
+            if (Program.Conn != null && Program.Conn.State == System.Data.ConnectionState.Open)
+                Program.Conn.Close();
+            try
+            {
+                Program.Connstr = "Data Source=" + Program.ServerName + ";Initial Catalog=" + Program.DataBase
+                  + ";User ID=" + Program.MLogin + ";Password=" + Program.MPass;
+                Program.Conn.ConnectionString = Program.Connstr;
+
+                Program.Conn.Open();
+                return 1;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi kết nối!\n Xem lại tài khoản, mật khẩu hoặc khoa đã chọn!!!","",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+        }
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+
+            Program.frmMain = new frmMain();
+            Program.frmMain.Show();
+            Program.frmMain.Enabled = false;
+
+            Program.frmDangNhap = new frmDangNhap();
+            Application.Run(Program.frmDangNhap);
         }
     }
 }

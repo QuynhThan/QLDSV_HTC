@@ -51,24 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmDangNhap.cs">
+    <Compile Include="Forms\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangNhap.Designer.cs">
+    <Compile Include="Forms\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDangNhap.resx">
+    <EmbeddedResource Include="Forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -91,6 +92,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\4082.9-class-icon-iconbunny.jpg" />
+    <Content Include="Resources\add-login.png" />
+    <None Include="Resources\morefunctions_16x16.png" />
+    <None Include="Resources\morefunctions_32x32.png" />
+    <None Include="Resources\trackingchanges_trackchanges_16x16.png" />
+    <None Include="Resources\trackingchanges_trackchanges_32x32.png" />
+    <None Include="Resources\text.svg" />
+    <None Include="Resources\printallpages.svg" />
+    <None Include="Resources\allowuserstoeditranges.svg" />
+    <None Include="Resources\financial_32x32.png" />
+    <None Include="Resources\financial_16x16.png" />
+    <Content Include="Resources\log-out.png" />
+    <Content Include="Resources\main-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
