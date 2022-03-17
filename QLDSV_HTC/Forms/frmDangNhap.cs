@@ -51,7 +51,10 @@ namespace QLDSV_HTC
             cmbKhoa.DataSource = Program.bds_dspm;
             cmbKhoa.DisplayMember = "TENKHOA";
             cmbKhoa.ValueMember = "TENSERVER";
-
+            //Lib.BDataToCmb(cmbKhoa, Program.bds_dspm.DataSource);
+            //Program.MKhoa = 0;
+            //cmbKhoa.SelectedIndex = 0;
+            //Program.ServerName = "QUYNH\\SERVER1";//cmbKhoa.SelectedValue.ToString();
 
         }
 
@@ -87,7 +90,7 @@ namespace QLDSV_HTC
 
             Program.MKhoa = cmbKhoa.SelectedIndex;
             Program.MLoginDN = Program.MLogin;
-            Program.MPasswordDN = Program.MPass;
+            Program.MPassDN = Program.MPass;
 
             string strLenh = "EXEC SP_DANGNHAP '" + Program.MLogin + "'";
             Program.myReader = Program.ExecSqlDataReader(strLenh);
@@ -105,6 +108,25 @@ namespace QLDSV_HTC
             Program.frmMain.lblGroup.Text = "Nhom: " + Program.mGroup;
 
 
+            //PHAN QUYEN TREN DAY
+            if (Program.mGroup == Program.quyen[3])
+            {
+                Program.frmMain.barBtnLop.Enabled = Program.frmMain.barBtnSinhVien.Enabled = Program.frmMain.barBtnMonHoc.Enabled
+                    = Program.frmMain.barBtnDiem.Enabled = Program.frmMain.barBtnLopTinChi.Enabled =Program.frmMain.barBtnTaoLogin.Enabled = false;
+                Program.frmMain.rbBaoCao.Visible = false;
+            }
+            if (Program.mGroup == Program.quyen[2])
+            {
+                Program.frmMain.barBtnLop.Enabled = Program.frmMain.barBtnSinhVien.Enabled = Program.frmMain.barBtnMonHoc.Enabled
+                    = Program.frmMain.barBtnDiem.Enabled = Program.frmMain.barBtnHocPhi.Enabled =Program.frmMain.barBtnTaoLogin.Enabled = false;
+                Program.frmMain.rbBaoCao.Visible = false;
+            }
+            if (Program.mGroup == Program.quyen[0] || Program.mGroup == Program.quyen[1])
+            {
+                Program.frmMain.barBtnLop.Enabled = Program.frmMain.barBtnSinhVien.Enabled = Program.frmMain.barBtnMonHoc.Enabled
+                    = Program.frmMain.barBtnDiem.Enabled = Program.frmMain.barBtnHocPhi.Enabled = Program.frmMain.barBtnTaoLogin.Enabled = true;
+                Program.frmMain.rbBaoCao.Visible = true;
+            }
             Program.frmMain.Enabled = true;
             Program.frmDangNhap.Visible = false;
         }

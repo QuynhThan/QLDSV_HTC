@@ -1,5 +1,6 @@
 ﻿using DevExpress.Skins;
 using DevExpress.UserSkins;
+//using QLDSV_HTC.Forms; ///
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,11 +17,14 @@ namespace QLDSV_HTC
         /// </summary>
         /// 
 
+        //public static frmLop frmLop = new frmLop();
+
         public static SqlConnection Conn = new SqlConnection();
         public static string Connstr = "";
         public static string Connstr_pub = "Data Source=QUYNH;Initial Catalog=QLDSV_HTC;Integrated Security=True";
 
-
+        public static string remoteLogin = "HTKN";
+        public static string remotePass = "123";
         public static SqlDataReader myReader;
         public static string userName = "";
         public static string mHoTen = "";
@@ -33,7 +37,7 @@ namespace QLDSV_HTC
 
 
         public static String MLoginDN = string.Empty;
-        public static String MPasswordDN = string.Empty;
+        public static String MPassDN = string.Empty;
 
 
         public static BindingSource bds_dspm = new BindingSource(); // luu ds pm
@@ -42,6 +46,7 @@ namespace QLDSV_HTC
         public static frmMain frmMain;
         public static frmDangNhap frmDangNhap;
 
+        public static string[] quyen = new string[4] { "PGV", "KHOA", "SV", "PKT" };
 
         public static SqlDataReader ExecSqlDataReader(String strLenh)
         {
@@ -84,7 +89,7 @@ namespace QLDSV_HTC
                 Program.Connstr = "Data Source=" + Program.ServerName + ";Initial Catalog=" + Program.DataBase
                   + ";User ID=" + Program.MLogin + ";Password=" + Program.MPass;
                 Program.Conn.ConnectionString = Program.Connstr;
-
+                Console.WriteLine(Program.Connstr);
                 Program.Conn.Open();
                 return 1;
             }

@@ -92,6 +92,7 @@ namespace QLDSV_HTC
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(292, 27);
             this.txtTK.TabIndex = 3;
+            this.txtTK.Text = "pgv";
             // 
             // txtMK
             // 
@@ -215,11 +216,11 @@ namespace QLDSV_HTC
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.TextBox txtMK;
-        private System.Windows.Forms.ComboBox cmbKhoa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.CheckBox chkShowPass;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.ComboBox cmbKhoa;
     }
 }

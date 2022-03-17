@@ -33,14 +33,14 @@ namespace QLDSV_HTC
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItemDangXuat = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemTaoLogin = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemLop = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemSinhVien = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnTaoLogin = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnLop = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemMonHoc = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemDiem = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemHocPhi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemLopTinChi = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnMonHoc = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDiem = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnHocPhi = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnLopTinChi = new DevExpress.XtraBars.BarButtonItem();
             this.rbQuanTri = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupQuanTri = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -64,14 +64,14 @@ namespace QLDSV_HTC
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.barButtonItemDangXuat,
-            this.barButtonItemTaoLogin,
-            this.barButtonItemLop,
-            this.barButtonItemSinhVien,
+            this.barBtnTaoLogin,
+            this.barBtnLop,
+            this.barBtnSinhVien,
             this.barButtonItem1,
-            this.barButtonItemMonHoc,
-            this.barButtonItemDiem,
-            this.barButtonItemHocPhi,
-            this.barButtonItemLopTinChi});
+            this.barBtnMonHoc,
+            this.barBtnDiem,
+            this.barBtnHocPhi,
+            this.barBtnLopTinChi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12, 15, 12, 15);
             this.ribbonControl1.MaxItemId = 14;
@@ -91,32 +91,33 @@ namespace QLDSV_HTC
             this.barButtonItemDangXuat.Name = "barButtonItemDangXuat";
             this.barButtonItemDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDangXuat_ItemClick);
             // 
-            // barButtonItemTaoLogin
+            // barBtnTaoLogin
             // 
-            this.barButtonItemTaoLogin.Caption = "TẠO TÀI KHOẢN";
-            this.barButtonItemTaoLogin.Id = 6;
-            this.barButtonItemTaoLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItemTaoLogin.ImageOptions.SvgImage")));
-            this.barButtonItemTaoLogin.LargeWidth = 90;
-            this.barButtonItemTaoLogin.Name = "barButtonItemTaoLogin";
+            this.barBtnTaoLogin.Caption = "TẠO TÀI KHOẢN";
+            this.barBtnTaoLogin.Id = 6;
+            this.barBtnTaoLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItemTaoLogin.ImageOptions.SvgImage")));
+            this.barBtnTaoLogin.LargeWidth = 90;
+            this.barBtnTaoLogin.Name = "barBtnTaoLogin";
             // 
-            // barButtonItemLop
+            // barBtnLop
             // 
-            this.barButtonItemLop.Caption = "LỚP";
-            this.barButtonItemLop.Id = 7;
-            this.barButtonItemLop.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.kisspng_google_classroom__2_;
-            this.barButtonItemLop.LargeWidth = 75;
-            this.barButtonItemLop.Name = "barButtonItemLop";
-            this.barButtonItemLop.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLop.Caption = "LỚP";
+            this.barBtnLop.Id = 7;
+            this.barBtnLop.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.kisspng_google_classroom__2_;
+            this.barBtnLop.LargeWidth = 75;
+            this.barBtnLop.Name = "barBtnLop";
+            this.barBtnLop.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemLop_ItemClick);
             // 
-            // barButtonItemSinhVien
+            // barBtnSinhVien
             // 
-            this.barButtonItemSinhVien.Caption = "SINH VIÊN";
-            this.barButtonItemSinhVien.Id = 8;
-            this.barButtonItemSinhVien.ImageOptions.DisabledImage = global::QLDSV_HTC.Properties.Resources.kisspng_google_classroom__2_;
-            this.barButtonItemSinhVien.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.allowuserstoeditranges;
-            this.barButtonItemSinhVien.LargeWidth = 75;
-            this.barButtonItemSinhVien.Name = "barButtonItemSinhVien";
-            this.barButtonItemSinhVien.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnSinhVien.Caption = "SINH VIÊN";
+            this.barBtnSinhVien.Id = 8;
+            this.barBtnSinhVien.ImageOptions.DisabledImage = global::QLDSV_HTC.Properties.Resources.kisspng_google_classroom__2_;
+            this.barBtnSinhVien.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.allowuserstoeditranges;
+            this.barBtnSinhVien.LargeWidth = 75;
+            this.barBtnSinhVien.Name = "barBtnSinhVien";
+            this.barBtnSinhVien.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // barButtonItem1
             // 
@@ -125,40 +126,40 @@ namespace QLDSV_HTC
             this.barButtonItem1.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItemMonHoc
+            // barBtnMonHoc
             // 
-            this.barButtonItemMonHoc.Caption = "MÔN HỌC";
-            this.barButtonItemMonHoc.Id = 10;
-            this.barButtonItemMonHoc.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.text;
-            this.barButtonItemMonHoc.LargeWidth = 75;
-            this.barButtonItemMonHoc.Name = "barButtonItemMonHoc";
+            this.barBtnMonHoc.Caption = "MÔN HỌC";
+            this.barBtnMonHoc.Id = 10;
+            this.barBtnMonHoc.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.text;
+            this.barBtnMonHoc.LargeWidth = 75;
+            this.barBtnMonHoc.Name = "barBtnMonHoc";
             // 
-            // barButtonItemDiem
+            // barBtnDiem
             // 
-            this.barButtonItemDiem.Caption = "ĐIỂM";
-            this.barButtonItemDiem.Id = 11;
-            this.barButtonItemDiem.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.trackingchanges_trackchanges_16x16;
-            this.barButtonItemDiem.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.trackingchanges_trackchanges_32x32;
-            this.barButtonItemDiem.LargeWidth = 75;
-            this.barButtonItemDiem.Name = "barButtonItemDiem";
+            this.barBtnDiem.Caption = "ĐIỂM";
+            this.barBtnDiem.Id = 11;
+            this.barBtnDiem.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.trackingchanges_trackchanges_16x16;
+            this.barBtnDiem.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.trackingchanges_trackchanges_32x32;
+            this.barBtnDiem.LargeWidth = 75;
+            this.barBtnDiem.Name = "barBtnDiem";
             // 
-            // barButtonItemHocPhi
+            // barBtnHocPhi
             // 
-            this.barButtonItemHocPhi.Caption = "HỌC PHÍ";
-            this.barButtonItemHocPhi.Id = 12;
-            this.barButtonItemHocPhi.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.financial_16x16;
-            this.barButtonItemHocPhi.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.financial_32x32;
-            this.barButtonItemHocPhi.LargeWidth = 75;
-            this.barButtonItemHocPhi.Name = "barButtonItemHocPhi";
+            this.barBtnHocPhi.Caption = "HỌC PHÍ";
+            this.barBtnHocPhi.Id = 12;
+            this.barBtnHocPhi.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.financial_16x16;
+            this.barBtnHocPhi.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.financial_32x32;
+            this.barBtnHocPhi.LargeWidth = 75;
+            this.barBtnHocPhi.Name = "barBtnHocPhi";
             // 
-            // barButtonItemLopTinChi
+            // barBtnLopTinChi
             // 
-            this.barButtonItemLopTinChi.Caption = "LỚP TÍN CHỈ";
-            this.barButtonItemLopTinChi.Id = 13;
-            this.barButtonItemLopTinChi.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.morefunctions_16x16;
-            this.barButtonItemLopTinChi.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.morefunctions_32x32;
-            this.barButtonItemLopTinChi.LargeWidth = 75;
-            this.barButtonItemLopTinChi.Name = "barButtonItemLopTinChi";
+            this.barBtnLopTinChi.Caption = "LỚP TÍN CHỈ";
+            this.barBtnLopTinChi.Id = 13;
+            this.barBtnLopTinChi.ImageOptions.Image = global::QLDSV_HTC.Properties.Resources.morefunctions_16x16;
+            this.barBtnLopTinChi.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.morefunctions_32x32;
+            this.barBtnLopTinChi.LargeWidth = 75;
+            this.barBtnLopTinChi.Name = "barBtnLopTinChi";
             // 
             // rbQuanTri
             // 
@@ -169,12 +170,12 @@ namespace QLDSV_HTC
             // 
             // ribbonPageGroupQuanTri
             // 
-            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barButtonItemLop);
-            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barButtonItemSinhVien);
-            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barButtonItemMonHoc);
-            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barButtonItemDiem);
-            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barButtonItemHocPhi);
-            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barButtonItemLopTinChi);
+            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barBtnLop);
+            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barBtnSinhVien);
+            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barBtnMonHoc);
+            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barBtnDiem);
+            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barBtnHocPhi);
+            this.ribbonPageGroupQuanTri.ItemLinks.Add(this.barBtnLopTinChi);
             this.ribbonPageGroupQuanTri.Name = "ribbonPageGroupQuanTri";
             this.ribbonPageGroupQuanTri.Text = "QUẢN LÍ DỮ LIỆU";
             // 
@@ -201,7 +202,7 @@ namespace QLDSV_HTC
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItemDangXuat);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItemTaoLogin);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnTaoLogin);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "CHỨC NĂNG";
             // 
@@ -265,28 +266,27 @@ namespace QLDSV_HTC
         }
 
         #endregion
-
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbQuanTri;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupQuanTri;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rbBaoCao;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbChucNang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDangXuat;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemTaoLogin;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemLop;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemSinhVien;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemMonHoc;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemDiem;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemHocPhi;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemLopTinChi;
         public System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.ToolStripStatusLabel lblMaSV;
         public System.Windows.Forms.ToolStripStatusLabel lblHoTen;
         public System.Windows.Forms.ToolStripStatusLabel lblGroup;
+        public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        public DevExpress.XtraBars.BarButtonItem barBtnLop;
+        public DevExpress.XtraBars.BarButtonItem barBtnSinhVien;
+        public DevExpress.XtraBars.BarButtonItem barBtnMonHoc;
+        public DevExpress.XtraBars.BarButtonItem barBtnDiem;
+        public DevExpress.XtraBars.BarButtonItem barBtnHocPhi;
+        public DevExpress.XtraBars.BarButtonItem barBtnLopTinChi;
+        public DevExpress.XtraBars.Ribbon.RibbonPage rbBaoCao;
+        public DevExpress.XtraBars.BarButtonItem barBtnTaoLogin;
     }
 }
 

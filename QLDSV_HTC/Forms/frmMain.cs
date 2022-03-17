@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using QLDSV_HTC.Forms;
 namespace QLDSV_HTC
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -19,19 +20,48 @@ namespace QLDSV_HTC
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            
  
         }
-
+        // TODO : HANDLE CONTROL CHILDREN
+        private void ShowMdiChildren(Type fType)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == fType)
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form form = (Form)Activator.CreateInstance(fType);
+            form.MdiParent = this;
+            form.Show();
+        }
         private void barButtonItemDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             /*Program.frmMain.Close();
             Program.frmMain = new frmMain();
             Program.frmMain.Show();*/
+            // Dong tat ca cac frm con dang open
+            foreach (Form f in this.MdiChildren)
+            {
+                f.Close();
+            }
+            Program.ServerName = Program.frmDangNhap.cmbKhoa.SelectedValue.ToString();
             Program.frmMain.Enabled = false;
 
             Program.frmDangNhap.Visible = true;
         }
 
+        private void barButtonItemLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Program.mGroup != Program.quyen[3])
+            {
+                ShowMdiChildren(typeof(frmLop));
+            }
+        }
 
+      
     }
 }
