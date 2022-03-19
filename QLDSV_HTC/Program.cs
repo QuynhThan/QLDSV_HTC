@@ -21,7 +21,9 @@ namespace QLDSV_HTC
 
         public static SqlConnection Conn = new SqlConnection();
         public static string Connstr = "";
-        public static string Connstr_pub = "Data Source=QUYNH;Initial Catalog=QLDSV_HTC;Integrated Security=True";
+        //public static string Connstr_pub = "Data Source=QUYNH;Initial Catalog=QLDSV_HTC;Integrated Security=True";
+        public static string Connstr_pub = "Data Source=DESKTOP-ENO2DP6\\MSSQLSERVER4;Initial Catalog=QLDSV_HTC;Integrated Security=True";
+
 
         public static string remoteLogin = "HTKN";
         public static string remotePass = "123";
