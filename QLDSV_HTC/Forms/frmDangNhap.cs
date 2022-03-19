@@ -138,6 +138,7 @@ namespace QLDSV_HTC
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             try
             {
                 Program.ServerName = cmbKhoa.SelectedValue.ToString();

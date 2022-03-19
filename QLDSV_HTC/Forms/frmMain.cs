@@ -56,12 +56,19 @@ namespace QLDSV_HTC
 
         private void barButtonItemLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (Program.mGroup != Program.quyen[3])
-            {
+            
                 ShowMdiChildren(typeof(frmLop));
-            }
+            
         }
 
-      
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void barBtnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmSinhVien));
+        }
     }
 }

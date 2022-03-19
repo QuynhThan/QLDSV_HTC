@@ -95,7 +95,7 @@ namespace QLDSV_HTC
             // 
             this.barBtnTaoLogin.Caption = "TẠO TÀI KHOẢN";
             this.barBtnTaoLogin.Id = 6;
-            this.barBtnTaoLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItemTaoLogin.ImageOptions.SvgImage")));
+            this.barBtnTaoLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnTaoLogin.ImageOptions.SvgImage")));
             this.barBtnTaoLogin.LargeWidth = 90;
             this.barBtnTaoLogin.Name = "barBtnTaoLogin";
             // 
@@ -118,6 +118,7 @@ namespace QLDSV_HTC
             this.barBtnSinhVien.LargeWidth = 75;
             this.barBtnSinhVien.Name = "barBtnSinhVien";
             this.barBtnSinhVien.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSinhVien_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -255,6 +256,7 @@ namespace QLDSV_HTC
             this.Ribbon = this.ribbonControl1;
             this.Text = "QUAN LI DIEM SINH VIEN HTC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -280,13 +282,13 @@ namespace QLDSV_HTC
         public System.Windows.Forms.ToolStripStatusLabel lblGroup;
         public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         public DevExpress.XtraBars.BarButtonItem barBtnLop;
-        public DevExpress.XtraBars.BarButtonItem barBtnSinhVien;
         public DevExpress.XtraBars.BarButtonItem barBtnMonHoc;
         public DevExpress.XtraBars.BarButtonItem barBtnDiem;
         public DevExpress.XtraBars.BarButtonItem barBtnHocPhi;
         public DevExpress.XtraBars.BarButtonItem barBtnLopTinChi;
         public DevExpress.XtraBars.Ribbon.RibbonPage rbBaoCao;
         public DevExpress.XtraBars.BarButtonItem barBtnTaoLogin;
+        public DevExpress.XtraBars.BarButtonItem barBtnSinhVien;
     }
 }
 
