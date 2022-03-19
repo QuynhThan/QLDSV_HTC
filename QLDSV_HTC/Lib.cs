@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace QLDSV_HTC
 
             //cmb.SelectedIndex = 1;
 
-            cmb.SelectedItem = Program.MKhoa;
+            cmb.SelectedIndex = Program.MKhoa;
         }
 
         public static void CmbHelper (ComboBox cmb)
@@ -41,6 +42,18 @@ namespace QLDSV_HTC
                 Program.MLogin = Program.MLoginDN;
                 Program.MPass = Program.MPassDN;
             }
+        }
+
+        public static int checkData(string cmd)
+        {
+            SqlDataReader dataReader = Program.ExecSqlDataReader(cmd);
+
+            if (dataReader == null) return -1;
+
+            dataReader.Read();
+            int result = int.Parse(dataReader.GetValue(0).ToString());
+            dataReader.Close();
+            return result;
         }
 
     }
