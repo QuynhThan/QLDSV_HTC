@@ -41,6 +41,8 @@ namespace QLDSV_HTC.Forms
             this.barBtnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -61,6 +63,7 @@ namespace QLDSV_HTC.Forms
             this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBoxNhapLop = new System.Windows.Forms.GroupBox();
             this.txtMaKhoa = new DevExpress.XtraEditors.TextEdit();
             this.txtKhoaHoc = new DevExpress.XtraEditors.TextEdit();
@@ -68,9 +71,11 @@ namespace QLDSV_HTC.Forms
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.bdsSV = new System.Windows.Forms.BindingSource(this.components);
             this.SINHVIENTableAdapter = new QLDSV_HTC.DSTableAdapters.SINHVIENTableAdapter();
-            this.barBtnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.barBtnHuy = new DevExpress.XtraBars.BarButtonItem();
+            this.ds1 = new QLDSV_HTC.DS();
+            this.khoaTableAdapter1 = new QLDSV_HTC.DSTableAdapters.KHOATableAdapter();
+            this.lopTableAdapter1 = new QLDSV_HTC.DSTableAdapters.LOPTableAdapter();
+            this.lopTableAdapter2 = new QLDSV_HTC.DSTableAdapters.LOPTableAdapter();
+            this.sinhvienTableAdapter1 = new QLDSV_HTC.DSTableAdapters.SINHVIENTableAdapter();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             kHOAHOCLabel = new System.Windows.Forms.Label();
@@ -88,6 +93,7 @@ namespace QLDSV_HTC.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
             this.SuspendLayout();
             // 
             // mALOPLabel
@@ -95,7 +101,7 @@ namespace QLDSV_HTC.Forms
             mALOPLabel.AutoSize = true;
             mALOPLabel.Location = new System.Drawing.Point(49, 32);
             mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(83, 22);
+            mALOPLabel.Size = new System.Drawing.Size(67, 19);
             mALOPLabel.TabIndex = 0;
             mALOPLabel.Text = "MALOP:";
             // 
@@ -104,7 +110,7 @@ namespace QLDSV_HTC.Forms
             tENLOPLabel.AutoSize = true;
             tENLOPLabel.Location = new System.Drawing.Point(49, 70);
             tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(90, 22);
+            tENLOPLabel.Size = new System.Drawing.Size(72, 19);
             tENLOPLabel.TabIndex = 2;
             tENLOPLabel.Text = "TENLOP:";
             // 
@@ -113,7 +119,7 @@ namespace QLDSV_HTC.Forms
             kHOAHOCLabel.AutoSize = true;
             kHOAHOCLabel.Location = new System.Drawing.Point(49, 104);
             kHOAHOCLabel.Name = "kHOAHOCLabel";
-            kHOAHOCLabel.Size = new System.Drawing.Size(113, 22);
+            kHOAHOCLabel.Size = new System.Drawing.Size(92, 19);
             kHOAHOCLabel.TabIndex = 4;
             kHOAHOCLabel.Text = "KHOAHOC:";
             // 
@@ -122,7 +128,7 @@ namespace QLDSV_HTC.Forms
             mAKHOALabel.AutoSize = true;
             mAKHOALabel.Location = new System.Drawing.Point(49, 140);
             mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(103, 22);
+            mAKHOALabel.Size = new System.Drawing.Size(83, 19);
             mAKHOALabel.TabIndex = 6;
             mAKHOALabel.Text = "MAKHOA:";
             // 
@@ -202,12 +208,30 @@ namespace QLDSV_HTC.Forms
             this.barBtnPhucHoi.Name = "barBtnPhucHoi";
             this.barBtnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
+            // barBtnReload
+            // 
+            this.barBtnReload.Caption = "RELOAD";
+            this.barBtnReload.Id = 6;
+            this.barBtnReload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnReload.ImageOptions.SvgImage")));
+            this.barBtnReload.Name = "barBtnReload";
+            this.barBtnReload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barBtnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnReload_ItemClick);
+            // 
+            // barBtnHuy
+            // 
+            this.barBtnHuy.Caption = "HỦY";
+            this.barBtnHuy.Id = 7;
+            this.barBtnHuy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnHuy.ImageOptions.SvgImage")));
+            this.barBtnHuy.Name = "barBtnHuy";
+            this.barBtnHuy.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barBtnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnHuy_ItemClick);
+            // 
             // barBtnThoat
             // 
             this.barBtnThoat.Caption = "THOÁT";
             this.barBtnThoat.Id = 5;
-            this.barBtnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barBtnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barBtnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnThoat.ImageOptions.Image")));
+            this.barBtnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnThoat.ImageOptions.LargeImage")));
             this.barBtnThoat.Name = "barBtnThoat";
             this.barBtnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -217,7 +241,7 @@ namespace QLDSV_HTC.Forms
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManagerLop;
-            this.barDockControlTop.Size = new System.Drawing.Size(1521, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1521, 24);
             // 
             // barDockControlBottom
             // 
@@ -231,17 +255,17 @@ namespace QLDSV_HTC.Forms
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManagerLop;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 772);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 778);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1521, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1521, 24);
             this.barDockControlRight.Manager = this.barManagerLop;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 772);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 778);
             // 
             // barButtonItem1
             // 
@@ -255,7 +279,7 @@ namespace QLDSV_HTC.Forms
             this.panelLop.Controls.Add(this.label1);
             this.panelLop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLop.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelLop.Location = new System.Drawing.Point(0, 30);
+            this.panelLop.Location = new System.Drawing.Point(0, 24);
             this.panelLop.Name = "panelLop";
             this.panelLop.Size = new System.Drawing.Size(1521, 69);
             this.panelLop.TabIndex = 4;
@@ -265,7 +289,7 @@ namespace QLDSV_HTC.Forms
             this.cmbKhoa.FormattingEnabled = true;
             this.cmbKhoa.Location = new System.Drawing.Point(353, 23);
             this.cmbKhoa.Name = "cmbKhoa";
-            this.cmbKhoa.Size = new System.Drawing.Size(410, 33);
+            this.cmbKhoa.Size = new System.Drawing.Size(410, 28);
             this.cmbKhoa.TabIndex = 1;
             this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
@@ -275,7 +299,7 @@ namespace QLDSV_HTC.Forms
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(248, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 26);
+            this.label1.Size = new System.Drawing.Size(66, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "KHOA";
             // 
@@ -305,8 +329,8 @@ namespace QLDSV_HTC.Forms
             // 
             this.LOPGridControl.DataSource = this.bdsLop;
             this.LOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.LOPGridControl.Location = new System.Drawing.Point(0, 99);
+            this.LOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
+            this.LOPGridControl.Location = new System.Drawing.Point(0, 93);
             this.LOPGridControl.MainView = this.gridView1;
             this.LOPGridControl.MenuManager = this.barManagerLop;
             this.LOPGridControl.Name = "LOPGridControl";
@@ -368,10 +392,21 @@ namespace QLDSV_HTC.Forms
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.groupBoxNhapLop);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 350);
+            this.panel1.Location = new System.Drawing.Point(0, 344);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1521, 452);
+            this.panel1.Size = new System.Drawing.Size(1521, 458);
             this.panel1.TabIndex = 20;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdd.Location = new System.Drawing.Point(944, 235);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(110, 48);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBoxNhapLop
             // 
@@ -397,7 +432,7 @@ namespace QLDSV_HTC.Forms
             this.txtMaKhoa.Location = new System.Drawing.Point(244, 141);
             this.txtMaKhoa.MenuManager = this.barManagerLop;
             this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(485, 22);
+            this.txtMaKhoa.Size = new System.Drawing.Size(485, 20);
             this.txtMaKhoa.TabIndex = 7;
             // 
             // txtKhoaHoc
@@ -406,7 +441,7 @@ namespace QLDSV_HTC.Forms
             this.txtKhoaHoc.Location = new System.Drawing.Point(244, 105);
             this.txtKhoaHoc.MenuManager = this.barManagerLop;
             this.txtKhoaHoc.Name = "txtKhoaHoc";
-            this.txtKhoaHoc.Size = new System.Drawing.Size(485, 22);
+            this.txtKhoaHoc.Size = new System.Drawing.Size(485, 20);
             this.txtKhoaHoc.TabIndex = 5;
             // 
             // txtTenLop
@@ -415,7 +450,7 @@ namespace QLDSV_HTC.Forms
             this.txtTenLop.Location = new System.Drawing.Point(244, 67);
             this.txtTenLop.MenuManager = this.barManagerLop;
             this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(485, 22);
+            this.txtTenLop.Size = new System.Drawing.Size(485, 20);
             this.txtTenLop.TabIndex = 3;
             // 
             // txtMaLop
@@ -424,7 +459,7 @@ namespace QLDSV_HTC.Forms
             this.txtMaLop.Location = new System.Drawing.Point(244, 29);
             this.txtMaLop.MenuManager = this.barManagerLop;
             this.txtMaLop.Name = "txtMaLop";
-            this.txtMaLop.Size = new System.Drawing.Size(485, 22);
+            this.txtMaLop.Size = new System.Drawing.Size(485, 20);
             this.txtMaLop.TabIndex = 1;
             // 
             // bdsSV
@@ -436,39 +471,31 @@ namespace QLDSV_HTC.Forms
             // 
             this.SINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // barBtnReload
+            // ds1
             // 
-            this.barBtnReload.Caption = "RELOAD";
-            this.barBtnReload.Id = 6;
-            this.barBtnReload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barBtnReload.Name = "barBtnReload";
-            this.barBtnReload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barBtnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnReload_ItemClick);
+            this.ds1.DataSetName = "DS";
+            this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnAdd
+            // khoaTableAdapter1
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.Location = new System.Drawing.Point(944, 235);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(110, 48);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.khoaTableAdapter1.ClearBeforeFill = true;
             // 
-            // barBtnHuy
+            // lopTableAdapter1
             // 
-            this.barBtnHuy.Caption = "HỦY";
-            this.barBtnHuy.Id = 7;
-            this.barBtnHuy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barBtnHuy.Name = "barBtnHuy";
-            this.barBtnHuy.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barBtnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnHuy_ItemClick);
+            this.lopTableAdapter1.ClearBeforeFill = true;
+            // 
+            // lopTableAdapter2
+            // 
+            this.lopTableAdapter2.ClearBeforeFill = true;
+            // 
+            // sinhvienTableAdapter1
+            // 
+            this.sinhvienTableAdapter1.ClearBeforeFill = true;
             // 
             // frmLop
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1521, 802);
             this.Controls.Add(this.panel1);
@@ -498,6 +525,7 @@ namespace QLDSV_HTC.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,5 +569,10 @@ namespace QLDSV_HTC.Forms
         private DevExpress.XtraBars.BarButtonItem barBtnReload;
         private System.Windows.Forms.Button btnAdd;
         private DevExpress.XtraBars.BarButtonItem barBtnHuy;
+        private DS ds1;
+        private DSTableAdapters.KHOATableAdapter khoaTableAdapter1;
+        private DSTableAdapters.LOPTableAdapter lopTableAdapter1;
+        private DSTableAdapters.LOPTableAdapter lopTableAdapter2;
+        private DSTableAdapters.SINHVIENTableAdapter sinhvienTableAdapter1;
     }
 }

@@ -42,5 +42,16 @@ namespace QLDSV_HTC.Properties {
                 return ((string)(this["QLDSV_HTCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-ENO2DP6\\MSSQLSERVER5;Initial Catalog=QLDSV_HTC;User ID=sa;Pas" +
+            "sword=sa")]
+        public string QLDSV_HTCConnectionString2 {
+            get {
+                return ((string)(this["QLDSV_HTCConnectionString2"]));
+            }
+        }
     }
 }
