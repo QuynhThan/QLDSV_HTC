@@ -79,7 +79,26 @@ namespace QLDSV_HTC
             Conn.Close();
             return dt;
         }
-
+        public static int ExecSqlNonQuery(string strlenh)
+        {
+            SqlCommand Sqlcmd = new SqlCommand(strlenh, Conn);
+            Sqlcmd.CommandType = CommandType.Text;
+            Sqlcmd.CommandTimeout = 600; // 10 phut
+            if (Conn.State == ConnectionState.Closed) Conn.Open();
+            try
+            {
+                Sqlcmd.ExecuteNonQuery();
+                Conn.Close();
+                return 0;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(strlenh);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Conn.Close();
+                return ex.State;
+            }
+        }
         public static int KetNoi()
         {
             if (Program.Conn != null && Program.Conn.State == System.Data.ConnectionState.Open)
