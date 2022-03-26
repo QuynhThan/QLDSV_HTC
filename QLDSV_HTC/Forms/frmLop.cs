@@ -473,9 +473,6 @@ namespace QLDSV_HTC.Forms
             return true;
         }
 
-        private void bdsLop_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }   
 }

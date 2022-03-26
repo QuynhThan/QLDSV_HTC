@@ -73,14 +73,14 @@ namespace QLDSV_HTC
             this.barBtnHocPhi,
             this.barBtnLopTinChi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12, 15, 12, 15);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbQuanTri,
             this.rbBaoCao,
             this.rbChucNang});
-            this.ribbonControl1.Size = new System.Drawing.Size(884, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(758, 158);
             // 
             // barButtonItemDangXuat
             // 
@@ -134,6 +134,7 @@ namespace QLDSV_HTC
             this.barBtnMonHoc.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.text;
             this.barBtnMonHoc.LargeWidth = 75;
             this.barBtnMonHoc.Name = "barBtnMonHoc";
+            this.barBtnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnMonHoc_ItemClick);
             // 
             // barBtnDiem
             // 
@@ -218,40 +219,40 @@ namespace QLDSV_HTC
             this.lblMaSV,
             this.lblHoTen,
             this.lblGroup});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 417);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 338);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(884, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(758, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblMaSV
             // 
             this.lblMaSV.Name = "lblMaSV";
-            this.lblMaSV.Size = new System.Drawing.Size(47, 20);
+            this.lblMaSV.Size = new System.Drawing.Size(37, 17);
             this.lblMaSV.Text = "MaSV";
             // 
             // lblHoTen
             // 
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(62, 20);
+            this.lblHoTen.Size = new System.Drawing.Size(49, 17);
             this.lblHoTen.Text = "HO TEN";
             // 
             // lblGroup
             // 
             this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(50, 20);
+            this.lblGroup.Size = new System.Drawing.Size(40, 17);
             this.lblGroup.Text = "Group";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 443);
+            this.ClientSize = new System.Drawing.Size(758, 360);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::QLDSV_HTC.Properties.Resources.main_icon;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "QUAN LI DIEM SINH VIEN HTC";
