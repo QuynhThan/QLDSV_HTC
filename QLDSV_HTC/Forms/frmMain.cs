@@ -70,5 +70,12 @@ namespace QLDSV_HTC
         {
             ShowMdiChildren(typeof(frmSinhVien));
         }
+
+        private void barBtnDangKyLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmDangKyLTC));
+
+
+        }
     }
 }

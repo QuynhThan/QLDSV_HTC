@@ -34,6 +34,8 @@ namespace QLDSV_HTC
         public static string MLogin = "";
         public static string MPass = "";
         public static int MKhoa;
+        public static string MUser = "";
+        public static string MUserPass = "";
 
 
         public static String MLoginDN = string.Empty;
@@ -46,7 +48,7 @@ namespace QLDSV_HTC
         public static frmMain frmMain;
         public static frmDangNhap frmDangNhap;
 
-        public static string[] quyen = new string[4] { "PGV", "KHOA", "SV", "PKT" };
+        public static string[] quyen = new string[4] { "PGV", "KHOA", "SINH VIEN", "PKT" };
 
         public static SqlDataReader ExecSqlDataReader(String strLenh)
         {
@@ -57,6 +59,7 @@ namespace QLDSV_HTC
             sqlcmd.CommandType = CommandType.Text;
             sqlcmd.CommandTimeout = 600;
             if (Program.Conn.State == ConnectionState.Closed) Program.Conn.Open();
+            
             try
             {
                 myReader = sqlcmd.ExecuteReader();
