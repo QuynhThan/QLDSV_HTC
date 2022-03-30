@@ -25,12 +25,7 @@ namespace QLDSV_HTC.Forms
         {
             InitializeComponent();
         }
-        private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsLop.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS);
-        }
+     
         private void fillData()
         {
             DS.EnforceConstraints = false;

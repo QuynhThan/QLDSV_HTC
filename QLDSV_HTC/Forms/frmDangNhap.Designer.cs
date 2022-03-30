@@ -40,6 +40,8 @@ namespace QLDSV_HTC
             this.btnThoat = new System.Windows.Forms.Button();
             this.chkShowPass = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMSV = new System.Windows.Forms.Label();
+            this.chkSV = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,7 +94,7 @@ namespace QLDSV_HTC
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(292, 27);
             this.txtTK.TabIndex = 3;
-            this.txtTK.Text = "pgv";
+            this.txtTK.Text = "N15DCCN001";
             // 
             // txtMK
             // 
@@ -175,6 +177,8 @@ namespace QLDSV_HTC
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblMSV);
+            this.panel1.Controls.Add(this.chkSV);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.chkShowPass);
             this.panel1.Controls.Add(this.label2);
@@ -190,6 +194,37 @@ namespace QLDSV_HTC
             this.panel1.Padding = new System.Windows.Forms.Padding(2);
             this.panel1.Size = new System.Drawing.Size(592, 336);
             this.panel1.TabIndex = 11;
+            // 
+            // lblMSV
+            // 
+            this.lblMSV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMSV.AutoSize = true;
+            this.lblMSV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMSV.Location = new System.Drawing.Point(37, 102);
+            this.lblMSV.Name = "lblMSV";
+            this.lblMSV.Size = new System.Drawing.Size(181, 26);
+            this.lblMSV.TabIndex = 11;
+            this.lblMSV.Text = "MÃ SINH VIÊN";
+            this.lblMSV.Visible = false;
+            // 
+            // chkSV
+            // 
+            this.chkSV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkSV.AutoSize = true;
+            this.chkSV.BackColor = System.Drawing.SystemColors.Control;
+            this.chkSV.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSV.Location = new System.Drawing.Point(234, 185);
+            this.chkSV.Name = "chkSV";
+            this.chkSV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chkSV.Size = new System.Drawing.Size(99, 24);
+            this.chkSV.TabIndex = 10;
+            this.chkSV.Text = "Sinh Viên";
+            this.chkSV.UseVisualStyleBackColor = false;
+            this.chkSV.CheckedChanged += new System.EventHandler(this.chkSV_CheckedChanged);
             // 
             // frmDangNhap
             // 
@@ -222,5 +257,7 @@ namespace QLDSV_HTC
         private System.Windows.Forms.CheckBox chkShowPass;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.ComboBox cmbKhoa;
+        private System.Windows.Forms.CheckBox chkSV;
+        private System.Windows.Forms.Label lblMSV;
     }
 }
