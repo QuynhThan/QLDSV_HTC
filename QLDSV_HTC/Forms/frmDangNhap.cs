@@ -87,7 +87,7 @@ namespace QLDSV_HTC
             {
                 Program.MLogin = "SV";
                 Program.MPass = "123";
-                Program.MUser = txtTK.Text.Trim();
+                Program.MUser = txtTK.Text.Trim().ToUpper();
                 Program.MUserPass = txtMK.Text.Trim();
                 if (Program.KetNoi() == 0) return;
 
@@ -184,9 +184,9 @@ namespace QLDSV_HTC
                     = Program.frmMain.barBtnDiem.Enabled 
                     = Program.frmMain.barBtnHocPhi.Enabled
                     = Program.frmMain.barBtnTaoLogin.Enabled 
-                    = Program.frmMain.barBtnDangKyLTC.Enabled 
                     = Program.frmMain.barBtnLopTinChi.Enabled 
                     = true;
+                Program.frmMain.barBtnDangKyLTC.Enabled = false;
                 Program.frmMain.rbBaoCao.Visible = true;
             }
             Program.frmMain.Enabled = true;
@@ -214,7 +214,7 @@ namespace QLDSV_HTC
         private void chkSV_CheckedChanged(object sender, EventArgs e)
         {
             lblMSV.Visible  = isSinhVien = (chkSV.Checked) ? true : false;
-            Console.WriteLine(isSinhVien);
+            
         }
     }
 }

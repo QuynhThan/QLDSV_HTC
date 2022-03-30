@@ -32,6 +32,7 @@ namespace QLDSV_HTC.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangKyLTC));
             this.panelDN = new System.Windows.Forms.Panel();
+            this.lblMaSV = new System.Windows.Forms.Label();
             this.lblTenLop = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblMaLop = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@ namespace QLDSV_HTC.Forms
             this.colNHOM1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.lblMaSV = new System.Windows.Forms.Label();
             this.panelDN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
@@ -121,6 +121,14 @@ namespace QLDSV_HTC.Forms
             this.panelDN.Size = new System.Drawing.Size(1581, 66);
             this.panelDN.TabIndex = 0;
             // 
+            // lblMaSV
+            // 
+            this.lblMaSV.AutoSize = true;
+            this.lblMaSV.Location = new System.Drawing.Point(337, 22);
+            this.lblMaSV.Name = "lblMaSV";
+            this.lblMaSV.Size = new System.Drawing.Size(0, 21);
+            this.lblMaSV.TabIndex = 15;
+            // 
             // lblTenLop
             // 
             this.lblTenLop.AutoSize = true;
@@ -134,9 +142,9 @@ namespace QLDSV_HTC.Forms
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(1437, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 21);
+            this.label7.Size = new System.Drawing.Size(79, 21);
             this.label7.TabIndex = 13;
-            this.label7.Text = "TÊN LỚP: ";
+            this.label7.Text = "Tên Lớp:";
             // 
             // lblMaLop
             // 
@@ -151,9 +159,9 @@ namespace QLDSV_HTC.Forms
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(1106, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 21);
+            this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 11;
-            this.label4.Text = "MÃ LỚP: ";
+            this.label4.Text = "Mã Lớp:";
             // 
             // lblHoTen
             // 
@@ -168,19 +176,19 @@ namespace QLDSV_HTC.Forms
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(715, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 21);
+            this.label2.Size = new System.Drawing.Size(71, 21);
             this.label2.TabIndex = 9;
-            this.label2.Text = "HỌ TÊN: ";
+            this.label2.Text = "Họ Tên:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 22);
+            this.label1.Location = new System.Drawing.Point(172, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 21);
+            this.label1.Size = new System.Drawing.Size(114, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MÃ SINH VIÊN";
+            this.label1.Text = "Mã Sinh Viên:";
             // 
             // dS
             // 
@@ -306,7 +314,6 @@ namespace QLDSV_HTC.Forms
             this.groupBoxDKLTC.Controls.Add(this.gcLTCDaDangKy);
             this.groupBoxDKLTC.Controls.Add(this.panel4);
             this.groupBoxDKLTC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxDKLTC.Enabled = false;
             this.groupBoxDKLTC.Location = new System.Drawing.Point(0, 96);
             this.groupBoxDKLTC.Name = "groupBoxDKLTC";
             this.groupBoxDKLTC.Size = new System.Drawing.Size(1581, 966);
@@ -330,9 +337,12 @@ namespace QLDSV_HTC.Forms
             // 
             this.gvDangKyLTC.Appearance.FocusedCell.BackColor = System.Drawing.Color.Transparent;
             this.gvDangKyLTC.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvDangKyLTC.Appearance.FocusedRow.BackColor = System.Drawing.Color.Aqua;
+            this.gvDangKyLTC.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gvDangKyLTC.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Aqua;
             this.gvDangKyLTC.Appearance.HideSelectionRow.Options.UseBackColor = true;
             this.gvDangKyLTC.Appearance.SelectedRow.BackColor = System.Drawing.Color.Aqua;
+            this.gvDangKyLTC.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.Aqua;
             this.gvDangKyLTC.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gvDangKyLTC.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSTT,
@@ -347,9 +357,8 @@ namespace QLDSV_HTC.Forms
             this.gvDangKyLTC.OptionsSelection.MultiSelect = true;
             this.gvDangKyLTC.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gvDangKyLTC.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.gvDangKyLTC.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvDangKyLTC_RowStyle);
+            this.gvDangKyLTC.OptionsView.ShowIndicator = false;
             this.gvDangKyLTC.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvDangKyLTC_SelectionChanged);
-            this.gvDangKyLTC.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gvDangKyLTC_ShowingEditor);
             // 
             // colSTT
             // 
@@ -567,6 +576,14 @@ namespace QLDSV_HTC.Forms
             // 
             // gvLTCDaDangKy
             // 
+            this.gvLTCDaDangKy.Appearance.FocusedCell.BackColor = System.Drawing.Color.Transparent;
+            this.gvLTCDaDangKy.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvLTCDaDangKy.Appearance.FocusedRow.BackColor = System.Drawing.Color.PeachPuff;
+            this.gvLTCDaDangKy.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvLTCDaDangKy.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.PeachPuff;
+            this.gvLTCDaDangKy.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvLTCDaDangKy.Appearance.SelectedRow.BackColor = System.Drawing.Color.PeachPuff;
+            this.gvLTCDaDangKy.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gvLTCDaDangKy.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSTT1,
             this.colMAMH1,
@@ -672,14 +689,6 @@ namespace QLDSV_HTC.Forms
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             this.btnXoa.MouseLeave += new System.EventHandler(this.btnXoa_MouseLeave);
             this.btnXoa.MouseHover += new System.EventHandler(this.btnXoa_MouseHover);
-            // 
-            // lblMaSV
-            // 
-            this.lblMaSV.AutoSize = true;
-            this.lblMaSV.Location = new System.Drawing.Point(177, 22);
-            this.lblMaSV.Name = "lblMaSV";
-            this.lblMaSV.Size = new System.Drawing.Size(0, 21);
-            this.lblMaSV.TabIndex = 15;
             // 
             // frmDangKyLTC
             // 
