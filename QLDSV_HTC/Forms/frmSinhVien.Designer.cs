@@ -101,7 +101,6 @@ namespace QLDSV_HTC.Forms
             this.bdsDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.dANGKYTableAdapter = new QLDSV_HTC.DSTableAdapters.DANGKYTableAdapter();
             this.bdsHocPhi = new System.Windows.Forms.BindingSource(this.components);
-            this.hOCPHITableAdapter = new QLDSV_HTC.DSTableAdapters.HOCPHITableAdapter();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -252,10 +251,8 @@ namespace QLDSV_HTC.Forms
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CT_DONGHOCPHITableAdapter = null;
             this.tableAdapterManager.DANGKYTableAdapter = null;
             this.tableAdapterManager.GIANGVIENTableAdapter = null;
-            this.tableAdapterManager.HOCPHITableAdapter = null;
             this.tableAdapterManager.KHOATableAdapter = null;
             this.tableAdapterManager.LOPTableAdapter = null;
             this.tableAdapterManager.LOPTINCHITableAdapter = null;
@@ -841,10 +838,7 @@ namespace QLDSV_HTC.Forms
             this.bdsHocPhi.DataMember = "FK_SINHVIEN_HOCPHI";
             this.bdsHocPhi.DataSource = this.bdsSinhVien;
             // 
-            // hOCPHITableAdapter
-            // 
-            this.hOCPHITableAdapter.ClearBeforeFill = true;
-            // 
+            
             // frmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -955,7 +949,6 @@ namespace QLDSV_HTC.Forms
         private System.Windows.Forms.BindingSource bdsDangKy;
         private DSTableAdapters.DANGKYTableAdapter dANGKYTableAdapter;
         private System.Windows.Forms.BindingSource bdsHocPhi;
-        private DSTableAdapters.HOCPHITableAdapter hOCPHITableAdapter;
         private DevExpress.XtraEditors.CheckEdit chkDaNghiHoc;
         private System.Windows.Forms.Panel panelDaNghiHoc;
         private System.Windows.Forms.Panel panelInfoLop;

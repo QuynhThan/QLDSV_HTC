@@ -46,10 +46,32 @@ namespace QLDSV_HTC.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=QUYNH\\SERVER3;Initial Catalog=QLDSV_HTC;User ID=sa; Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-ENO2DP6\\MSSQLSERVER5;Initial Catalog=QLDSV_HTC;User ID=sa;Pas" +
+            "sword=123")]
         public string QLDSV_HTCConnectionString2 {
             get {
                 return ((string)(this["QLDSV_HTCConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-ENO2DP6\\MSSQLSERVER5;Initial Catalog=QLDSV_HTC;Integrated Sec" +
+            "urity=True")]
+        public string QLDSV_HTCConnectionString3 {
+            get {
+                return ((string)(this["QLDSV_HTCConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=QUYNH\\SERVER3;Initial Catalog=QLDSV_HTC;User ID=sa; Password=123")]
+        public string QLDSV_HTCConnectionString4 {
+            get {
+                return ((string)(this["QLDSV_HTCConnectionString4"]));
             }
         }
     }
