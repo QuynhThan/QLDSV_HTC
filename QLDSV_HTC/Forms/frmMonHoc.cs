@@ -80,9 +80,9 @@ namespace QLDSV_HTC.Forms
             }
             return false;
         }
-        private Boolean kiemTraThongTInMonHoc()
+       /* private Boolean kiemTraThongTInMonHoc()
         {
 
-        }
+        }*/
     }
 }
