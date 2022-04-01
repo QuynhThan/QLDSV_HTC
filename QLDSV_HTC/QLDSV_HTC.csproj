@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS.cs">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,11 +96,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLDSV_HTCDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSV_HTCDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,17 +148,6 @@
   <ItemGroup>
     <Content Include="Resources\4082.9-class-icon-iconbunny.jpg" />
     <Content Include="Resources\add-login.png" />
-    <None Include="QLDSV_HTCDataSet.xsc">
-      <DependentUpon>QLDSV_HTCDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSV_HTCDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSV_HTCDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLDSV_HTCDataSet.xss">
-      <DependentUpon>QLDSV_HTCDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\morefunctions_16x16.png" />
     <None Include="Resources\morefunctions_32x32.png" />
     <None Include="Resources\trackingchanges_trackchanges_16x16.png" />
