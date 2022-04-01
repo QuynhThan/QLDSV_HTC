@@ -42,5 +42,15 @@ namespace QLDSV_HTC.Properties {
                 return ((string)(this["QLDSV_HTCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=QUYNH\\SERVER3;Initial Catalog=QLDSV_HTC;User ID=sa; Password=123")]
+        public string QLDSV_HTCConnectionString2 {
+            get {
+                return ((string)(this["QLDSV_HTCConnectionString2"]));
+            }
+        }
     }
 }

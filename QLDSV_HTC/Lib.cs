@@ -46,6 +46,8 @@ namespace QLDSV_HTC
 
         public static int checkData(string cmd)
         {
+            // return 1 site hien tai
+            //return 2 site khac
             SqlDataReader dataReader = Program.ExecSqlDataReader(cmd);
 
             if (dataReader == null) return -1;

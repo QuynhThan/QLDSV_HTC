@@ -18,10 +18,24 @@ namespace QLDSV_HTC
 
         }
 
+
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
- 
+            /*Lib.BDataToCmb(this.cmbKhoaSV, Program.bds_dspm.DataSource);
+
+            //PHAN QUYEN TREN DAY
+            if (Program.mGroup == Program.quyen[0])
+            {
+                Program.bds_dspm.Filter = "TENKHOA <> 'HỌC PHÍ'";
+
+            }
+
+            if (Program.mGroup == Program.quyen[1])
+            {
+                //Program.bds_dspm.Filter = string.Format("TENSERVER = '{0}'", Program.ServerName);
+                cmbKhoaSV.Enabled = false;
+            }*/
+
         }
         // TODO : HANDLE CONTROL CHILDREN
         private void ShowMdiChildren(Type fType)
@@ -77,5 +91,7 @@ namespace QLDSV_HTC
 
 
         }
+
+        
     }
 }
