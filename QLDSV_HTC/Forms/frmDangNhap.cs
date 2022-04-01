@@ -13,7 +13,7 @@ namespace QLDSV_HTC
 {
     public partial class frmDangNhap : Form
     {
-
+        private bool isSinhVien = false;
         private static SqlConnection Conn_pub = new SqlConnection();
 
         public frmDangNhap()
@@ -83,48 +83,110 @@ namespace QLDSV_HTC
                 MessageBox.Show("Tai khoan hoac mat khau khong duoc bo trong");
                 return;
             }
+            if (isSinhVien)
+            {
+                Program.MLogin = "SV";
+                Program.MPass = "123";
+                Program.MUser = txtTK.Text.Trim().ToUpper();
+                Program.MUserPass = txtMK.Text.Trim();
+                if (Program.KetNoi() == 0) return;
 
-            Program.MLogin = txtTK.Text;
-            Program.MPass = txtMK.Text;
-            if (Program.KetNoi() == 0) return;
+                Program.MKhoa = cmbKhoa.SelectedIndex;
+                Program.MLoginDN = Program.MLogin;
+                Program.MPassDN = Program.MPass;
 
-            Program.MKhoa = cmbKhoa.SelectedIndex;
-            Program.MLoginDN = Program.MLogin;
-            Program.MPassDN = Program.MPass;
+                string strLenh = string.Format("EXEC SP_DANGNHAP '{0}',N'{1}',N'{2}'", Program.MLogin, Program.MUser, Program.MUserPass);
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null)
+                {
+                    MessageBox.Show("Mã Sinh Viên Hoặc Mật Khẩu Không đúng!!","Login fail",MessageBoxButtons.OK);
+                    txtTK.Focus();
+                    return;
+                }
+                if(Program.myReader.FieldCount == 0)
+                {
+                    MessageBox.Show("Mã Sinh Viên Hoặc Mật Khẩu Không đúng!!", "Login fail", MessageBoxButtons.OK);
+                    txtTK.Focus();
+                    return;
+                }
+                Program.myReader.Read();
 
-            string strLenh = "EXEC SP_DANGNHAP '" + Program.MLogin + "'";
-            Program.myReader = Program.ExecSqlDataReader(strLenh);
-            if (Program.myReader == null) return;
+                Program.userName = Program.myReader.GetString(0);
+                Program.mHoTen = Program.myReader.GetString(1);
+                Program.mGroup = Program.myReader.GetString(2);
 
-            Program.myReader.Read();
+                Program.myReader.Close();
+                Program.frmMain.lblMaSV.Text = "MaSV: " + Program.MUser;
+                Program.frmMain.lblHoTen.Text = "Ho Ten: " + Program.mHoTen;
+                Program.frmMain.lblGroup.Text = "Nhom: " + Program.mGroup;
+            }
+            else
+            {
+                Program.MLogin = txtTK.Text;
+                Program.MPass = txtMK.Text;
+                if (Program.KetNoi() == 0) return;
 
-            Program.userName = Program.myReader.GetString(0);
-            Program.mHoTen = Program.myReader.GetString(1);
-            Program.mGroup = Program.myReader.GetString(2);
-            
+                Program.MKhoa = cmbKhoa.SelectedIndex;
+                Program.MLoginDN = Program.MLogin;
+                Program.MPassDN = Program.MPass;
 
-            Program.frmMain.lblMaSV.Text = "MaSV: " + Program.userName;
-            Program.frmMain.lblHoTen.Text = "Ho Ten: " + Program.mHoTen;
-            Program.frmMain.lblGroup.Text = "Nhom: " + Program.mGroup;
+                string strLenh = "EXEC SP_DANGNHAP '" + Program.MLogin + "','',''";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null) return;
 
+                Program.myReader.Read();
+
+                Program.userName = Program.myReader.GetString(0);
+                Program.mHoTen = Program.myReader.GetString(1);
+                Program.mGroup = Program.myReader.GetString(2);
+
+                Program.myReader.Close();
+                Program.frmMain.lblMaSV.Text = "MaGV: " + Program.userName;
+                Program.frmMain.lblHoTen.Text = "Ho Ten: " + Program.mHoTen;
+                Program.frmMain.lblGroup.Text = "Nhom: " + Program.mGroup;
+
+
+            }
 
             //PHAN QUYEN TREN DAY
             if (Program.mGroup == Program.quyen[3])
             {
-                Program.frmMain.barBtnLop.Enabled = Program.frmMain.barBtnSinhVien.Enabled = Program.frmMain.barBtnMonHoc.Enabled
-                    = Program.frmMain.barBtnDiem.Enabled = Program.frmMain.barBtnLopTinChi.Enabled =Program.frmMain.barBtnTaoLogin.Enabled = false;
+                Program.frmMain.barBtnHocPhi.Enabled = true;
+                Program.frmMain.barBtnLop.Enabled 
+                    = Program.frmMain.barBtnSinhVien.Enabled 
+                    = Program.frmMain.barBtnMonHoc.Enabled
+                    = Program.frmMain.barBtnDiem.Enabled 
+                    = Program.frmMain.barBtnLopTinChi.Enabled 
+                    = Program.frmMain.barBtnDangKyLTC.Enabled
+                    = Program.frmMain.barBtnTaoLogin.Enabled 
+                    = false;
                 Program.frmMain.rbBaoCao.Visible = false;
             }
             if (Program.mGroup == Program.quyen[2])
             {
-                Program.frmMain.barBtnLop.Enabled = Program.frmMain.barBtnSinhVien.Enabled = Program.frmMain.barBtnMonHoc.Enabled
-                    = Program.frmMain.barBtnDiem.Enabled = Program.frmMain.barBtnHocPhi.Enabled =Program.frmMain.barBtnTaoLogin.Enabled = false;
+                Program.frmMain.barBtnDangKyLTC.Enabled = true;
+                Program.frmMain.barBtnLop.Enabled
+                    = Program.frmMain.barBtnSinhVien.Enabled 
+                    = Program.frmMain.barBtnMonHoc.Enabled
+                    = Program.frmMain.barBtnDiem.Enabled 
+                    = Program.frmMain.barBtnHocPhi.Enabled
+                    = Program.frmMain.barBtnTaoLogin.Enabled 
+                    = Program.frmMain.barBtnLopTinChi.Enabled 
+                    = false;
+
                 Program.frmMain.rbBaoCao.Visible = false;
             }
             if (Program.mGroup == Program.quyen[0] || Program.mGroup == Program.quyen[1])
             {
-                Program.frmMain.barBtnLop.Enabled = Program.frmMain.barBtnSinhVien.Enabled = Program.frmMain.barBtnMonHoc.Enabled
-                    = Program.frmMain.barBtnDiem.Enabled = Program.frmMain.barBtnHocPhi.Enabled = Program.frmMain.barBtnTaoLogin.Enabled = true;
+                Program.frmMain.barBtnLop.Enabled 
+                    = Program.frmMain.barBtnSinhVien.Enabled 
+                    = Program.frmMain.barBtnMonHoc.Enabled
+                    = Program.frmMain.barBtnDiem.Enabled 
+                    = Program.frmMain.barBtnHocPhi.Enabled
+                    = Program.frmMain.barBtnTaoLogin.Enabled 
+                    = Program.frmMain.barBtnLopTinChi.Enabled 
+                    = true;
+                Program.frmMain.barBtnDangKyLTC.Enabled = false;
                 Program.frmMain.rbBaoCao.Visible = true;
             }
             Program.frmMain.Enabled = true;
@@ -147,6 +209,12 @@ namespace QLDSV_HTC
             {
                 MessageBox.Show("Loi khong co chi nhanh tron db" + ex.ToString());
             }
+        }
+
+        private void chkSV_CheckedChanged(object sender, EventArgs e)
+        {
+            lblMSV.Visible  = isSinhVien = (chkSV.Checked) ? true : false;
+            
         }
     }
 }
