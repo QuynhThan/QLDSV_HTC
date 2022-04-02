@@ -334,8 +334,14 @@ namespace QLDSV_HTC.Forms
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_DONGHOCPHITableAdapter = null;
+            this.tableAdapterManager.DANGKYTableAdapter = null;
+            this.tableAdapterManager.GIANGVIENTableAdapter = null;
+            this.tableAdapterManager.HOCPHITableAdapter = null;
             this.tableAdapterManager.KHOATableAdapter = null;
             this.tableAdapterManager.LOPTableAdapter = this.LOPTableAdapter;
+            this.tableAdapterManager.LOPTINCHITableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_HTC.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -445,7 +451,7 @@ namespace QLDSV_HTC.Forms
             this.btnXong.Name = "btnXong";
             this.btnXong.Size = new System.Drawing.Size(193, 43);
             this.btnXong.TabIndex = 8;
-            this.btnXong.Text = "XONG";
+            this.btnXong.Text = "KẾT THÚC";
             this.btnXong.UseVisualStyleBackColor = false;
             this.btnXong.Visible = false;
             this.btnXong.Click += new System.EventHandler(this.btnXong_Click);

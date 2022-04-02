@@ -251,8 +251,10 @@ namespace QLDSV_HTC.Forms
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_DONGHOCPHITableAdapter = null;
             this.tableAdapterManager.DANGKYTableAdapter = null;
             this.tableAdapterManager.GIANGVIENTableAdapter = null;
+            this.tableAdapterManager.HOCPHITableAdapter = null;
             this.tableAdapterManager.KHOATableAdapter = null;
             this.tableAdapterManager.LOPTableAdapter = null;
             this.tableAdapterManager.LOPTINCHITableAdapter = null;
@@ -647,6 +649,7 @@ namespace QLDSV_HTC.Forms
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(222, 22);
             this.txtDiaChi.TabIndex = 17;
+            this.txtDiaChi.EditValueChanged += new System.EventHandler(this.txtDiaChi_EditValueChanged);
             // 
             // dateNgaySinh
             // 
@@ -704,12 +707,12 @@ namespace QLDSV_HTC.Forms
             // txtMaSV
             // 
             this.txtMaSV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSinhVien, "MASV", true));
-            this.txtMaSV.Location = new System.Drawing.Point(172, 66);
+            this.txtMaSV.Location = new System.Drawing.Point(172, 67);
             this.txtMaSV.MenuManager = this.barManagerLop;
             this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMaSV.Size = new System.Drawing.Size(222, 22);
             this.txtMaSV.TabIndex = 1;
-            this.txtMaSV.EditValueChanged += new System.EventHandler(this.txtMaSV_EditValueChanged);
             // 
             // lOPTableAdapter
             // 
@@ -838,7 +841,6 @@ namespace QLDSV_HTC.Forms
             this.bdsHocPhi.DataMember = "FK_SINHVIEN_HOCPHI";
             this.bdsHocPhi.DataSource = this.bdsSinhVien;
             // 
-            
             // frmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);

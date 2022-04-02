@@ -24,8 +24,8 @@ namespace QLDSV_HTC.Forms
         Stack<string> unduStack = new Stack<string>();
 
         //===== bấm undu thì quay lại position cũ=================OKKK
-        //===== lỗi chuyển cmbKhoa cả 2 frm đều đổi ==========
-        //===== bắt lỗi nhập họ tên in hoa ký tự đầu sau khoảng trắng (uppercase)
+        //===== lỗi chuyển cmbKhoa cả 2 frm đều đổi 
+        //===== bắt lỗi nhập họ tên in hoa ký tự đầu sau khoảng trắng (uppercase)//==============OKKKKKK
         //===== 
 
         public frmSinhVien()
@@ -112,7 +112,7 @@ namespace QLDSV_HTC.Forms
             {
                 if (unduStack.Count > 0)
                 {
-                    if (MessageBox.Show("Chuyển khoa sẽ không thể phục hồi lại!!\nBạn có muốn chuyển khoa??", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    if (MessageBox.Show("Chuyển khoa sẽ không thể phục hồi lại!!\nBạn có muốn chuyển khoa??", "frmSinhVien", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                     {
                         this.cmbKhoaSV.SelectedIndex = thisKhoa;
                         return;
@@ -230,20 +230,6 @@ namespace QLDSV_HTC.Forms
             {
                 try
                 {
-                    /* 
-                     oldMaSV = txtMaSV.Text.Trim();
-                     oldHo = txtHo.Text.Trim();
-                     oldTen = txtTen.Text.Trim();
-                     oldDiaChi = txtDiaChi.Text.Trim();
-                     oldPassWord = txtPassword.Text.Trim();
-                     oldMaLop = txtMalop.Text.Trim();
-                     oldNgaySinh = dateNgaySinh.DateTime.ToString("yyyy/MM/dd");
-                     oldPhai = chkPhai.Checked;
-                     oldDaNghiHoc = chkDaNghiHoc.Checked;
-
-
-                     Console.WriteLine(chkDaNghiHoc.Checked);
-                     oldDaNghiHoc = chkDaNghiHoc.Checked;*/
                     bdsSinhVien.EndEdit();
                     this.bdsSinhVien.ResetCurrentItem();
                     this.sINHVIENTableAdapter.Update(DS.SINHVIEN);
@@ -354,21 +340,23 @@ namespace QLDSV_HTC.Forms
 
         }
 
-        private void txtMaSV_EditValueChanged(object sender, EventArgs e)
-        {
-            txtMaSV.Properties.CharacterCasing = CharacterCasing.Upper;
-        }
+       
         //  bắt lỗi Nhập liệu họ tên sinh viên
         private void txtHo_EditValueChanged(object sender, EventArgs e)
         {
-            txtHo.Properties.CharacterCasing = CharacterCasing.Upper;
+            //txtHo.Properties.CharacterCasing = CharacterCasing.Upper;
+            txtHo.Text = Lib.ToCapitalize(txtHo.Text.Trim());
         }
 
         private void txtTen_EditValueChanged(object sender, EventArgs e)
         {
-            txtTen.Properties.CharacterCasing = CharacterCasing.Upper;
+            //txtTen.Properties.CharacterCasing = CharacterCasing.Upper;
+            txtTen.Text = Lib.ToCapitalize(txtTen.Text.Trim());
         }
-
+        private void txtDiaChi_EditValueChanged(object sender, EventArgs e)
+        {
+            txtDiaChi.Text = Lib.ToCapitalize(txtDiaChi.Text.Trim());
+        }
         private void gvDSLop_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             barBtnXoa.Enabled = barBtnSua.Enabled = bdsSinhVien.Count > 0;
@@ -387,6 +375,7 @@ namespace QLDSV_HTC.Forms
 
         }
 
+        
 
         private void barBtnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -407,7 +396,7 @@ namespace QLDSV_HTC.Forms
         private void barBtnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string cmd = unduStack.Pop();
-            getPositionFromStack(ref cmd);
+            SplitPositionFromStack(ref cmd);
             int kt = Program.ExecSqlNonQuery(cmd);
             if(kt != 0)
             {
@@ -463,7 +452,7 @@ namespace QLDSV_HTC.Forms
                 txtMaSV.Focus();
                 return false;
             }
-            if (txtHo.Text.Trim().Length > 10)
+            if (txtHo.Text.Trim().Length > 50)
             {
                 MessageBox.Show("Họ tối đa 50 kí tự!!!", "", MessageBoxButtons.OK);
                 txtHo.Focus();
@@ -475,7 +464,7 @@ namespace QLDSV_HTC.Forms
                 txtTen.Focus();
                 return false;
             }
-            if (txtDiaChi.Text.Trim().Length > 10)
+            if (txtDiaChi.Text.Trim().Length > 100)
             {
                 MessageBox.Show("Địa chỉ tối đa 100 kí tự!!!", "", MessageBoxButtons.OK);
                 txtDiaChi.Focus();
@@ -507,7 +496,7 @@ namespace QLDSV_HTC.Forms
             return true;
         }
 
-        private void getPositionFromStack(ref string str)
+        private void SplitPositionFromStack(ref string str)
         {
             //int po = Convert.ToInt32(str.Substring(str.LastIndexOf(" ")));
             string[] pos= str.Substring(str.LastIndexOf(" ")).Split(',');

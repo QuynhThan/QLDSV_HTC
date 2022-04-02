@@ -122,8 +122,8 @@ namespace QLDSV_HTC.Forms
                     if (txtMaLop.Text.Trim() != "" || txtTenLop.Text.Trim() != ""
                         || txtKhoaHoc.Text.Trim() != "")
                     {
-                        if (MessageBox.Show("Bạn có chắc chắn muốn hủy? \nCác thông tin vừa nhập sẽ không được lưu!",
-                        "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                        if (MessageBox.Show("Bạn có chắc chắn muốn chuyển khoa?\nCác thông tin vừa nhập sẽ không được lưu!",
+                        "frmLop", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                         {
                             return;
                         }
@@ -136,7 +136,7 @@ namespace QLDSV_HTC.Forms
                 }
                 if (unduStack.Count > 0)
                 {
-                    if (MessageBox.Show("Chuyển khoa sẽ không thể phục hồi lại!!\nBạn có muốn chuyển khoa??", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    if (MessageBox.Show("Chuyển khoa sẽ không thể phục hồi lại!!\nBạn có muốn chuyển khoa??", "frmLop", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                     {
                         this.cmbKhoa.SelectedIndex = thisKhoa;
                         return;
