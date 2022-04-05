@@ -113,7 +113,7 @@ namespace QLDSV_HTC
                 Program.Connstr = "Data Source=" + Program.ServerName + ";Initial Catalog=" + Program.DataBase
                   + ";User ID=" + Program.MLogin + ";Password=" + Program.MPass;
                 Program.Conn.ConnectionString = Program.Connstr;
-                Console.WriteLine(Program.Connstr);
+               // Console.WriteLine(Program.Connstr);
                 Program.Conn.Open();
                 return 1;
             }
