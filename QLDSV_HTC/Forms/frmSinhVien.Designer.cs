@@ -465,6 +465,7 @@ namespace QLDSV_HTC.Forms
             // 
             // cmbKhoaSV
             // 
+            this.cmbKhoaSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKhoaSV.FormattingEnabled = true;
             this.cmbKhoaSV.Location = new System.Drawing.Point(373, 12);
             this.cmbKhoaSV.Name = "cmbKhoaSV";
@@ -583,7 +584,6 @@ namespace QLDSV_HTC.Forms
             this.panelInfoLop.Controls.Add(mALOPLabel);
             this.panelInfoLop.Controls.Add(this.tENLOPTextEdit);
             this.panelInfoLop.Controls.Add(tENLOPLabel);
-            this.panelInfoLop.Enabled = false;
             this.panelInfoLop.Location = new System.Drawing.Point(57, 3);
             this.panelInfoLop.Name = "panelInfoLop";
             this.panelInfoLop.Size = new System.Drawing.Size(656, 57);
@@ -592,20 +592,20 @@ namespace QLDSV_HTC.Forms
             // txtMalop
             // 
             this.txtMalop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "MALOP", true));
-            this.txtMalop.Enabled = false;
             this.txtMalop.Location = new System.Drawing.Point(114, 19);
             this.txtMalop.MenuManager = this.barManagerLop;
             this.txtMalop.Name = "txtMalop";
+            this.txtMalop.Properties.ReadOnly = true;
             this.txtMalop.Size = new System.Drawing.Size(160, 22);
             this.txtMalop.TabIndex = 14;
             // 
             // tENLOPTextEdit
             // 
             this.tENLOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "TENLOP", true));
-            this.tENLOPTextEdit.Enabled = false;
             this.tENLOPTextEdit.Location = new System.Drawing.Point(377, 17);
             this.tENLOPTextEdit.MenuManager = this.barManagerLop;
             this.tENLOPTextEdit.Name = "tENLOPTextEdit";
+            this.tENLOPTextEdit.Properties.ReadOnly = true;
             this.tENLOPTextEdit.Size = new System.Drawing.Size(242, 22);
             this.tENLOPTextEdit.TabIndex = 15;
             // 
@@ -917,7 +917,6 @@ namespace QLDSV_HTC.Forms
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private System.Windows.Forms.Panel panelLop;
-        private System.Windows.Forms.ComboBox cmbKhoaSV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbSinhVien;
         private System.Windows.Forms.Panel panelNhapSinhVien;
@@ -954,5 +953,6 @@ namespace QLDSV_HTC.Forms
         private DevExpress.XtraEditors.CheckEdit chkDaNghiHoc;
         private System.Windows.Forms.Panel panelDaNghiHoc;
         private System.Windows.Forms.Panel panelInfoLop;
+        public System.Windows.Forms.ComboBox cmbKhoaSV;
     }
 }

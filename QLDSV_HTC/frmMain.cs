@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using QLDSV_HTC.Forms;
+using QLDSV_HTC.ReportsForms;
 namespace QLDSV_HTC
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -92,6 +93,14 @@ namespace QLDSV_HTC
 
         }
 
-        
+        private void barBtnTaoLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmTaoLogin));
+        }
+
+        private void barBtnDSLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frpt_DSLTC_NK_HK));
+        }
     }
 }

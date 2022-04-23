@@ -34,6 +34,7 @@ namespace QLDSV_HTC
         public static string MLogin = "";
         public static string MPass = "";
         public static int MKhoa;
+        // MASV AND PASS
         public static string MUser = "";
         public static string MUserPass = "";
 
@@ -72,7 +73,7 @@ namespace QLDSV_HTC
                 return null;
             }
         }
-
+        // CHUA SU DUNG
         public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();
@@ -118,7 +119,7 @@ namespace QLDSV_HTC
 
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối!\n Xem lại tài khoản, mật khẩu hoặc khoa đã chọn!!!","",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lỗi kết nối!\n Xem lại tài khoản, mật khẩu hoặc khoa đã chọn!!!\n" + ex.Message,"",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
         }

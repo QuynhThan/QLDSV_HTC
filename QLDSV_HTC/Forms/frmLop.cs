@@ -115,6 +115,7 @@ namespace QLDSV_HTC.Forms
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (this.cmbKhoa.SelectedIndex != thisKhoa)
             {
                 if (!barBtnThem.Enabled || !barBtnSua.Enabled)
@@ -128,11 +129,11 @@ namespace QLDSV_HTC.Forms
                             return;
                         }
                     }
-                    setBtnEnable(false);
+                  /*  setBtnEnable(false);
                     if (action == "add")
                         bdsLop.RemoveCurrent();
                     if (action == "edit")
-                        bdsLop.CancelEdit();
+                        bdsLop.CancelEdit();*/
                 }
                 if (unduStack.Count > 0)
                 {
@@ -159,6 +160,12 @@ namespace QLDSV_HTC.Forms
                 else
                 {
                     fillData();
+                    if (action == "add")
+                        bdsLop.AddNew();
+                         this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
+                        txtMaLop.Focus();
+                    //if (action == "edit")
+                        //bdsLop.CancelEdit();
                 }
             }
 
@@ -330,6 +337,8 @@ namespace QLDSV_HTC.Forms
         }
         private void barBtnSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            /*DataRow row = ((DataSet) this.bdsLop.DataSource).Tables[this.bdsLop.DataMember].Rows[this.bdsLop.Position];
+            Console.WriteLine(row["TENLOP"].ToString().Trim());*/
             oldMaLop = txtMaLop.Text.Trim();
             oldTenLop = txtTenLop.Text.Trim();
             oldKhoaHoc = txtKhoaHoc.Text.Trim();
@@ -345,6 +354,7 @@ namespace QLDSV_HTC.Forms
            
         }
 
+       
         private void barBtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (unduStack.Count > 0 && MessageBox.Show("Thoát sẽ không thể phục hồi lại!!\nBạn có muốn thoát??", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
@@ -401,82 +411,88 @@ namespace QLDSV_HTC.Forms
                 return false;
             }
             //
-            string strLenh1 = "EXEC SP_CHECKMALOP '" +txtMaLop.Text.Trim() +"'";
-            int check = Lib.checkData(strLenh1);
-            if ( check == -1)
+            if(action != "edit" || oldMaLop != txtMaLop.Text.Trim())
             {
-                MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
-                return false;
-            }
-            if (check == 1)
-            {
-                //return true;
-                MessageBox.Show("Mã Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
-                txtMaLop.Focus();
-                return false;
-
-            }
-            if(check == 2)
-            {
-                MessageBox.Show("Mã Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
-                txtMaLop.Focus();
-                return false;
-            }
-            //kiem tra lại trong bds (khi trên server xóa lớp nhưng trong bds chưa update)
-            check = bdsLop.Find("MALOP", txtMaLop.Text);
-            if (check != -1)
-            {
-                //ghi lai thong tin va fill laij data truongwf hop 'add' and 'edit'
-                /*if(action == "add")
+                string strLenh1 = "EXEC SP_CHECKMALOP '" + txtMaLop.Text.Trim() + "'";
+                int check = Lib.checkData(strLenh1);
+                if (check == -1)
                 {
-                    oldMaLop = txtMaLop.Text.Trim();
-                    oldTenLop = txtTenLop.Text.Trim();
-                    oldKhoaHoc = txtKhoaHoc.Text.Trim();
-                    oldMaKhoa = txtMaKhoa.Text.Trim();
+                    MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (check == 1)
+                {
+                    //return true;
+                    MessageBox.Show("Mã Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
+                    txtMaLop.Focus();
+                    return false;
 
-                    fillData();
+                }
+                if (check == 2)
+                {
+                    MessageBox.Show("Mã Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
+                    txtMaLop.Focus();
+                    return false;
+                }
+                //kiem tra lại trong bds (khi trên server xóa lớp nhưng trong bds chưa update)
+                check = bdsLop.Find("MALOP", txtMaLop.Text);
+                if (check != -1)
+                {
+                    //ghi lai thong tin va fill laij data truongwf hop 'add' and 'edit'
+                    /*if(action == "add")
+                    {
+                        oldMaLop = txtMaLop.Text.Trim();
+                        oldTenLop = txtTenLop.Text.Trim();
+                        oldKhoaHoc = txtKhoaHoc.Text.Trim();
+                        oldMaKhoa = txtMaKhoa.Text.Trim();
 
-                    bdsLop.AddNew();
-                    this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
-                    txtMaLop.Text = oldMaLop;
-                    txtTenLop.Text = oldTenLop;
-                    txtKhoaHoc.Text = oldKhoaHoc;
-                    txtMaKhoa.Text = oldMaKhoa;
-                }*/
-                MessageBox.Show("Mã Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
-                txtMaLop.Focus();
-                return false;
+                        fillData();
+
+                        bdsLop.AddNew();
+                        this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
+                        txtMaLop.Text = oldMaLop;
+                        txtTenLop.Text = oldTenLop;
+                        txtKhoaHoc.Text = oldKhoaHoc;
+                        txtMaKhoa.Text = oldMaKhoa;
+                    }*/
+                    MessageBox.Show("Mã Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
+                    txtMaLop.Focus();
+                    return false;
+                }
             }
             // kiem tra tenlop =========================================
-            string strLenh2 = "EXEC SP_CHECKTENLOP N'" + txtTenLop.Text.Trim() + "'";
-            check = Lib.checkData(strLenh2);
-            if (check == -1)
+            if(action != "edit" || oldTenLop != txtTenLop.Text.Trim())
             {
-                MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
+                string strLenh2 = "EXEC SP_CHECKTENLOP N'" + txtTenLop.Text.Trim() + "'";
+                int check = Lib.checkData(strLenh2);
+                if (check == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
 
-                return false;
-            }
-            if (check == 1)
-            {
-                MessageBox.Show("Tên Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
-                txtTenLop.Focus();
+                    return false;
+                }
+                if (check == 1)
+                {
+                    MessageBox.Show("Tên Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
+                    txtTenLop.Focus();
 
-                return false;
-            }
-            if (check == 2)
-            {
-                MessageBox.Show("Tên Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
-                txtTenLop.Focus();
+                    return false;
+                }
+                if (check == 2)
+                {
+                    MessageBox.Show("Tên Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
+                    txtTenLop.Focus();
 
-                return false;
-            }
-            check = bdsLop.Find("TENLOP", txtTenLop.Text);
-            if (check != -1)
-            {
-                MessageBox.Show("Tên Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
-                txtTenLop.Focus();
-                return false;
-                //fillData();
+                    return false;
+                }
+                check = bdsLop.Find("TENLOP", txtTenLop.Text);
+                if (check != -1)
+                {
+                    MessageBox.Show("Tên Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
+                    txtTenLop.Focus();
+                    return false;
+                    //fillData();
+                }
             }
 
             return true;

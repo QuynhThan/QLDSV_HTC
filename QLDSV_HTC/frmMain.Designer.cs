@@ -36,7 +36,7 @@ namespace QLDSV_HTC
             this.barBtnTaoLogin = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnLop = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnSinhVien = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDSLTC = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnDiem = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnHocPhi = new DevExpress.XtraBars.BarButtonItem();
@@ -68,7 +68,7 @@ namespace QLDSV_HTC
             this.barBtnTaoLogin,
             this.barBtnLop,
             this.barBtnSinhVien,
-            this.barButtonItem1,
+            this.barBtnDSLTC,
             this.barBtnMonHoc,
             this.barBtnDiem,
             this.barBtnHocPhi,
@@ -100,6 +100,7 @@ namespace QLDSV_HTC
             this.barBtnTaoLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnTaoLogin.ImageOptions.SvgImage")));
             this.barBtnTaoLogin.LargeWidth = 90;
             this.barBtnTaoLogin.Name = "barBtnTaoLogin";
+            this.barBtnTaoLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnTaoLogin_ItemClick);
             // 
             // barBtnLop
             // 
@@ -122,12 +123,13 @@ namespace QLDSV_HTC
             this.barBtnSinhVien.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSinhVien_ItemClick);
             // 
-            // barButtonItem1
+            // barBtnDSLTC
             // 
-            this.barButtonItem1.Caption = "Báo Cáo 1";
-            this.barButtonItem1.Id = 9;
-            this.barButtonItem1.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.barBtnDSLTC.Caption = "Danh sách lớp tín chỉ";
+            this.barBtnDSLTC.Id = 9;
+            this.barBtnDSLTC.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;
+            this.barBtnDSLTC.Name = "barBtnDSLTC";
+            this.barBtnDSLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDSLTC_ItemClick);
             // 
             // barBtnMonHoc
             // 
@@ -201,9 +203,9 @@ namespace QLDSV_HTC
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnDSLTC);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "BÁO CÁO";
             // 
             // rbChucNang
             // 
@@ -287,7 +289,7 @@ namespace QLDSV_HTC
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDangXuat;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barBtnDSLTC;
         public System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.ToolStripStatusLabel lblMaSV;
         public System.Windows.Forms.ToolStripStatusLabel lblHoTen;

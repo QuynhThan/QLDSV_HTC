@@ -111,6 +111,12 @@ namespace QLDSV_HTC
                 }
                 Program.myReader.Read();
 
+                if (Program.myReader.GetBoolean(3)){
+                    MessageBox.Show("Bạn Đã Nghỉ Học Không Thể Đăng Nhập!!", "Login fail", MessageBoxButtons.OK);
+                    txtTK.Focus();
+                    return;
+                }
+
                 Program.userName = Program.myReader.GetString(0);
                 Program.mHoTen = Program.myReader.GetString(1);
                 Program.mGroup = Program.myReader.GetString(2);

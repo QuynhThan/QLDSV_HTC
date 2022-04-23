@@ -26,7 +26,7 @@ namespace QLDSV_HTC.Forms
         //===== bấm undu thì quay lại position cũ=================OKKK
         //===== lỗi chuyển cmbKhoa cả 2 frm đều đổi 
         //===== bắt lỗi nhập họ tên in hoa ký tự đầu sau khoảng trắng (uppercase)//==============OKKKKKK
-        //===== 
+        //===== bắt lỗi check info sinh vien cho chuc nang edit     ==================== OKKKKKK
 
         public frmSinhVien()
         {
@@ -472,6 +472,11 @@ namespace QLDSV_HTC.Forms
             }
 
             ///===kiem tra masv co trùng ko
+            if(action == "edit" && txtMaSV.Text.Trim() == oldMaSV)
+            {
+                return true;
+            }
+            
             string strLenh1 = "EXEC SP_CHECKMASINHVIEN '" + txtMaSV.Text.Trim() + "'";
             int check = Lib.checkData(strLenh1);
             if (check == -1)
