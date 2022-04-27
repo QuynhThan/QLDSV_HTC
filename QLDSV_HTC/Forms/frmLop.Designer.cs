@@ -72,6 +72,8 @@ namespace QLDSV_HTC.Forms
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.bdsSV = new System.Windows.Forms.BindingSource(this.components);
             this.SINHVIENTableAdapter = new QLDSV_HTC.DSTableAdapters.SINHVIENTableAdapter();
+            this.cmbNKBegin = new System.Windows.Forms.ComboBox();
+            this.cmbNKEnd = new System.Windows.Forms.ComboBox();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             kHOAHOCLabel = new System.Windows.Forms.Label();
@@ -418,6 +420,8 @@ namespace QLDSV_HTC.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbNKEnd);
+            this.panel1.Controls.Add(this.cmbNKBegin);
             this.panel1.Controls.Add(this.grbNhapLop);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 457);
@@ -504,6 +508,27 @@ namespace QLDSV_HTC.Forms
             // 
             this.SINHVIENTableAdapter.ClearBeforeFill = true;
             // 
+            // cmbNKBegin
+            // 
+            this.cmbNKBegin.DropDownHeight = 75;
+            this.cmbNKBegin.FormattingEnabled = true;
+            this.cmbNKBegin.IntegralHeight = false;
+            this.cmbNKBegin.Location = new System.Drawing.Point(72, 112);
+            this.cmbNKBegin.Name = "cmbNKBegin";
+            this.cmbNKBegin.Size = new System.Drawing.Size(121, 30);
+            this.cmbNKBegin.TabIndex = 1;
+            this.cmbNKBegin.SelectedIndexChanged += new System.EventHandler(this.cmbNKBegin_SelectedIndexChanged);
+            // 
+            // cmbNKEnd
+            // 
+            this.cmbNKEnd.DropDownHeight = 75;
+            this.cmbNKEnd.FormattingEnabled = true;
+            this.cmbNKEnd.IntegralHeight = false;
+            this.cmbNKEnd.Location = new System.Drawing.Point(237, 111);
+            this.cmbNKEnd.Name = "cmbNKEnd";
+            this.cmbNKEnd.Size = new System.Drawing.Size(121, 30);
+            this.cmbNKEnd.TabIndex = 2;
+            // 
             // frmLop
             // 
             this.Appearance.Options.UseFont = true;
@@ -581,5 +606,7 @@ namespace QLDSV_HTC.Forms
         private DevExpress.XtraBars.BarButtonItem barBtnGhi;
         private System.Windows.Forms.Button btnXong;
         private DevExpress.XtraBars.BarButtonItem barBtnSua;
+        private System.Windows.Forms.ComboBox cmbNKEnd;
+        private System.Windows.Forms.ComboBox cmbNKBegin;
     }
 }

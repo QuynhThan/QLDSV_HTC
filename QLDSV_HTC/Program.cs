@@ -97,7 +97,7 @@ namespace QLDSV_HTC
             }
             catch (SqlException ex)
             {
-                Console.WriteLine(strlenh);
+                Console.WriteLine(strlenh + " // " + ex.State);
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Conn.Close();
                 return ex.State;

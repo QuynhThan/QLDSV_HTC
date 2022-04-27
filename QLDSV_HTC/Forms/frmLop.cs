@@ -51,6 +51,13 @@ namespace QLDSV_HTC.Forms
         {
             fillData();
             
+            //Load data NK
+            for(int i = 2010; i <= 2050; i++)
+            {
+                cmbNKBegin.Items.Add(i);
+                cmbNKEnd.Items.Add(i);
+            }
+            //
             if (bdsLop.Count == 0)
             {
                 barBtnXoa.Enabled = false;
@@ -320,7 +327,7 @@ namespace QLDSV_HTC.Forms
                     this.LOPTableAdapter.Update(DS.LOP);
                     unduStack.Push(string.Format("INSERT INTO LOP(MALOP,TENLOP,KHOAHOC,MAKHOA) " +
                         "VALUES(N'{0}', N'{1}',N'{2}',N'{3}')", oldMaLop, oldTenLop, oldKhoaHoc, oldMaKhoa));
-
+                        
                 }
                 catch (Exception ex)
                 {
@@ -354,7 +361,11 @@ namespace QLDSV_HTC.Forms
            
         }
 
-       
+        private void cmbNKBegin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim());
+        }
+
         private void barBtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (unduStack.Count > 0 && MessageBox.Show("Thoát sẽ không thể phục hồi lại!!\nBạn có muốn thoát??", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)

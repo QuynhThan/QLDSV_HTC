@@ -102,5 +102,10 @@ namespace QLDSV_HTC
         {
             ShowMdiChildren(typeof(frpt_DSLTC_NK_HK));
         }
+
+        private void barBtnDSSV_DKLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frpt_DSSV_DANGKY_LTC));
+        }
     }
 }

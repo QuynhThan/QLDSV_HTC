@@ -164,7 +164,6 @@ namespace QLDSV_HTC
                     = Program.frmMain.barBtnDiem.Enabled 
                     = Program.frmMain.barBtnLopTinChi.Enabled 
                     = Program.frmMain.barBtnDangKyLTC.Enabled
-                    = Program.frmMain.barBtnTaoLogin.Enabled 
                     = false;
                 Program.frmMain.rbBaoCao.Visible = false;
             }
@@ -210,10 +209,19 @@ namespace QLDSV_HTC
             try
             {
                 Program.ServerName = cmbKhoa.SelectedValue.ToString();
+                if(cmbKhoa.SelectedIndex == 2)
+                {
+                    chkSV.Checked = false;
+                    chkSV.Enabled = false;
+                }
+                else
+                {
+                    chkSV.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi khong co chi nhanh tron db" + ex.ToString());
+                MessageBox.Show("Loi khong co chi nhanh nay" + ex.ToString());
             }
         }
 

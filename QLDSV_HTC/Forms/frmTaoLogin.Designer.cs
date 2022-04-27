@@ -30,23 +30,25 @@ namespace QLDSV_HTC.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnTao = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbUser = new System.Windows.Forms.ComboBox();
+            this.chkShowPass = new System.Windows.Forms.CheckBox();
+            this.cmbNhom = new System.Windows.Forms.ComboBox();
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbNhom = new System.Windows.Forms.ComboBox();
+            this.cmbUser = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnTao = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkShowPass);
             this.panel1.Controls.Add(this.cmbNhom);
             this.panel1.Controls.Add(this.cmbKhoa);
             this.panel1.Controls.Add(this.label6);
@@ -64,88 +66,26 @@ namespace QLDSV_HTC.Forms
             this.panel1.Size = new System.Drawing.Size(592, 431);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // chkShowPass
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TẠO LOGIN";
+            this.chkShowPass.AutoSize = true;
+            this.chkShowPass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShowPass.Location = new System.Drawing.Point(179, 192);
+            this.chkShowPass.Name = "chkShowPass";
+            this.chkShowPass.Size = new System.Drawing.Size(157, 23);
+            this.chkShowPass.TabIndex = 16;
+            this.chkShowPass.Text = "Hiển thị mật khẩu";
+            this.chkShowPass.UseVisualStyleBackColor = true;
+            this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged);
             // 
-            // label2
+            // cmbNhom
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Username";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Password";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(179, 118);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(348, 27);
-            this.txtUsername.TabIndex = 3;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(179, 159);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(348, 27);
-            this.txtPassword.TabIndex = 4;
-            // 
-            // btnTao
-            // 
-            this.btnTao.Location = new System.Drawing.Point(218, 317);
-            this.btnTao.Name = "btnTao";
-            this.btnTao.Size = new System.Drawing.Size(174, 39);
-            this.btnTao.TabIndex = 8;
-            this.btnTao.Text = "TẠO";
-            this.btnTao.UseVisualStyleBackColor = true;
-            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(50, 249);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 19);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Nhóm";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 202);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 19);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "User";
-            // 
-            // cmbUser
-            // 
-            this.cmbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(179, 195);
-            this.cmbUser.Name = "cmbUser";
-            this.cmbUser.Size = new System.Drawing.Size(348, 27);
-            this.cmbUser.TabIndex = 11;
+            this.cmbNhom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNhom.FormattingEnabled = true;
+            this.cmbNhom.Location = new System.Drawing.Point(179, 277);
+            this.cmbNhom.Name = "cmbNhom";
+            this.cmbNhom.Size = new System.Drawing.Size(348, 27);
+            this.cmbNhom.TabIndex = 14;
             // 
             // cmbKhoa
             // 
@@ -167,14 +107,90 @@ namespace QLDSV_HTC.Forms
             this.label6.TabIndex = 12;
             this.label6.Text = "KHOA";
             // 
-            // cmbNhom
+            // cmbUser
             // 
-            this.cmbNhom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNhom.FormattingEnabled = true;
-            this.cmbNhom.Location = new System.Drawing.Point(184, 241);
-            this.cmbNhom.Name = "cmbNhom";
-            this.cmbNhom.Size = new System.Drawing.Size(348, 27);
-            this.cmbNhom.TabIndex = 14;
+            this.cmbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUser.FormattingEnabled = true;
+            this.cmbUser.Location = new System.Drawing.Point(179, 235);
+            this.cmbUser.Name = "cmbUser";
+            this.cmbUser.Size = new System.Drawing.Size(348, 27);
+            this.cmbUser.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(45, 242);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "User";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(45, 285);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 19);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Nhóm";
+            // 
+            // btnTao
+            // 
+            this.btnTao.Location = new System.Drawing.Point(213, 353);
+            this.btnTao.Name = "btnTao";
+            this.btnTao.Size = new System.Drawing.Size(174, 39);
+            this.btnTao.TabIndex = 8;
+            this.btnTao.Text = "TẠO";
+            this.btnTao.UseVisualStyleBackColor = true;
+            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(179, 159);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(348, 27);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "123";
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(179, 118);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(348, 27);
+            this.txtUsername.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(45, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Password";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tài khoản";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(237, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TẠO LOGIN";
             // 
             // frmTaoLogin
             // 
@@ -208,5 +224,6 @@ namespace QLDSV_HTC.Forms
         private System.Windows.Forms.ComboBox cmbUser;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbNhom;
+        private System.Windows.Forms.CheckBox chkShowPass;
     }
 }

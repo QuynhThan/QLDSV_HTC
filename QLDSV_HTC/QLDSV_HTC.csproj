@@ -127,11 +127,23 @@
     <Compile Include="ReportsForms\frpt_DSLTC_NK_HK.Designer.cs">
       <DependentUpon>frpt_DSLTC_NK_HK.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportsForms\frpt_DSSV_DANGKY_LTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForms\frpt_DSSV_DANGKY_LTC.Designer.cs">
+      <DependentUpon>frpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\xrpt_DSLTC_NK_HK.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\xrpt_DSLTC_NK_HK.Designer.cs">
       <DependentUpon>xrpt_DSLTC_NK_HK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\xrpt_DSSV_DANGKY_LTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\xrpt_DSSV_DANGKY_LTC.Designer.cs">
+      <DependentUpon>xrpt_DSSV_DANGKY_LTC.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\frmDangKyLTC.resx">
       <DependentUpon>frmDangKyLTC.cs</DependentUpon>
@@ -168,8 +180,14 @@
     <EmbeddedResource Include="ReportsForms\frpt_DSLTC_NK_HK.resx">
       <DependentUpon>frpt_DSLTC_NK_HK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForms\frpt_DSSV_DANGKY_LTC.resx">
+      <DependentUpon>frpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\xrpt_DSLTC_NK_HK.resx">
       <DependentUpon>xrpt_DSLTC_NK_HK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\xrpt_DSSV_DANGKY_LTC.resx">
+      <DependentUpon>xrpt_DSSV_DANGKY_LTC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
