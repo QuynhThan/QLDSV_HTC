@@ -22,7 +22,7 @@ namespace QLDSV_HTC
         public static SqlConnection Conn = new SqlConnection();
         public static string Connstr = "";
         //public static string Connstr_pub = "Data Source=QUYNH;Initial Catalog=QLDSV_HTC;Integrated Security=True";
-        public static string Connstr_pub = "Data Source=DESKTOP-ENO2DP6\\MSSQLSERVER4;Initial Catalog=QLDSV_HTC;User ID=sa;Password=123";
+        public static string Connstr_pub = "Data Source=DESKTOP-ENO2DP6;Initial Catalog=QLDSV_HTC;User ID=sa;Password=123";
 
 
         public static string remoteLogin = "HTKN";
@@ -120,7 +120,7 @@ namespace QLDSV_HTC
 
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối!\n Xem lại tài khoản, mật khẩu hoặc khoa đã chọn!!!","",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lỗi kết nối!\n Xem lại tài khoản, mật khẩu hoặc khoa đã chọn!!!" + ex.Message,"",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
         }
