@@ -119,10 +119,17 @@ namespace QLDSV_HTC.Forms
                     }
                     else
                     {
-
                         unduStack.Clear();
                         barBtnPhucHoi.Enabled = false;
                     }
+                }
+                if(!barBtnThem.Enabled || !barBtnSua.Enabled)
+                {
+                    if (action == "add")
+                        bdsSinhVien.RemoveCurrent();
+                    if (action == "edit")
+                        bdsSinhVien.CancelEdit();
+                    setBtnEnable(false);
                 }
                 thisKhoa = this.cmbKhoaSV.SelectedIndex;
                 //chuyen site
@@ -135,6 +142,7 @@ namespace QLDSV_HTC.Forms
                 else
                 {
                     loadData();
+                    barBtnXoa.Enabled = barBtnSua.Enabled = bdsSinhVien.Count > 0;
                 }
             }
         }
@@ -369,13 +377,17 @@ namespace QLDSV_HTC.Forms
             positionLop = bdsLop.Position;
             positionSV = bdsSinhVien.Position;
             loadData();
-            bdsSinhVien.Position = positionSV;
             bdsLop.Position = positionLop;
+            bdsSinhVien.Position = positionSV;
             MessageBox.Show("Làm mới dữ liệu thành công", "", MessageBoxButtons.OK);
 
         }
 
-        
+        private void chkShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            //txtPassword.UseSystemPasswordChar = (chkShowPass.Checked) ? false : true;
+            txtPassword.Properties.UseSystemPasswordChar = (chkShowPass.Checked) ? false : true;
+        }
 
         private void barBtnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -388,7 +400,10 @@ namespace QLDSV_HTC.Forms
                 }
             }
 
-            bdsSinhVien.RemoveCurrent();
+            if (action == "add")
+                bdsSinhVien.RemoveCurrent();
+            if (action == "edit")
+                bdsSinhVien.CancelEdit();
             setBtnEnable(false);
             bdsSinhVien.Position = positionSV;
             bdsLop.Position = positionLop;

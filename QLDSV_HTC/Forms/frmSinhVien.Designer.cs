@@ -100,7 +100,7 @@ namespace QLDSV_HTC.Forms
             this.gcSinhVien = new DevExpress.XtraGrid.GridControl();
             this.bdsDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.dANGKYTableAdapter = new QLDSV_HTC.DSTableAdapters.DANGKYTableAdapter();
-            this.bdsHocPhi = new System.Windows.Forms.BindingSource(this.components);
+            this.chkShowPass = new System.Windows.Forms.CheckBox();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -136,7 +136,6 @@ namespace QLDSV_HTC.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gvSinhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcSinhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDangKy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsHocPhi)).BeginInit();
             this.SuspendLayout();
             // 
             // mASVLabel
@@ -554,6 +553,7 @@ namespace QLDSV_HTC.Forms
             // panelNhapSinhVien
             // 
             this.panelNhapSinhVien.AutoScroll = true;
+            this.panelNhapSinhVien.Controls.Add(this.chkShowPass);
             this.panelNhapSinhVien.Controls.Add(this.panelInfoLop);
             this.panelNhapSinhVien.Controls.Add(this.panelDaNghiHoc);
             this.panelNhapSinhVien.Controls.Add(this.btnXong);
@@ -632,7 +632,7 @@ namespace QLDSV_HTC.Forms
             // btnXong
             // 
             this.btnXong.BackColor = System.Drawing.Color.Aqua;
-            this.btnXong.Location = new System.Drawing.Point(270, 268);
+            this.btnXong.Location = new System.Drawing.Point(270, 293);
             this.btnXong.Name = "btnXong";
             this.btnXong.Size = new System.Drawing.Size(144, 37);
             this.btnXong.TabIndex = 18;
@@ -671,6 +671,7 @@ namespace QLDSV_HTC.Forms
             this.txtPassword.Location = new System.Drawing.Point(171, 221);
             this.txtPassword.MenuManager = this.barManagerLop;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
             this.txtPassword.Size = new System.Drawing.Size(222, 22);
             this.txtPassword.TabIndex = 11;
             // 
@@ -836,10 +837,19 @@ namespace QLDSV_HTC.Forms
             // 
             this.dANGKYTableAdapter.ClearBeforeFill = true;
             // 
-            // bdsHocPhi
+            // chkShowPass
             // 
-            this.bdsHocPhi.DataMember = "FK_SINHVIEN_HOCPHI";
-            this.bdsHocPhi.DataSource = this.bdsSinhVien;
+            this.chkShowPass.AutoSize = true;
+            this.chkShowPass.Checked = true;
+            this.chkShowPass.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkShowPass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShowPass.Location = new System.Drawing.Point(172, 249);
+            this.chkShowPass.Name = "chkShowPass";
+            this.chkShowPass.Size = new System.Drawing.Size(157, 23);
+            this.chkShowPass.TabIndex = 23;
+            this.chkShowPass.Text = "Hiển thị mật khẩu";
+            this.chkShowPass.UseVisualStyleBackColor = true;
+            this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged);
             // 
             // frmSinhVien
             // 
@@ -886,7 +896,6 @@ namespace QLDSV_HTC.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gvSinhVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcSinhVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDangKy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsHocPhi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -949,10 +958,10 @@ namespace QLDSV_HTC.Forms
         private DevExpress.XtraGrid.Columns.GridColumn colDANGHIHOC;
         private System.Windows.Forms.BindingSource bdsDangKy;
         private DSTableAdapters.DANGKYTableAdapter dANGKYTableAdapter;
-        private System.Windows.Forms.BindingSource bdsHocPhi;
         private DevExpress.XtraEditors.CheckEdit chkDaNghiHoc;
         private System.Windows.Forms.Panel panelDaNghiHoc;
         private System.Windows.Forms.Panel panelInfoLop;
         public System.Windows.Forms.ComboBox cmbKhoaSV;
+        private System.Windows.Forms.CheckBox chkShowPass;
     }
 }

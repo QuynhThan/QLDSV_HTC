@@ -132,7 +132,7 @@ namespace QLDSV_HTC.Forms
             // lblTenLop
             // 
             this.lblTenLop.AutoSize = true;
-            this.lblTenLop.Location = new System.Drawing.Point(838, 35);
+            this.lblTenLop.Location = new System.Drawing.Point(838, 40);
             this.lblTenLop.Name = "lblTenLop";
             this.lblTenLop.Size = new System.Drawing.Size(0, 21);
             this.lblTenLop.TabIndex = 14;
@@ -140,7 +140,7 @@ namespace QLDSV_HTC.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(718, 35);
+            this.label7.Location = new System.Drawing.Point(718, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 21);
             this.label7.TabIndex = 13;
@@ -149,7 +149,7 @@ namespace QLDSV_HTC.Forms
             // lblMaLop
             // 
             this.lblMaLop.AutoSize = true;
-            this.lblMaLop.Location = new System.Drawing.Point(296, 35);
+            this.lblMaLop.Location = new System.Drawing.Point(340, 40);
             this.lblMaLop.Name = "lblMaLop";
             this.lblMaLop.Size = new System.Drawing.Size(0, 21);
             this.lblMaLop.TabIndex = 12;
@@ -157,7 +157,7 @@ namespace QLDSV_HTC.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(177, 35);
+            this.label4.Location = new System.Drawing.Point(177, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 11;

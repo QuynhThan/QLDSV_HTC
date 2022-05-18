@@ -63,6 +63,7 @@ namespace QLDSV_HTC
             {
                 f.Close();
             }
+            Program.bds_dspm.RemoveFilter();
             Program.ServerName = Program.frmDangNhap.cmbKhoa.SelectedValue.ToString();
             Program.frmMain.Enabled = false;
 

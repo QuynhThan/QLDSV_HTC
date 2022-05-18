@@ -52,7 +52,7 @@ namespace QLDSV_HTC.Forms
             fillData();
             
             //Load data NK
-            for(int i = 2010; i <= 2050; i++)
+            for(int i = 2010; i <= Convert.ToInt32(DateTime.Now.Year.ToString()) + 20; i++)
             {
                 cmbNKBegin.Items.Add(i);
                 cmbNKEnd.Items.Add(i);
@@ -136,11 +136,11 @@ namespace QLDSV_HTC.Forms
                             return;
                         }
                     }
-                  /*  setBtnEnable(false);
+                    setBtnEnable(false);
                     if (action == "add")
                         bdsLop.RemoveCurrent();
                     if (action == "edit")
-                        bdsLop.CancelEdit();*/
+                        bdsLop.CancelEdit();
                 }
                 if (unduStack.Count > 0)
                 {
@@ -158,6 +158,7 @@ namespace QLDSV_HTC.Forms
                 }
                 thisKhoa = this.cmbKhoa.SelectedIndex;
                 //chuyen site
+
                 Lib.CmbHelper(this.cmbKhoa);
                 if (Program.KetNoi() == 0)
                 {
@@ -167,12 +168,17 @@ namespace QLDSV_HTC.Forms
                 else
                 {
                     fillData();
+
+                    /*setBtnEnable(false);
+
                     if (action == "add")
-                        bdsLop.AddNew();
-                         this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
-                        txtMaLop.Focus();
-                    //if (action == "edit")
-                        //bdsLop.CancelEdit();
+                        bdsLop.RemoveCurrent();
+                    *//*bdsLop.AddNew();
+                     this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
+                    txtMaLop.Focus();*//*
+                    if (action == "edit")
+                        bdsLop.CancelEdit();*/
+
                 }
             }
 
@@ -181,7 +187,6 @@ namespace QLDSV_HTC.Forms
         //         ======================= btn even    ===================
         private void barBtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             positionLop = bdsLop.Position;
             action = "add";
             setBtnEnable(true);
@@ -217,7 +222,8 @@ namespace QLDSV_HTC.Forms
             {
                 return;
             }
-            if (action == "edit" && (oldMaLop!=txtMaLop.Text.Trim() || oldTenLop != txtTenLop.Text.Trim()) && !checkInfoLop())
+
+            if (action == "edit" &&  !checkInfoLop()) //(oldMaLop!=txtMaLop.Text.Trim() || oldTenLop != txtTenLop.Text.Trim()) &&
             {
                 return;
             }
@@ -363,7 +369,41 @@ namespace QLDSV_HTC.Forms
 
         private void cmbNKBegin_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine(cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim());
+            if(txtKhoaHoc.Enabled)
+                txtKhoaHoc.Text = cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim();
+            //Console.WriteLine(cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim());
+        }
+
+        private void cmbNKEnd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(txtKhoaHoc.Enabled)
+              txtKhoaHoc.Text = cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim();
+
+        }
+
+        private void txtKhoaHoc_EditValueChanged(object sender, EventArgs e)
+        {
+          //  string[] tmp = txtKhoaHoc.Text.Split('-');
+            //  ======================== conf loixo =================================
+            /*if(txtKhoaHoc.Text.Length > 8)
+            {
+                cmbNKBegin.Text = txtKhoaHoc.Text.Substring(0, 4);
+                cmbNKEnd.Text = txtKhoaHoc.Text.Substring(5, 4);
+            }*/
+        }
+
+        private void gvLop_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (!txtKhoaHoc.Enabled)
+            {
+                DataRowView drv = (DataRowView)gvLop.GetFocusedRow();
+                if (drv == null)
+                    return;
+                DataRow dr = drv.Row;
+                cmbNKBegin.SelectedIndex = cmbNKBegin.FindStringExact(dr["KHOAHOC"].ToString().Substring(0, 4));
+                cmbNKEnd.SelectedIndex = cmbNKEnd.FindStringExact(dr["KHOAHOC"].ToString().Substring(5, 4));
+                Console.WriteLine(dr["KHOAHOC"].ToString().Substring(5, 4));
+            }
         }
 
         private void barBtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -380,6 +420,8 @@ namespace QLDSV_HTC.Forms
         //kiem tra thong tin txt da diem du thong tin chua
         private bool isFillAllInfoLop()
         {
+            txtKhoaHoc.Text = cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim();
+            Console.WriteLine(txtKhoaHoc.Text);
             if (txtMaLop.Text.Trim() == "")
             {
                 MessageBox.Show("Mã lớp không được bỏ trống!", "", MessageBoxButtons.OK);
@@ -398,12 +440,14 @@ namespace QLDSV_HTC.Forms
                 txtKhoaHoc.Focus();
                 return false;
             }
+            
             return true;
         }
         private bool checkInfoLop()
         {
+
             //check độ dài
-            if(txtMaLop.Text.Trim().Length > 10)
+            if (txtMaLop.Text.Trim().Length > 10)
             {
                 MessageBox.Show("Mã Lớp tối đa 10 kí tự!!!", "", MessageBoxButtons.OK);
                 txtMaLop.Focus();
@@ -421,8 +465,15 @@ namespace QLDSV_HTC.Forms
                 txtKhoaHoc.Focus();
                 return false;
             }
+            if (string.Compare(cmbNKBegin.Text.Trim(),cmbNKEnd.Text.Trim()) == 1)
+            {
+                MessageBox.Show("Khóa học không hợp  lệ!!\n", "", MessageBoxButtons.OK);
+                txtKhoaHoc.Focus();
+                return false;
+            }
+
             //
-            if(action != "edit" || oldMaLop != txtMaLop.Text.Trim())
+            if (action != "edit" || oldMaLop != txtMaLop.Text.Trim())
             {
                 string strLenh1 = "EXEC SP_CHECKMALOP '" + txtMaLop.Text.Trim() + "'";
                 int check = Lib.checkData(strLenh1);

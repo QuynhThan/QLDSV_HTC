@@ -95,7 +95,7 @@ namespace QLDSV_HTC
                 Program.MLoginDN = Program.MLogin;
                 Program.MPassDN = Program.MPass;
 
-                string strLenh = string.Format("EXEC SP_DANGNHAP '{0}',N'{1}',N'{2}'", Program.MLogin, Program.MUser, Program.MUserPass);
+                string strLenh = string.Format("EXEC SP_DANGNHAP_SV N'{0}',N'{1}'", Program.MUser, Program.MUserPass);
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null)
                 {
@@ -136,7 +136,7 @@ namespace QLDSV_HTC
                 Program.MLoginDN = Program.MLogin;
                 Program.MPassDN = Program.MPass;
 
-                string strLenh = "EXEC SP_DANGNHAP '" + Program.MLogin + "','',''";
+                string strLenh = "EXEC SP_DANGNHAP '" + Program.MLogin + "'";
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null) return;
 

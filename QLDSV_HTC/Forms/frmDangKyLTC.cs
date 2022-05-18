@@ -268,5 +268,7 @@ namespace QLDSV_HTC.Forms
             //Console.WriteLine(gvDangKyLTC.SelectedRowsCount);
 
         }
+
+        
     }
 }
