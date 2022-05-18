@@ -128,11 +128,7 @@ namespace QLDSV_HTC
             // 
             // barBtnDSLTC
             // 
-            this.barButtonItem1.Caption = "Báo Cáo 1";
-            this.barButtonItem1.Id = 9;
-            this.barButtonItem1.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+   
             this.barBtnDSLTC.Caption = "Danh sách lớp tín chỉ";
             this.barBtnDSLTC.Id = 9;
             this.barBtnDSLTC.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;

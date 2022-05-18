@@ -58,9 +58,9 @@ namespace QLDSV_HTC.Forms
             try
             {
                 this.dS.EnforceConstraints = false;
-                this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.Connection.ConnectionString = Program.Connstr;
+            /*    this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.Connection.ConnectionString = Program.Connstr;
                 this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.Fill(this.dS.SP_DSLTC_NIENKHOAHOCKY
-                    , cmbNienKhoa.SelectedValue.ToString().Trim(), Convert.ToInt32(txtHocKy.Text.Trim()));
+                    , cmbNienKhoa.SelectedValue.ToString().Trim(), Convert.ToInt32(txtHocKy.Text.Trim()));*/
 
             }
             catch

@@ -84,7 +84,8 @@ namespace QLDSV_HTC.Forms
             this.colNHOM1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.sP_DSLTC_NIENKHOAHOCKYTableAdapter = new QLDSV_HTC.DSTableAdapters.SP_DSLTC_NIENKHOAHOCKYTableAdapter();
+      //      this.sP_DSLTC_NIENKHOAHOCKYTableAdapter = new QLDSV_HTC.DSTableAdapters.SP_DSLTC_NIENKHOAHOCKYTableAdapter();
+           
             this.panelDN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
@@ -690,7 +691,7 @@ namespace QLDSV_HTC.Forms
             // 
             // sP_DSLTC_NIENKHOAHOCKYTableAdapter
             // 
-            this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.ClearBeforeFill = true;
+  //          this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.ClearBeforeFill = true;
             // 
             // frmDangKyLTC
             // 
