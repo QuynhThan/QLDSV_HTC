@@ -81,24 +81,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DS.cs">
-      <DependentUpon>DS.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmBaoCaoBangDiem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmBaoCaoBangDiem.Designer.cs">
       <DependentUpon>frmBaoCaoBangDiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmDangKyLTC.cs">
       <SubType>Form</SubType>
@@ -244,17 +231,6 @@
       <DependentUpon>xrpt_DSSV_DANGKY_LTC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="DS.xsc">
-      <DependentUpon>DS.xsd</DependentUpon>
-    </None>
-    <None Include="DS.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DS.xss">
-      <DependentUpon>DS.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

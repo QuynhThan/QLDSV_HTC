@@ -191,7 +191,7 @@ namespace QLDSV_HTC {
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public LOPTINCHIDataTable LOPTINCHI {
             get {
-                return this.tableLOP;
+                return this.tableLOPTINCHI;
             }
         }
         
@@ -199,9 +199,9 @@ namespace QLDSV_HTC {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public LOPTINCHIDataTable LOPTINCHI {
+        public MONHOCDataTable MONHOC {
             get {
-                return this.tableLOPTINCHI;
+                return this.tableMONHOC;
             }
         }
         
@@ -649,7 +649,7 @@ namespace QLDSV_HTC {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeLOPTINCHI() {
+        private bool ShouldSerializeMONHOC() {
             return false;
         }
         
@@ -3496,7 +3496,7 @@ namespace QLDSV_HTC {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_DSLTC_NIENKHOAHOCKYDataTable : global::System.Data.TypedTableBase<SP_DSLTC_NIENKHOAHOCKYRow> {
+        public partial class SP_DSLTCDADANGKYDataTable : global::System.Data.TypedTableBase<SP_DSLTCDADANGKYRow> {
             
             private global::System.Data.DataColumn columnSTT;
             
@@ -3504,18 +3504,18 @@ namespace QLDSV_HTC {
             
             private global::System.Data.DataColumn columnTENMH;
             
+            private global::System.Data.DataColumn columnNIENKHOA;
+            
+            private global::System.Data.DataColumn columnHOCKY;
+            
             private global::System.Data.DataColumn columnNHOM;
-            
-            private global::System.Data.DataColumn columnTENGV;
-            
-            private global::System.Data.DataColumn columnSOSVTOITHIEU;
             
             private global::System.Data.DataColumn columnMALTC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_DSLTC_NIENKHOAHOCKYDataTable() {
-                this.TableName = "SP_DSLTC_NIENKHOAHOCKY";
+            public SP_DSLTCDADANGKYDataTable() {
+                this.TableName = "SP_DSLTCDADANGKY";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3523,7 +3523,7 @@ namespace QLDSV_HTC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_DSLTC_NIENKHOAHOCKYDataTable(global::System.Data.DataTable table) {
+            internal SP_DSLTCDADANGKYDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3540,7 +3540,7 @@ namespace QLDSV_HTC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_DSLTC_NIENKHOAHOCKYDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SP_DSLTCDADANGKYDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3571,25 +3571,25 @@ namespace QLDSV_HTC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NIENKHOAColumn {
+                get {
+                    return this.columnNIENKHOA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn HOCKYColumn {
+                get {
+                    return this.columnHOCKY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn NHOMColumn {
                 get {
                     return this.columnNHOM;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TENGVColumn {
-                get {
-                    return this.columnTENGV;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SOSVTOITHIEUColumn {
-                get {
-                    return this.columnSOSVTOITHIEU;
                 }
             }
             
@@ -3612,27 +3612,27 @@ namespace QLDSV_HTC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_DSLTC_NIENKHOAHOCKYRow this[int index] {
+            public SP_DSLTCDADANGKYRow this[int index] {
                 get {
-                    return ((SP_DSLTC_NIENKHOAHOCKYRow)(this.Rows[index]));
+                    return ((SP_DSLTCDADANGKYRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_DSLTC_NIENKHOAHOCKYRowChangeEventHandler SP_DSLTC_NIENKHOAHOCKYRowChanging;
+            public event SP_DSLTCDADANGKYRowChangeEventHandler SP_DSLTCDADANGKYRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_DSLTC_NIENKHOAHOCKYRowChangeEventHandler SP_DSLTC_NIENKHOAHOCKYRowChanged;
+            public event SP_DSLTCDADANGKYRowChangeEventHandler SP_DSLTCDADANGKYRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_DSLTC_NIENKHOAHOCKYRowChangeEventHandler SP_DSLTC_NIENKHOAHOCKYRowDeleting;
+            public event SP_DSLTCDADANGKYRowChangeEventHandler SP_DSLTCDADANGKYRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_DSLTC_NIENKHOAHOCKYRowChangeEventHandler SP_DSLTC_NIENKHOAHOCKYRowDeleted;
+            public event SP_DSLTCDADANGKYRowChangeEventHandler SP_DSLTCDADANGKYRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_DSLTC_NIENKHOAHOCKYRow(SP_DSLTC_NIENKHOAHOCKYRow row) {
+            public void AddSP_DSLTCDADANGKYRow(SP_DSLTCDADANGKYRow row) {
                 this.Rows.Add(row);
             }
             
@@ -3644,17 +3644,26 @@ namespace QLDSV_HTC {
                         STT,
                         MAMH,
                         TENMH,
+                        NIENKHOA,
+                        HOCKY,
                         NHOM,
                         null};
-                rowSP_DSLTC_NIENKHOAHOCKYRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_DSLTC_NIENKHOAHOCKYRow);
-                return rowSP_DSLTC_NIENKHOAHOCKYRow;
+                rowSP_DSLTCDADANGKYRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_DSLTCDADANGKYRow);
+                return rowSP_DSLTCDADANGKYRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_DSLTCDADANGKYRow FindByMALTC(int MALTC) {
+                return ((SP_DSLTCDADANGKYRow)(this.Rows.Find(new object[] {
+                            MALTC})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SP_DSLTC_NIENKHOAHOCKYDataTable cln = ((SP_DSLTC_NIENKHOAHOCKYDataTable)(base.Clone()));
+                SP_DSLTCDADANGKYDataTable cln = ((SP_DSLTCDADANGKYDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3662,7 +3671,7 @@ namespace QLDSV_HTC {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_DSLTC_NIENKHOAHOCKYDataTable();
+                return new SP_DSLTCDADANGKYDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3671,6 +3680,8 @@ namespace QLDSV_HTC {
                 this.columnSTT = base.Columns["STT"];
                 this.columnMAMH = base.Columns["MAMH"];
                 this.columnTENMH = base.Columns["TENMH"];
+                this.columnNIENKHOA = base.Columns["NIENKHOA"];
+                this.columnHOCKY = base.Columns["HOCKY"];
                 this.columnNHOM = base.Columns["NHOM"];
                 this.columnMALTC = base.Columns["MALTC"];
             }
@@ -3684,6 +3695,10 @@ namespace QLDSV_HTC {
                 base.Columns.Add(this.columnMAMH);
                 this.columnTENMH = new global::System.Data.DataColumn("TENMH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENMH);
+                this.columnNIENKHOA = new global::System.Data.DataColumn("NIENKHOA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNIENKHOA);
+                this.columnHOCKY = new global::System.Data.DataColumn("HOCKY", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHOCKY);
                 this.columnNHOM = new global::System.Data.DataColumn("NHOM", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNHOM);
                 this.columnMALTC = new global::System.Data.DataColumn("MALTC", typeof(int), null, global::System.Data.MappingType.Element);
@@ -3693,37 +3708,42 @@ namespace QLDSV_HTC {
                 this.columnSTT.ReadOnly = true;
                 this.columnMAMH.AllowDBNull = false;
                 this.columnMAMH.MaxLength = 10;
+                this.columnTENMH.AllowDBNull = false;
                 this.columnTENMH.MaxLength = 50;
+                this.columnNIENKHOA.AllowDBNull = false;
+                this.columnNIENKHOA.MaxLength = 9;
+                this.columnHOCKY.AllowDBNull = false;
                 this.columnNHOM.AllowDBNull = false;
                 this.columnMALTC.AutoIncrement = true;
                 this.columnMALTC.AllowDBNull = false;
                 this.columnMALTC.ReadOnly = true;
+                this.columnMALTC.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_DSLTC_NIENKHOAHOCKYRow NewSP_DSLTC_NIENKHOAHOCKYRow() {
-                return ((SP_DSLTC_NIENKHOAHOCKYRow)(this.NewRow()));
+            public SP_DSLTCDADANGKYRow NewSP_DSLTCDADANGKYRow() {
+                return ((SP_DSLTCDADANGKYRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_DSLTC_NIENKHOAHOCKYRow(builder);
+                return new SP_DSLTCDADANGKYRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SP_DSLTC_NIENKHOAHOCKYRow);
+                return typeof(SP_DSLTCDADANGKYRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SP_DSLTC_NIENKHOAHOCKYRowChanged != null)) {
-                    this.SP_DSLTC_NIENKHOAHOCKYRowChanged(this, new SP_DSLTC_NIENKHOAHOCKYRowChangeEvent(((SP_DSLTC_NIENKHOAHOCKYRow)(e.Row)), e.Action));
+                if ((this.SP_DSLTCDADANGKYRowChanged != null)) {
+                    this.SP_DSLTCDADANGKYRowChanged(this, new SP_DSLTCDADANGKYRowChangeEvent(((SP_DSLTCDADANGKYRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3731,8 +3751,8 @@ namespace QLDSV_HTC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SP_DSLTC_NIENKHOAHOCKYRowChanging != null)) {
-                    this.SP_DSLTC_NIENKHOAHOCKYRowChanging(this, new SP_DSLTC_NIENKHOAHOCKYRowChangeEvent(((SP_DSLTC_NIENKHOAHOCKYRow)(e.Row)), e.Action));
+                if ((this.SP_DSLTCDADANGKYRowChanging != null)) {
+                    this.SP_DSLTCDADANGKYRowChanging(this, new SP_DSLTCDADANGKYRowChangeEvent(((SP_DSLTCDADANGKYRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3740,8 +3760,8 @@ namespace QLDSV_HTC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SP_DSLTC_NIENKHOAHOCKYRowDeleted != null)) {
-                    this.SP_DSLTC_NIENKHOAHOCKYRowDeleted(this, new SP_DSLTC_NIENKHOAHOCKYRowChangeEvent(((SP_DSLTC_NIENKHOAHOCKYRow)(e.Row)), e.Action));
+                if ((this.SP_DSLTCDADANGKYRowDeleted != null)) {
+                    this.SP_DSLTCDADANGKYRowDeleted(this, new SP_DSLTCDADANGKYRowChangeEvent(((SP_DSLTCDADANGKYRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3749,14 +3769,14 @@ namespace QLDSV_HTC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SP_DSLTC_NIENKHOAHOCKYRowDeleting != null)) {
-                    this.SP_DSLTC_NIENKHOAHOCKYRowDeleting(this, new SP_DSLTC_NIENKHOAHOCKYRowChangeEvent(((SP_DSLTC_NIENKHOAHOCKYRow)(e.Row)), e.Action));
+                if ((this.SP_DSLTCDADANGKYRowDeleting != null)) {
+                    this.SP_DSLTCDADANGKYRowDeleting(this, new SP_DSLTCDADANGKYRowChangeEvent(((SP_DSLTCDADANGKYRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_DSLTC_NIENKHOAHOCKYRow(SP_DSLTC_NIENKHOAHOCKYRow row) {
+            public void RemoveSP_DSLTCDADANGKYRow(SP_DSLTCDADANGKYRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3783,7 +3803,7 @@ namespace QLDSV_HTC {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_DSLTC_NIENKHOAHOCKYDataTable";
+                attribute2.FixedValue = "SP_DSLTCDADANGKYDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4206,42 +4226,6 @@ namespace QLDSV_HTC {
             public global::System.Data.DataColumn NIENKHOAColumn {
                 get {
                     return this.columnNIENKHOA;
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HOCPHIRowChangeEventHandler HOCPHIRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HOCPHIRowChangeEventHandler HOCPHIRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HOCPHIRowChangeEventHandler HOCPHIRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HOCPHIRowChangeEventHandler HOCPHIRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NGAYDONGColumn {
-                get {
-                    return this.columnNGAYDONG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SOTIENDONGColumn {
-                get {
-                    return this.columnSOTIENDONG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn HOCKYColumn {
-                get {
-                    return this.columnHOCKY;
                 }
             }
             
@@ -5937,187 +5921,25 @@ namespace QLDSV_HTC {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class HOCPHIRow : global::System.Data.DataRow {
-            
-            private HOCPHIDataTable tableHOCPHI;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal HOCPHIRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableHOCPHI = ((HOCPHIDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MASV {
-                get {
-                    return ((string)(this[this.tableHOCPHI.MASVColumn]));
-                }
-                set {
-                    this[this.tableHOCPHI.MASVColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NIENKHOA {
-                get {
-                    return ((string)(this[this.tableHOCPHI.NIENKHOAColumn]));
-                }
-                set {
-                    this[this.tableHOCPHI.NIENKHOAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int HOCKY {
-                get {
-                    return ((int)(this[this.tableHOCPHI.HOCKYColumn]));
-                }
-                set {
-                    this[this.tableHOCPHI.HOCKYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int HOCPHI {
-                get {
-                    return ((int)(this[this.tableHOCPHI.HOCPHIColumn]));
-                }
-                set {
-                    this[this.tableHOCPHI.HOCPHIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SINHVIENRow SINHVIENRow {
-                get {
-                    return ((SINHVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_SINHVIEN_HOCPHI"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_SINHVIEN_HOCPHI"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CT_DONGHOCPHIRow[] GetCT_DONGHOCPHIRows() {
-                if ((this.Table.ChildRelations["FK_CT_DONGHOCPHI_HOCPHI"] == null)) {
-                    return new CT_DONGHOCPHIRow[0];
-                }
-                else {
-                    return ((CT_DONGHOCPHIRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CT_DONGHOCPHI_HOCPHI"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class CT_DONGHOCPHIRow : global::System.Data.DataRow {
-            
-            private CT_DONGHOCPHIDataTable tableCT_DONGHOCPHI;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CT_DONGHOCPHIRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableCT_DONGHOCPHI = ((CT_DONGHOCPHIDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MASV {
-                get {
-                    return ((string)(this[this.tableCT_DONGHOCPHI.MASVColumn]));
-                }
-                set {
-                    this[this.tableCT_DONGHOCPHI.MASVColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NIENKHOA {
-                get {
-                    return ((string)(this[this.tableCT_DONGHOCPHI.NIENKHOAColumn]));
-                }
-                set {
-                    this[this.tableCT_DONGHOCPHI.NIENKHOAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int HOCKY {
-                get {
-                    return ((int)(this[this.tableCT_DONGHOCPHI.HOCKYColumn]));
-                }
-                set {
-                    this[this.tableCT_DONGHOCPHI.HOCKYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime NGAYDONG {
-                get {
-                    return ((global::System.DateTime)(this[this.tableCT_DONGHOCPHI.NGAYDONGColumn]));
-                }
-                set {
-                    this[this.tableCT_DONGHOCPHI.NGAYDONGColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SOTIENDONG {
-                get {
-                    return ((int)(this[this.tableCT_DONGHOCPHI.SOTIENDONGColumn]));
-                }
-                set {
-                    this[this.tableCT_DONGHOCPHI.SOTIENDONGColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HOCPHIRow HOCPHIRowParent {
-                get {
-                    return ((HOCPHIRow)(this.GetParentRow(this.Table.ParentRelations["FK_CT_DONGHOCPHI_HOCPHI"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CT_DONGHOCPHI_HOCPHI"]);
-                }
-            }
-        }
-        
-        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class DANGKYRowChangeEvent : global::System.EventArgs {
+        public class KHOARowChangeEvent : global::System.EventArgs {
             
-            private DANGKYRow eventRow;
+            private KHOARow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DANGKYRowChangeEvent(DANGKYRow row, global::System.Data.DataRowAction action) {
+            public KHOARowChangeEvent(KHOARow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DANGKYRow Row {
+            public KHOARow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6136,22 +5958,22 @@ namespace QLDSV_HTC {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class GIANGVIENRowChangeEvent : global::System.EventArgs {
+        public class LOPRowChangeEvent : global::System.EventArgs {
             
-            private GIANGVIENRow eventRow;
+            private LOPRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GIANGVIENRowChangeEvent(GIANGVIENRow row, global::System.Data.DataRowAction action) {
+            public LOPRowChangeEvent(LOPRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GIANGVIENRow Row {
+            public LOPRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6322,74 +6144,6 @@ namespace QLDSV_HTC {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_DSLTCDADANGKYRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class HOCPHIRowChangeEvent : global::System.EventArgs {
-            
-            private HOCPHIRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HOCPHIRowChangeEvent(HOCPHIRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HOCPHIRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class CT_DONGHOCPHIRowChangeEvent : global::System.EventArgs {
-            
-            private CT_DONGHOCPHIRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CT_DONGHOCPHIRowChangeEvent(CT_DONGHOCPHIRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CT_DONGHOCPHIRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6656,7 +6410,7 @@ SELECT MALTC, MASV, DIEM_CC, DIEM_GK, DIEM_CK, HUYDANGKY FROM DANGKY WHERE (MALT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::QLDSV_HTC.Properties.Settings.Default.QLDSV_HTCConnectionString2;
+            this._connection.ConnectionString = global::QLDSV_HTC.Properties.Settings.Default.QLDSV_HTCConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7119,7 +6873,7 @@ SELECT MAGV, MAKHOA, HO, TEN, HOCVI, HOCHAM, CHUYENMON FROM GIANGVIEN WHERE (MAG
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::QLDSV_HTC.Properties.Settings.Default.QLDSV_HTCConnectionString2;
+            this._connection.ConnectionString = global::QLDSV_HTC.Properties.Settings.Default.QLDSV_HTCConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9522,15 +9276,6 @@ SELECT MASV, HO, TEN, PHAI, DIACHI, NGAYSINH, MALOP, DANGHIHOC, PASSWORD FROM SI
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_PASSWORD));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(Original_DANGHIHOC));
-            if ((Original_PASSWORD == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_PASSWORD));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9801,16 +9546,6 @@ SELECT MASV, HO, TEN, PHAI, DIACHI, NGAYSINH, MALOP, DANGHIHOC, PASSWORD FROM SI
             this.ClearBeforeFill = true;
         }
         
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
@@ -9934,19 +9669,6 @@ SELECT MASV, HO, TEN, PHAI, DIACHI, NGAYSINH, MALOP, DANGHIHOC, PASSWORD FROM SI
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MSV", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIENKHOA", global::System.Data.SqlDbType.NVarChar, 11, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HOCKY", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SP_DSLTC_NIENKHOAHOCKY";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NK", global::System.Data.SqlDbType.NChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HK", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
