@@ -75,8 +75,6 @@ namespace QLDSV_HTC
             this.barBtnLopTinChi,
             this.barBtnDangKyLTC});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12, 15, 12, 15);
-            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -130,6 +128,7 @@ namespace QLDSV_HTC
             this.barButtonItem1.Id = 9;
             this.barButtonItem1.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barBtnMonHoc
             // 
@@ -166,6 +165,7 @@ namespace QLDSV_HTC
             this.barBtnLopTinChi.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.morefunctions_32x32;
             this.barBtnLopTinChi.LargeWidth = 75;
             this.barBtnLopTinChi.Name = "barBtnLopTinChi";
+            this.barBtnLopTinChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnLopTinChi_ItemClick);
             // 
             // barBtnDangKyLTC
             // 

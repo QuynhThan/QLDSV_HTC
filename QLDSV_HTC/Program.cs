@@ -120,7 +120,7 @@ namespace QLDSV_HTC
 
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối!\n Xem lại tài khoản, mật khẩu hoặc khoa đã chọn!!!","",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lỗi kết nối!\n Xem lại tài khoản, mật khẩu hoặc khoa đã chọn!!!" + ex.Message,"",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
         }

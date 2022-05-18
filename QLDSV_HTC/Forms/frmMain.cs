@@ -82,5 +82,15 @@ namespace QLDSV_HTC
 
 
         }
+
+        private void barBtnLopTinChi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmLopTinChi));
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmBaoCaoBangDiem));
+        }
     }
 }

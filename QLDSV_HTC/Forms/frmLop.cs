@@ -155,6 +155,7 @@ namespace QLDSV_HTC.Forms
             action = "add";
             setBtnEnable(true);
             bdsLop.AddNew();
+
             this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
         }
        
@@ -292,7 +293,7 @@ namespace QLDSV_HTC.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi xóa LỚP!!\n Vui lòng thử lại!", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa LỚP!!\n Vui lòng thử lại!" + ex.Message, "", MessageBoxButtons.OK);
                     fillData();
                     bdsLop.Position = positionLop;
                     return;

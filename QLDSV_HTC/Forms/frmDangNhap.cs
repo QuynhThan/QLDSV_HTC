@@ -216,5 +216,15 @@ namespace QLDSV_HTC
             lblMSV.Visible  = isSinhVien = (chkSV.Checked) ? true : false;
             
         }
+
+        private void txtTK_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnDN_Click(sender, e);
+        }
+
+        private void txtMK_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnDN_Click(sender, e);
+        }
     }
 }

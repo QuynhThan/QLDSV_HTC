@@ -37,13 +37,14 @@ namespace QLDSV_HTC.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonHoc));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.barButtonThem = new DevExpress.XtraBars.BarButtonItem();
-            this.r = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonGhi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonPhucHoi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonReload = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonHuy = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -52,38 +53,40 @@ namespace QLDSV_HTC.Forms
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonLuu = new DevExpress.XtraBars.BarButtonItem();
             this.tableAdapterManager = new QLDSV_HTC.DSTableAdapters.TableAdapterManager();
-            this.dS = new QLDSV_HTC.DS();
-            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mONHOCTableAdapter = new QLDSV_HTC.DSTableAdapters.MONHOCTableAdapter();
+            this.DS = new QLDSV_HTC.DS();
+            this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
+            this.MONHOCTableAdapter = new QLDSV_HTC.DSTableAdapters.MONHOCTableAdapter();
             this.txtMaMonHoc = new System.Windows.Forms.TextBox();
             this.txtTenMonHoc = new System.Windows.Forms.TextBox();
             this.txtSoTietLyThuyet = new System.Windows.Forms.TextBox();
             this.txtSoTietThucHanh = new System.Windows.Forms.TextBox();
-            this.mONHOCGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gcMonHoc = new DevExpress.XtraGrid.GridControl();
             this.gvMonHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTIET_LT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOTIET_LT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlMonHoc = new System.Windows.Forms.Panel();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.barButtonSua = new DevExpress.XtraBars.BarButtonItem();
+            this.bdsLOPTINCHI = new System.Windows.Forms.BindingSource(this.components);
+            this.lOPTINCHITableAdapter = new QLDSV_HTC.DSTableAdapters.LOPTINCHITableAdapter();
             lblMaMonHoc = new System.Windows.Forms.Label();
             lblTenMonHoc = new System.Windows.Forms.Label();
             lblSoTietLyThuyet = new System.Windows.Forms.Label();
             lblSoTietThucHanh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).BeginInit();
             this.pnlMonHoc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLOPTINCHI)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMaMonHoc
             // 
             lblMaMonHoc.AutoSize = true;
-            lblMaMonHoc.Location = new System.Drawing.Point(19, 15);
+            lblMaMonHoc.Location = new System.Drawing.Point(354, 42);
             lblMaMonHoc.Name = "lblMaMonHoc";
             lblMaMonHoc.Size = new System.Drawing.Size(69, 13);
             lblMaMonHoc.TabIndex = 64;
@@ -92,7 +95,7 @@ namespace QLDSV_HTC.Forms
             // lblTenMonHoc
             // 
             lblTenMonHoc.AutoSize = true;
-            lblTenMonHoc.Location = new System.Drawing.Point(19, 38);
+            lblTenMonHoc.Location = new System.Drawing.Point(354, 65);
             lblTenMonHoc.Name = "lblTenMonHoc";
             lblTenMonHoc.Size = new System.Drawing.Size(73, 13);
             lblTenMonHoc.TabIndex = 65;
@@ -101,7 +104,7 @@ namespace QLDSV_HTC.Forms
             // lblSoTietLyThuyet
             // 
             lblSoTietLyThuyet.AutoSize = true;
-            lblSoTietLyThuyet.Location = new System.Drawing.Point(19, 64);
+            lblSoTietLyThuyet.Location = new System.Drawing.Point(354, 91);
             lblSoTietLyThuyet.Name = "lblSoTietLyThuyet";
             lblSoTietLyThuyet.Size = new System.Drawing.Size(82, 13);
             lblSoTietLyThuyet.TabIndex = 66;
@@ -110,7 +113,7 @@ namespace QLDSV_HTC.Forms
             // lblSoTietThucHanh
             // 
             lblSoTietThucHanh.AutoSize = true;
-            lblSoTietThucHanh.Location = new System.Drawing.Point(19, 90);
+            lblSoTietThucHanh.Location = new System.Drawing.Point(354, 117);
             lblSoTietThucHanh.Name = "lblSoTietThucHanh";
             lblSoTietThucHanh.Size = new System.Drawing.Size(91, 13);
             lblSoTietThucHanh.TabIndex = 67;
@@ -126,17 +129,17 @@ namespace QLDSV_HTC.Forms
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonThem,
-            this.r,
-            this.barButtonGhi,
+            this.btnThem,
+            this.btnXoa,
+            this.btnGhi,
             this.barButtonItem4,
-            this.barButtonPhucHoi,
+            this.btnPhucHoi,
             this.barButtonItem6,
-            this.barButtonHuy,
-            this.barButtonThoat,
-            this.barButtonReload,
+            this.btnHuy,
+            this.btnThoat,
+            this.btnReload,
             this.barButtonLuu,
-            this.barButtonSua});
+            this.btnSua});
             this.barManager1.MaxItemId = 11;
             // 
             // bar1
@@ -146,70 +149,85 @@ namespace QLDSV_HTC.Forms
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.r, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonSua),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonPhucHoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonHuy, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHuy, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.Text = "Tools";
             // 
-            // barButtonThem
+            // btnThem
             // 
-            this.barButtonThem.Caption = "THÊM";
-            this.barButtonThem.Id = 0;
-            this.barButtonThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonThem.ImageOptions.Image")));
-            this.barButtonThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonThem.ImageOptions.LargeImage")));
-            this.barButtonThem.Name = "barButtonThem";
-            this.barButtonThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonThem_ItemClick);
+            this.btnThem.Caption = "THÊM";
+            this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonThem_ItemClick);
             // 
-            // r
+            // btnXoa
             // 
-            this.r.Caption = "XÓA";
-            this.r.Id = 1;
-            this.r.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("r.ImageOptions.Image")));
-            this.r.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("r.ImageOptions.LargeImage")));
-            this.r.Name = "r";
+            this.btnXoa.Caption = "XÓA";
+            this.btnXoa.Id = 1;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
-            // barButtonGhi
+            // btnSua
             // 
-            this.barButtonGhi.Caption = "GHI";
-            this.barButtonGhi.Id = 2;
-            this.barButtonGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGhi.ImageOptions.Image")));
-            this.barButtonGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonGhi.ImageOptions.LargeImage")));
-            this.barButtonGhi.Name = "barButtonGhi";
-            this.barButtonGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonGhi_ItemClick);
+            this.btnSua.Caption = "SỬA";
+            this.btnSua.Id = 10;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
-            // barButtonPhucHoi
+            // btnGhi
             // 
-            this.barButtonPhucHoi.Caption = "PHỤC HỒI";
-            this.barButtonPhucHoi.Id = 4;
-            this.barButtonPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonPhucHoi.ImageOptions.Image")));
-            this.barButtonPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonPhucHoi.ImageOptions.LargeImage")));
-            this.barButtonPhucHoi.Name = "barButtonPhucHoi";
+            this.btnGhi.Caption = "GHI";
+            this.btnGhi.Id = 2;
+            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
+            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonGhi_ItemClick);
             // 
-            // barButtonReload
+            // btnPhucHoi
             // 
-            this.barButtonReload.Caption = "RELOAD";
-            this.barButtonReload.Id = 8;
-            this.barButtonReload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonReload.ImageOptions.SvgImage")));
-            this.barButtonReload.Name = "barButtonReload";
+            this.btnPhucHoi.Caption = "PHỤC HỒI";
+            this.btnPhucHoi.Id = 4;
+            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
+            this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
+            this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
-            // barButtonHuy
+            // btnReload
             // 
-            this.barButtonHuy.Caption = "HỦY";
-            this.barButtonHuy.Id = 6;
-            this.barButtonHuy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonHuy.ImageOptions.SvgImage")));
-            this.barButtonHuy.Name = "barButtonHuy";
+            this.btnReload.Caption = "RELOAD";
+            this.btnReload.Id = 8;
+            this.btnReload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReload.ImageOptions.SvgImage")));
+            this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
-            // barButtonThoat
+            // btnHuy
             // 
-            this.barButtonThoat.Caption = "THOÁT";
-            this.barButtonThoat.Id = 7;
-            this.barButtonThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonThoat.ImageOptions.SvgImage")));
-            this.barButtonThoat.Name = "barButtonThoat";
+            this.btnHuy.Caption = "HỦY";
+            this.btnHuy.Id = 6;
+            this.btnHuy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHuy.ImageOptions.SvgImage")));
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHuy_ItemClick);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "THOÁT";
+            this.btnThoat.Id = 7;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonThoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -276,62 +294,63 @@ namespace QLDSV_HTC.Forms
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_HTC.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // dS
+            // DS
             // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.DS.DataSetName = "DS";
+            this.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // mONHOCBindingSource
+            // bdsMONHOC
             // 
-            this.mONHOCBindingSource.DataMember = "MONHOC";
-            this.mONHOCBindingSource.DataSource = this.dS;
+            this.bdsMONHOC.DataMember = "MONHOC";
+            this.bdsMONHOC.DataSource = this.DS;
             // 
-            // mONHOCTableAdapter
+            // MONHOCTableAdapter
             // 
-            this.mONHOCTableAdapter.ClearBeforeFill = true;
+            this.MONHOCTableAdapter.ClearBeforeFill = true;
             // 
             // txtMaMonHoc
             // 
-            this.txtMaMonHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "MAMH", true));
-            this.txtMaMonHoc.Location = new System.Drawing.Point(116, 12);
+            this.txtMaMonHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "MAMH", true));
+            this.txtMaMonHoc.Location = new System.Drawing.Point(451, 39);
             this.txtMaMonHoc.Name = "txtMaMonHoc";
             this.txtMaMonHoc.Size = new System.Drawing.Size(100, 20);
             this.txtMaMonHoc.TabIndex = 65;
             // 
             // txtTenMonHoc
             // 
-            this.txtTenMonHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "TENMH", true));
-            this.txtTenMonHoc.Location = new System.Drawing.Point(116, 38);
+            this.txtTenMonHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "TENMH", true));
+            this.txtTenMonHoc.Location = new System.Drawing.Point(451, 65);
             this.txtTenMonHoc.Name = "txtTenMonHoc";
             this.txtTenMonHoc.Size = new System.Drawing.Size(100, 20);
             this.txtTenMonHoc.TabIndex = 66;
             // 
             // txtSoTietLyThuyet
             // 
-            this.txtSoTietLyThuyet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "SOTIET_LT", true));
-            this.txtSoTietLyThuyet.Location = new System.Drawing.Point(116, 64);
+            this.txtSoTietLyThuyet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "SOTIET_LT", true));
+            this.txtSoTietLyThuyet.Location = new System.Drawing.Point(451, 91);
             this.txtSoTietLyThuyet.Name = "txtSoTietLyThuyet";
             this.txtSoTietLyThuyet.Size = new System.Drawing.Size(100, 20);
             this.txtSoTietLyThuyet.TabIndex = 67;
             // 
             // txtSoTietThucHanh
             // 
-            this.txtSoTietThucHanh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "SOTIET_TH", true));
-            this.txtSoTietThucHanh.Location = new System.Drawing.Point(116, 90);
+            this.txtSoTietThucHanh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "SOTIET_TH", true));
+            this.txtSoTietThucHanh.Location = new System.Drawing.Point(451, 117);
             this.txtSoTietThucHanh.Name = "txtSoTietThucHanh";
             this.txtSoTietThucHanh.Size = new System.Drawing.Size(100, 20);
             this.txtSoTietThucHanh.TabIndex = 68;
             // 
-            // mONHOCGridControl
+            // gcMonHoc
             // 
-            this.mONHOCGridControl.DataSource = this.mONHOCBindingSource;
-            this.mONHOCGridControl.Location = new System.Drawing.Point(298, 72);
-            this.mONHOCGridControl.MainView = this.gvMonHoc;
-            this.mONHOCGridControl.MenuManager = this.barManager1;
-            this.mONHOCGridControl.Name = "mONHOCGridControl";
-            this.mONHOCGridControl.Size = new System.Drawing.Size(670, 323);
-            this.mONHOCGridControl.TabIndex = 72;
-            this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcMonHoc.DataSource = this.bdsMONHOC;
+            this.gcMonHoc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcMonHoc.Location = new System.Drawing.Point(0, 24);
+            this.gcMonHoc.MainView = this.gvMonHoc;
+            this.gcMonHoc.MenuManager = this.barManager1;
+            this.gcMonHoc.Name = "gcMonHoc";
+            this.gcMonHoc.Size = new System.Drawing.Size(1004, 323);
+            this.gcMonHoc.TabIndex = 72;
+            this.gcMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMonHoc});
             // 
             // gvMonHoc
@@ -340,8 +359,9 @@ namespace QLDSV_HTC.Forms
             this.colMAMH,
             this.colTENMH,
             this.colSOTIET_LT,
-            this.colSOTIET_TH});
-            this.gvMonHoc.GridControl = this.mONHOCGridControl;
+            this.colSOTIET_TH,
+            this.colSOTIET_LT1});
+            this.gvMonHoc.GridControl = this.gcMonHoc;
             this.gvMonHoc.Name = "gvMonHoc";
             this.gvMonHoc.OptionsBehavior.Editable = false;
             // 
@@ -377,6 +397,13 @@ namespace QLDSV_HTC.Forms
             this.colSOTIET_TH.Visible = true;
             this.colSOTIET_TH.VisibleIndex = 3;
             // 
+            // colSOTIET_LT1
+            // 
+            this.colSOTIET_LT1.FieldName = "SOTIET_LT";
+            this.colSOTIET_LT1.Name = "colSOTIET_LT1";
+            this.colSOTIET_LT1.Visible = true;
+            this.colSOTIET_LT1.VisibleIndex = 4;
+            // 
             // pnlMonHoc
             // 
             this.pnlMonHoc.Controls.Add(lblSoTietLyThuyet);
@@ -387,38 +414,28 @@ namespace QLDSV_HTC.Forms
             this.pnlMonHoc.Controls.Add(this.txtTenMonHoc);
             this.pnlMonHoc.Controls.Add(lblTenMonHoc);
             this.pnlMonHoc.Controls.Add(this.txtSoTietLyThuyet);
-            this.pnlMonHoc.Location = new System.Drawing.Point(23, 72);
+            this.pnlMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMonHoc.Location = new System.Drawing.Point(0, 347);
             this.pnlMonHoc.Name = "pnlMonHoc";
-            this.pnlMonHoc.Size = new System.Drawing.Size(235, 194);
+            this.pnlMonHoc.Size = new System.Drawing.Size(1004, 212);
             this.pnlMonHoc.TabIndex = 77;
             // 
-            // btnThem
+            // bdsLOPTINCHI
             // 
-            this.btnThem.Location = new System.Drawing.Point(23, 300);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 78;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.bdsLOPTINCHI.DataMember = "FK_LOPTINCHI_MONHOC";
+            this.bdsLOPTINCHI.DataSource = this.bdsMONHOC;
             // 
-            // barButtonSua
+            // lOPTINCHITableAdapter
             // 
-            this.barButtonSua.Caption = "SỬA";
-            this.barButtonSua.Id = 10;
-            this.barButtonSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonSua.Name = "barButtonSua";
-            this.barButtonSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.lOPTINCHITableAdapter.ClearBeforeFill = true;
             // 
             // frmMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 559);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.pnlMonHoc);
-            this.Controls.Add(this.mONHOCGridControl);
+            this.Controls.Add(this.gcMonHoc);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -427,12 +444,13 @@ namespace QLDSV_HTC.Forms
             this.Text = "Môn học";
             this.Load += new System.EventHandler(this.frmMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).EndInit();
             this.pnlMonHoc.ResumeLayout(false);
             this.pnlMonHoc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLOPTINCHI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,36 +459,38 @@ namespace QLDSV_HTC.Forms
         #endregion
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarButtonItem barButtonThem;
-        private DevExpress.XtraBars.BarButtonItem r;
-        private DevExpress.XtraBars.BarButtonItem barButtonGhi;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnGhi;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonPhucHoi;
+        private DevExpress.XtraBars.BarButtonItem btnPhucHoi;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonHuy;
-        private DevExpress.XtraBars.BarButtonItem barButtonThoat;
-        private DevExpress.XtraBars.BarButtonItem barButtonReload;
+        private DevExpress.XtraBars.BarButtonItem btnHuy;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
+        private DevExpress.XtraBars.BarButtonItem btnReload;
         private DevExpress.XtraBars.BarButtonItem barButtonLuu;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource mONHOCBindingSource;
-        private DS dS;
-        private DSTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
+        private System.Windows.Forms.BindingSource bdsMONHOC;
+        private DS DS;
+        private DSTableAdapters.MONHOCTableAdapter MONHOCTableAdapter;
         private System.Windows.Forms.TextBox txtSoTietThucHanh;
         private System.Windows.Forms.TextBox txtSoTietLyThuyet;
         private System.Windows.Forms.TextBox txtTenMonHoc;
         private System.Windows.Forms.TextBox txtMaMonHoc;
-        private DevExpress.XtraGrid.GridControl mONHOCGridControl;
+        private DevExpress.XtraGrid.GridControl gcMonHoc;
         private DevExpress.XtraGrid.Views.Grid.GridView gvMonHoc;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_LT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_TH;
         private System.Windows.Forms.Panel pnlMonHoc;
-        private System.Windows.Forms.Button btnThem;
-        private DevExpress.XtraBars.BarButtonItem barButtonSua;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
+        private System.Windows.Forms.BindingSource bdsLOPTINCHI;
+        private DSTableAdapters.LOPTINCHITableAdapter lOPTINCHITableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_LT1;
     }
 }
