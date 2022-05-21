@@ -96,7 +96,7 @@ namespace QLDSV_HTC.Forms
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(358, 41);
+            mALOPLabel.Location = new System.Drawing.Point(88, 36);
             mALOPLabel.Name = "mALOPLabel";
             mALOPLabel.Size = new System.Drawing.Size(74, 22);
             mALOPLabel.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace QLDSV_HTC.Forms
             // tENLOPLabel
             // 
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(358, 85);
+            tENLOPLabel.Location = new System.Drawing.Point(88, 80);
             tENLOPLabel.Name = "tENLOPLabel";
             tENLOPLabel.Size = new System.Drawing.Size(78, 22);
             tENLOPLabel.TabIndex = 2;
@@ -114,7 +114,7 @@ namespace QLDSV_HTC.Forms
             // kHOAHOCLabel
             // 
             kHOAHOCLabel.AutoSize = true;
-            kHOAHOCLabel.Location = new System.Drawing.Point(358, 126);
+            kHOAHOCLabel.Location = new System.Drawing.Point(88, 121);
             kHOAHOCLabel.Name = "kHOAHOCLabel";
             kHOAHOCLabel.Size = new System.Drawing.Size(91, 22);
             kHOAHOCLabel.TabIndex = 4;
@@ -123,7 +123,7 @@ namespace QLDSV_HTC.Forms
             // mAKHOALabel
             // 
             mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Location = new System.Drawing.Point(358, 167);
+            mAKHOALabel.Location = new System.Drawing.Point(88, 162);
             mAKHOALabel.Name = "mAKHOALabel";
             mAKHOALabel.Size = new System.Drawing.Size(84, 22);
             mAKHOALabel.TabIndex = 6;
@@ -257,7 +257,7 @@ namespace QLDSV_HTC.Forms
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManagerLop;
-            this.barDockControlTop.Size = new System.Drawing.Size(1521, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1521, 30);
             // 
             // barDockControlBottom
             // 
@@ -271,17 +271,17 @@ namespace QLDSV_HTC.Forms
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManagerLop;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 778);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 772);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1521, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1521, 30);
             this.barDockControlRight.Manager = this.barManagerLop;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 778);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 772);
             // 
             // barButtonItem1
             // 
@@ -295,7 +295,7 @@ namespace QLDSV_HTC.Forms
             this.panelLop.Controls.Add(this.label1);
             this.panelLop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLop.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelLop.Location = new System.Drawing.Point(0, 24);
+            this.panelLop.Location = new System.Drawing.Point(0, 30);
             this.panelLop.Name = "panelLop";
             this.panelLop.Size = new System.Drawing.Size(1521, 69);
             this.panelLop.TabIndex = 4;
@@ -306,7 +306,7 @@ namespace QLDSV_HTC.Forms
             this.cmbKhoa.FormattingEnabled = true;
             this.cmbKhoa.Location = new System.Drawing.Point(353, 23);
             this.cmbKhoa.Name = "cmbKhoa";
-            this.cmbKhoa.Size = new System.Drawing.Size(410, 28);
+            this.cmbKhoa.Size = new System.Drawing.Size(410, 33);
             this.cmbKhoa.TabIndex = 1;
             this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
@@ -316,7 +316,7 @@ namespace QLDSV_HTC.Forms
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(248, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 22);
+            this.label1.Size = new System.Drawing.Size(86, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "KHOA";
             // 
@@ -423,7 +423,7 @@ namespace QLDSV_HTC.Forms
             // 
             this.panel1.Controls.Add(this.grbNhapLop);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 457);
+            this.panel1.Location = new System.Drawing.Point(0, 451);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1521, 351);
             this.panel1.TabIndex = 20;
@@ -454,7 +454,7 @@ namespace QLDSV_HTC.Forms
             this.cmbNKEnd.DropDownHeight = 75;
             this.cmbNKEnd.FormattingEnabled = true;
             this.cmbNKEnd.IntegralHeight = false;
-            this.cmbNKEnd.Location = new System.Drawing.Point(718, 126);
+            this.cmbNKEnd.Location = new System.Drawing.Point(448, 121);
             this.cmbNKEnd.Name = "cmbNKEnd";
             this.cmbNKEnd.Size = new System.Drawing.Size(121, 30);
             this.cmbNKEnd.TabIndex = 2;
@@ -465,7 +465,7 @@ namespace QLDSV_HTC.Forms
             this.cmbNKBegin.DropDownHeight = 75;
             this.cmbNKBegin.FormattingEnabled = true;
             this.cmbNKBegin.IntegralHeight = false;
-            this.cmbNKBegin.Location = new System.Drawing.Point(553, 126);
+            this.cmbNKBegin.Location = new System.Drawing.Point(283, 121);
             this.cmbNKBegin.Name = "cmbNKBegin";
             this.cmbNKBegin.Size = new System.Drawing.Size(121, 30);
             this.cmbNKBegin.TabIndex = 1;
@@ -475,7 +475,7 @@ namespace QLDSV_HTC.Forms
             // 
             this.btnXong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnXong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXong.Location = new System.Drawing.Point(341, 202);
+            this.btnXong.Location = new System.Drawing.Point(71, 197);
             this.btnXong.Name = "btnXong";
             this.btnXong.Size = new System.Drawing.Size(193, 43);
             this.btnXong.TabIndex = 8;
@@ -488,7 +488,7 @@ namespace QLDSV_HTC.Forms
             // 
             this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "MAKHOA", true));
             this.txtMaKhoa.Enabled = false;
-            this.txtMaKhoa.Location = new System.Drawing.Point(553, 168);
+            this.txtMaKhoa.Location = new System.Drawing.Point(283, 163);
             this.txtMaKhoa.MenuManager = this.barManagerLop;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,11 +499,12 @@ namespace QLDSV_HTC.Forms
             // txtKhoaHoc
             // 
             this.txtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "KHOAHOC", true));
-            this.txtKhoaHoc.Location = new System.Drawing.Point(845, 126);
+            this.txtKhoaHoc.Location = new System.Drawing.Point(575, 121);
             this.txtKhoaHoc.MenuManager = this.barManagerLop;
             this.txtKhoaHoc.Name = "txtKhoaHoc";
             this.txtKhoaHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKhoaHoc.Properties.Appearance.Options.UseFont = true;
+            this.txtKhoaHoc.Properties.ReadOnly = true;
             this.txtKhoaHoc.Size = new System.Drawing.Size(193, 28);
             this.txtKhoaHoc.TabIndex = 5;
             this.txtKhoaHoc.EditValueChanged += new System.EventHandler(this.txtKhoaHoc_EditValueChanged);
@@ -511,7 +512,7 @@ namespace QLDSV_HTC.Forms
             // txtTenLop
             // 
             this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "TENLOP", true));
-            this.txtTenLop.Location = new System.Drawing.Point(553, 82);
+            this.txtTenLop.Location = new System.Drawing.Point(283, 77);
             this.txtTenLop.MenuManager = this.barManagerLop;
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -522,7 +523,7 @@ namespace QLDSV_HTC.Forms
             // txtMaLop
             // 
             this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "MALOP", true));
-            this.txtMaLop.Location = new System.Drawing.Point(553, 38);
+            this.txtMaLop.Location = new System.Drawing.Point(283, 33);
             this.txtMaLop.MenuManager = this.barManagerLop;
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -543,7 +544,7 @@ namespace QLDSV_HTC.Forms
             // frmLop
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1521, 802);
             this.Controls.Add(this.panel1);

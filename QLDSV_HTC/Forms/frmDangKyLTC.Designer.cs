@@ -84,8 +84,7 @@ namespace QLDSV_HTC.Forms
             this.colNHOM1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
-      //      this.sP_DSLTC_NIENKHOAHOCKYTableAdapter = new QLDSV_HTC.DSTableAdapters.SP_DSLTC_NIENKHOAHOCKYTableAdapter();
-           
+            this.sP_DSLTC_NIENKHOAHOCKYTableAdapter = new QLDSV_HTC.DSTableAdapters.SP_DSLTC_NIENKHOAHOCKYTableAdapter();
             this.panelDN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
@@ -116,7 +115,7 @@ namespace QLDSV_HTC.Forms
             this.panelDN.Controls.Add(this.label2);
             this.panelDN.Controls.Add(this.label1);
             this.panelDN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDN.Location = new System.Drawing.Point(0, 24);
+            this.panelDN.Location = new System.Drawing.Point(0, 30);
             this.panelDN.Margin = new System.Windows.Forms.Padding(4);
             this.panelDN.Name = "panelDN";
             this.panelDN.Size = new System.Drawing.Size(1581, 66);
@@ -127,7 +126,7 @@ namespace QLDSV_HTC.Forms
             this.lblMaSV.AutoSize = true;
             this.lblMaSV.Location = new System.Drawing.Point(340, 10);
             this.lblMaSV.Name = "lblMaSV";
-            this.lblMaSV.Size = new System.Drawing.Size(0, 17);
+            this.lblMaSV.Size = new System.Drawing.Size(0, 21);
             this.lblMaSV.TabIndex = 15;
             // 
             // lblTenLop
@@ -135,7 +134,7 @@ namespace QLDSV_HTC.Forms
             this.lblTenLop.AutoSize = true;
             this.lblTenLop.Location = new System.Drawing.Point(838, 40);
             this.lblTenLop.Name = "lblTenLop";
-            this.lblTenLop.Size = new System.Drawing.Size(0, 17);
+            this.lblTenLop.Size = new System.Drawing.Size(0, 21);
             this.lblTenLop.TabIndex = 14;
             // 
             // label7
@@ -143,7 +142,7 @@ namespace QLDSV_HTC.Forms
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(718, 40);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 17);
+            this.label7.Size = new System.Drawing.Size(79, 21);
             this.label7.TabIndex = 13;
             this.label7.Text = "Tên Lớp:";
             // 
@@ -152,7 +151,7 @@ namespace QLDSV_HTC.Forms
             this.lblMaLop.AutoSize = true;
             this.lblMaLop.Location = new System.Drawing.Point(340, 40);
             this.lblMaLop.Name = "lblMaLop";
-            this.lblMaLop.Size = new System.Drawing.Size(0, 17);
+            this.lblMaLop.Size = new System.Drawing.Size(0, 21);
             this.lblMaLop.TabIndex = 12;
             // 
             // label4
@@ -160,7 +159,7 @@ namespace QLDSV_HTC.Forms
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(177, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
+            this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 11;
             this.label4.Text = "Mã Lớp:";
             // 
@@ -169,7 +168,7 @@ namespace QLDSV_HTC.Forms
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.Location = new System.Drawing.Point(835, 10);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(0, 17);
+            this.lblHoTen.Size = new System.Drawing.Size(0, 21);
             this.lblHoTen.TabIndex = 10;
             // 
             // label2
@@ -177,7 +176,7 @@ namespace QLDSV_HTC.Forms
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(718, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(71, 21);
             this.label2.TabIndex = 9;
             this.label2.Text = "Họ Tên:";
             // 
@@ -187,7 +186,7 @@ namespace QLDSV_HTC.Forms
             this.label1.Location = new System.Drawing.Point(175, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.Size = new System.Drawing.Size(114, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Sinh Viên:";
             // 
@@ -278,7 +277,7 @@ namespace QLDSV_HTC.Forms
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1581, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1581, 30);
             // 
             // barDockControlBottom
             // 
@@ -292,17 +291,17 @@ namespace QLDSV_HTC.Forms
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1038);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1032);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1581, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1581, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1038);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1032);
             // 
             // groupBoxDKLTC
             // 
@@ -313,15 +312,16 @@ namespace QLDSV_HTC.Forms
             this.groupBoxDKLTC.Controls.Add(this.gcLTCDaDangKy);
             this.groupBoxDKLTC.Controls.Add(this.panel4);
             this.groupBoxDKLTC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxDKLTC.Location = new System.Drawing.Point(0, 90);
+            this.groupBoxDKLTC.Location = new System.Drawing.Point(0, 96);
             this.groupBoxDKLTC.Name = "groupBoxDKLTC";
-            this.groupBoxDKLTC.Size = new System.Drawing.Size(1581, 972);
+            this.groupBoxDKLTC.Size = new System.Drawing.Size(1581, 966);
             this.groupBoxDKLTC.TabIndex = 18;
             this.groupBoxDKLTC.TabStop = false;
             // 
             // gcDangKyLTC
             // 
             this.gcDangKyLTC.DataSource = this.bdsSP_DSLTC_NIENKHOAHOCKY;
+            this.gcDangKyLTC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcDangKyLTC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.gcDangKyLTC.Location = new System.Drawing.Point(3, 88);
             this.gcDangKyLTC.MainView = this.gvDangKyLTC;
@@ -446,7 +446,7 @@ namespace QLDSV_HTC.Forms
             // 
             this.panel3.Controls.Add(this.lblText);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 601);
+            this.panel3.Location = new System.Drawing.Point(3, 595);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1575, 84);
             this.panel3.TabIndex = 13;
@@ -457,7 +457,7 @@ namespace QLDSV_HTC.Forms
             this.lblText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblText.Location = new System.Drawing.Point(9, 59);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(188, 17);
+            this.lblText.Size = new System.Drawing.Size(239, 22);
             this.lblText.TabIndex = 0;
             this.lblText.Text = "Danh sách môn học đã chọn";
             // 
@@ -471,7 +471,7 @@ namespace QLDSV_HTC.Forms
             this.panelNKHK.Controls.Add(this.label6);
             this.panelNKHK.Controls.Add(this.label5);
             this.panelNKHK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNKHK.Location = new System.Drawing.Point(3, 20);
+            this.panelNKHK.Location = new System.Drawing.Point(3, 24);
             this.panelNKHK.Name = "panelNKHK";
             this.panelNKHK.Size = new System.Drawing.Size(1575, 64);
             this.panelNKHK.TabIndex = 13;
@@ -502,7 +502,7 @@ namespace QLDSV_HTC.Forms
             this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(1427, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 17);
+            this.label3.Size = new System.Drawing.Size(127, 21);
             this.label3.TabIndex = 14;
             this.label3.Text = "ĐÃ ĐĂNG KÝ";
             // 
@@ -537,7 +537,7 @@ namespace QLDSV_HTC.Forms
             0,
             0,
             0});
-            this.txtHocKy.Size = new System.Drawing.Size(58, 20);
+            this.txtHocKy.Size = new System.Drawing.Size(58, 24);
             this.txtHocKy.TabIndex = 11;
             // 
             // label6
@@ -546,7 +546,7 @@ namespace QLDSV_HTC.Forms
             this.label6.Location = new System.Drawing.Point(502, 21);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.Size = new System.Drawing.Size(81, 21);
             this.label6.TabIndex = 10;
             this.label6.Text = "HỌC KỲ";
             // 
@@ -556,7 +556,7 @@ namespace QLDSV_HTC.Forms
             this.label5.Location = new System.Drawing.Point(26, 21);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 17);
+            this.label5.Size = new System.Drawing.Size(111, 21);
             this.label5.TabIndex = 8;
             this.label5.Text = "NIÊN KHÓA";
             // 
@@ -564,8 +564,8 @@ namespace QLDSV_HTC.Forms
             // 
             this.gcLTCDaDangKy.DataSource = this.bdsSP_DSLTCDADANGKY;
             this.gcLTCDaDangKy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gcLTCDaDangKy.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.gcLTCDaDangKy.Location = new System.Drawing.Point(3, 685);
+            this.gcLTCDaDangKy.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
+            this.gcLTCDaDangKy.Location = new System.Drawing.Point(3, 679);
             this.gcLTCDaDangKy.MainView = this.gvLTCDaDangKy;
             this.gcLTCDaDangKy.Name = "gcLTCDaDangKy";
             this.gcLTCDaDangKy.Size = new System.Drawing.Size(1575, 220);
@@ -668,7 +668,7 @@ namespace QLDSV_HTC.Forms
             // 
             this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(3, 905);
+            this.panel4.Location = new System.Drawing.Point(3, 899);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1575, 64);
             this.panel4.TabIndex = 10;
@@ -691,12 +691,12 @@ namespace QLDSV_HTC.Forms
             // 
             // sP_DSLTC_NIENKHOAHOCKYTableAdapter
             // 
-  //          this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.ClearBeforeFill = true;
+            this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.ClearBeforeFill = true;
             // 
             // frmDangKyLTC
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1581, 1062);
@@ -791,5 +791,6 @@ namespace QLDSV_HTC.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblMaSV;
         private System.Windows.Forms.ComboBox cmbNienKhoa;
+        private DSTableAdapters.SP_DSLTC_NIENKHOAHOCKYTableAdapter sP_DSLTC_NIENKHOAHOCKYTableAdapter;
     }
 }

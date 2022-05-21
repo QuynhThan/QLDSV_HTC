@@ -225,7 +225,7 @@ namespace QLDSV_HTC.Forms
                 txtPassword.Text = "123";
             }
             //==========Thêm Lệnh SQL Kiểm Tra Trùng MASV trogn tat ca sites
-            if (action == "add" && !checkInfoSinhVien())
+            if (!checkInfoSinhVien())
             {
                 return;
             }
@@ -485,10 +485,18 @@ namespace QLDSV_HTC.Forms
                 txtDiaChi.Focus();
                 return false;
             }
+            Console.WriteLine(Convert.ToInt32(DateTime.Now.Year.ToString().Trim()) - Convert.ToInt32(dateNgaySinh.DateTime.Year.ToString().Trim()));
+            if( Convert.ToInt32(DateTime.Now.Year.ToString().Trim()) - Convert.ToInt32(dateNgaySinh.DateTime.Year.ToString().Trim()) < 18)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ!!\nTuổi > 20", "", MessageBoxButtons.OK);
+                dateNgaySinh.Focus();
+                return false;
+            }
 
             ///===kiem tra masv co trùng ko
             if(action == "edit" && txtMaSV.Text.Trim() == oldMaSV)
             {
+
                 return true;
             }
             
