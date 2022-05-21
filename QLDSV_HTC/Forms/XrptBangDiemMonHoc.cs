@@ -21,7 +21,6 @@ namespace QLDSV_HTC.Forms
             this.sqlDataSource1.Queries[0].Parameters[2].Value = tenmh;
             this.sqlDataSource1.Queries[0].Parameters[3].Value = nhom;
             this.sqlDataSource1.Fill();
-
         }
     }
 }

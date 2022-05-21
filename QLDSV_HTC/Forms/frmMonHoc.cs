@@ -18,7 +18,6 @@ namespace QLDSV_HTC.Forms
     {
         private string action = "";
         string oldMaMH, oldTenMH, oldSoTietLT, oldSoTietTH;
-        string MaMH, TenMH, SoTietLT, SoTietTH;
         Stack<string> undoStack = new Stack<string>();
 
         public frmMonHoc()
@@ -35,7 +34,7 @@ namespace QLDSV_HTC.Forms
 
                 this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.Connstr;
                 this.lOPTINCHITableAdapter.Fill(this.DS.LOPTINCHI);
-                btnEnabled(true);
+                enabledButton(true);
             }
             catch (Exception ex)
             {
@@ -62,14 +61,14 @@ namespace QLDSV_HTC.Forms
 
         private void barButtonThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnEnabled(false);
+            enabledButton(false);
             gcMonHoc.Enabled = false;
             if (undoStack.Count == 0) btnPhucHoi.Enabled = false;
             action = "add";
             //vitri = bdsMONHOC.Position;
             bdsMONHOC.AddNew();
         }
-        private void btnEnabled(Boolean kt)
+        private void enabledButton(Boolean kt)
         {
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = kt;
             pnlMonHoc.Enabled = btnGhi.Enabled = btnHuy.Enabled = !kt;
@@ -121,6 +120,7 @@ namespace QLDSV_HTC.Forms
                         undoStack.Push(String.Format("UPDATE MONHOC SET MAMH = '{0}', TENMH = N'{1}', SOTIET_LT = {2}, SOTIET_TH = {3}  WHERE MAMH = '{4}'",
                             oldMaMH, oldTenMH, oldSoTietLT, oldSoTietTH, txtMaMonHoc.Text.Trim()));
                         MessageBox.Show("Sửa thành công!", "", MessageBoxButtons.OK);
+                        enabledButton(true);
                     }
                     if(undoStack.Count > 0)
                         btnPhucHoi.Enabled = true;
@@ -169,7 +169,7 @@ namespace QLDSV_HTC.Forms
                 if (action == "add") bdsMONHOC.RemoveCurrent();
                 if (action == "edit") bdsMONHOC.CancelEdit();
                 fillData();
-                btnEnabled(true);
+                enabledButton(true);
                 gcMonHoc.Enabled = true;
             }
         }
@@ -233,9 +233,13 @@ namespace QLDSV_HTC.Forms
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnEnabled(false);
+            enabledButton(false);
             action = "edit";
             gcMonHoc.Enabled = true;
+            oldMaMH = txtMaMonHoc.Text;
+            oldTenMH = txtTenMonHoc.Text;
+            oldSoTietLT = txtSoTietLyThuyet.Text;
+            oldSoTietTH = txtSoTietThucHanh.Text;
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

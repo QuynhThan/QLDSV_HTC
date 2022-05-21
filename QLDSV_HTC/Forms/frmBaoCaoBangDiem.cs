@@ -45,7 +45,6 @@ namespace QLDSV_HTC.Forms
         {
             Lib.BDataToCmb(this.cmbKhoa, Program.bds_dspm.DataSource);
             Program.bds_dspm.Filter = "TENKHOA <> 'HỌC PHÍ'";
-
         }
 
         private void frmBaoCaoBangDiem_Load(object sender, EventArgs e)
@@ -83,7 +82,17 @@ namespace QLDSV_HTC.Forms
                 rp.lblGiangVienLap.Text = "Giảng viên lập bảng điểm: " + Program.mHoTen;
                 ReportPrintTool print = new ReportPrintTool(rp);
                 print.ShowPreviewDialog();
-                print.ClosePreview();
+            }
+        }
+
+        private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Lib.CmbHelper(cmbKhoa);
+
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("Loi ket noi voi server khac!!");
+                this.cmbKhoa.SelectedIndex = Program.MKhoa;
             }
         }
     }

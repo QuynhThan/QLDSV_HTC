@@ -92,5 +92,10 @@ namespace QLDSV_HTC
         {
             ShowMdiChildren(typeof(frmBaoCaoBangDiem));
         }
+
+        private void btnPhieuDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmBaoCaoPhieuDiem));
+        }
     }
 }

@@ -126,6 +126,7 @@ namespace QLDSV_HTC.Forms
                             "HOCKY = {1}, MAMH = '{2}', NHOM = {3}, MAGV = '{4}', MAKHOA = '{5}', SOSVTOITHIEU = {6}, HUYLOP = '{7}'" +
                             " WHERE MALTC = {8}", oldNienKhoa, oldHocKy, oldMaMH, oldNhom, oldMaGV, oldMaKhoa, oldSoSVToiThieu, oldHuyLop, 
                             ((DataRowView)bdsLopTinChi[bdsLopTinChi.Position])["MALTC"]));
+                        enableButton(false);
                         MessageBox.Show("Sửa thành công! ", "", MessageBoxButtons.OK);
                     }
                     catch (Exception ex)
