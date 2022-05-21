@@ -48,6 +48,7 @@ namespace QLDSV_HTC
             this.ribbonPageGroupQuanTri = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbChucNang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -55,6 +56,8 @@ namespace QLDSV_HTC
             this.lblMaSV = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblGroup = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnPhieuDiem = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDSSV_DKLTC = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -81,7 +84,8 @@ namespace QLDSV_HTC
             this.barBtnLopTinChi,
             this.barBtnDangKyLTC,
             this.barBtnDSSV_DKLTC,
-            this.barBtnBDMH});
+            this.barBtnBDMH,
+            this.btnPhieuDiem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(14, 18, 14, 18);
             this.ribbonControl1.MaxItemId = 17;
@@ -133,6 +137,11 @@ namespace QLDSV_HTC
             // 
             // barBtnDSLTC
             // 
+            this.barButtonItem1.Caption = "Báo Cáo Bàng Điểm";
+            this.barButtonItem1.Id = 9;
+            this.barButtonItem1.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             this.barBtnDSLTC.Caption = "Danh sách lớp tín chỉ";
             this.barBtnDSLTC.Id = 9;
             this.barBtnDSLTC.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages;
@@ -226,7 +235,8 @@ namespace QLDSV_HTC
             // rbBaoCao
             // 
             this.rbBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup1});
             this.rbBaoCao.Name = "rbBaoCao";
             this.rbBaoCao.Text = "BÁO CÁO";
             // 
@@ -237,6 +247,12 @@ namespace QLDSV_HTC
             this.ribbonPageGroup2.ItemLinks.Add(this.barBtnBDMH);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "BÁO CÁO";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnPhieuDiem);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // rbChucNang
             // 
@@ -318,6 +334,13 @@ namespace QLDSV_HTC
             this.barButtonItem5.LargeWidth = 80;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
+            // btnPhieuDiem
+            // 
+            this.btnPhieuDiem.Caption = "Báo cáo  Phiếu Điểm";
+            this.btnPhieuDiem.Id = 14;
+            this.btnPhieuDiem.Name = "btnPhieuDiem";
+            this.btnPhieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuDiem_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -372,6 +395,8 @@ namespace QLDSV_HTC
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem btnPhieuDiem;
     }
 }
 
