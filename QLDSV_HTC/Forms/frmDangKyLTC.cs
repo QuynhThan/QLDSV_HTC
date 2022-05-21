@@ -14,10 +14,25 @@ namespace QLDSV_HTC.Forms
 {
     public partial class frmDangKyLTC : DevExpress.XtraEditors.XtraForm
     {
+
         private int position = 0;
         private bool isLoading = false;
+        DataTable dt = new DataTable();
+        // === xem lại các gc datasource nên gán datasource khi đã chọn nien khoa học kỳ ?? có nên hay ko??
+        // ===
         public frmDangKyLTC()
         {
+            // tạo 1 data Reader để dọc dữ liệu từ SP_DSLTC_NIENKHOAHOCKY 
+            dt.Columns.Add("STT", typeof(int));
+            dt.Columns.Add("MAMH", typeof(string));
+            dt.Columns.Add("TENMH", typeof(string));
+            dt.Columns.Add("NHOM", typeof(int));
+            dt.Columns.Add("TENGV", typeof(string));
+            dt.Columns.Add("SOSVTOITHIEU", typeof(int));
+            dt.Columns.Add("SOSVDADK", typeof(int));
+
+
+
             InitializeComponent();
         }
 
@@ -30,7 +45,7 @@ namespace QLDSV_HTC.Forms
                 this.dS.EnforceConstraints = false;
                 this.sP_DSLTCDADANGKYTableAdapter.Connection.ConnectionString = Program.Connstr;
                 this.sP_DSLTCDADANGKYTableAdapter.Fill(this.dS.SP_DSLTCDADANGKY,
-                    lblMaSV.Text.Trim(), txtNienKhoa.Text.Trim(), Convert.ToInt32(txtHocKy.Text.Trim()));
+                    lblMaSV.Text.Trim(), cmbNienKhoa.SelectedValue.ToString().Trim(), Convert.ToInt32(txtHocKy.Text.Trim()));
             }
             catch
             {
@@ -45,7 +60,7 @@ namespace QLDSV_HTC.Forms
                 this.dS.EnforceConstraints = false;
                 this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.Connection.ConnectionString = Program.Connstr;
                 this.sP_DSLTC_NIENKHOAHOCKYTableAdapter.Fill(this.dS.SP_DSLTC_NIENKHOAHOCKY
-                    , txtNienKhoa.Text.Trim(), Convert.ToInt32(txtHocKy.Text.Trim()));
+                    , cmbNienKhoa.SelectedValue.ToString().Trim(), Convert.ToInt32(txtHocKy.Text.Trim()));
 
             }
             catch
@@ -86,16 +101,43 @@ namespace QLDSV_HTC.Forms
             lblMaLop.Text = Program.myReader.GetString(1);
             lblTenLop.Text = Program.myReader.GetString(2);
             Program.myReader.Close();
+
+            cmd = "SELECT DISTINCT NIENKHOA FROM LOPTINCHI";
+            Program.myReader = Program.ExecSqlDataReader(cmd);
+            if (Program.myReader == null)
+            {
+                Program.myReader.Close();
+                return;
+            }
+            if (Program.myReader.FieldCount == 0)
+            {
+                MessageBox.Show("Hiện tại chưa có lớp tín chỉ nào!!.", "", MessageBoxButtons.OK);
+                Program.myReader.Close();
+                // disable frm dang ky
+                return;
+            }
+            DataTable dt_nk = new DataTable();
+            dt_nk.Columns.Add("NIENKHOA", typeof(string));
+            while (Program.myReader.Read())
+            {
+                dt_nk.Rows.Add(Program.myReader.GetString(0));
+            }
+            Program.myReader.Close();
+            cmbNienKhoa.DataSource = dt_nk;
+            cmbNienKhoa.DisplayMember = "NIENKHOA";
+            cmbNienKhoa.ValueMember = "NIENKHOA";
+           
+
         }
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            if (txtNienKhoa.Text.Trim() == "")
+            /*if (cmbNienKhoa.SelectedValue == "")
             {
                 MessageBox.Show("Niên Khóa không được bỏ trống!!!!", "", MessageBoxButtons.OK);
-                txtNienKhoa.Focus();
+                
                 return;
-            }
+            }*/
             loadData();
             barBtnReload.Enabled = true;
 
@@ -226,5 +268,7 @@ namespace QLDSV_HTC.Forms
             //Console.WriteLine(gvDangKyLTC.SelectedRowsCount);
 
         }
+
+        
     }
 }

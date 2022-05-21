@@ -95,7 +95,7 @@ namespace QLDSV_HTC
                 Program.MLoginDN = Program.MLogin;
                 Program.MPassDN = Program.MPass;
 
-                string strLenh = string.Format("EXEC SP_DANGNHAP '{0}',N'{1}',N'{2}'", Program.MLogin, Program.MUser, Program.MUserPass);
+                string strLenh = string.Format("EXEC SP_DANGNHAP_SV N'{0}',N'{1}'", Program.MUser, Program.MUserPass);
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null)
                 {
@@ -110,6 +110,12 @@ namespace QLDSV_HTC
                     return;
                 }
                 Program.myReader.Read();
+
+                if (Program.myReader.GetBoolean(3)){
+                    MessageBox.Show("Bạn Đã Nghỉ Học Không Thể Đăng Nhập!!", "Login fail", MessageBoxButtons.OK);
+                    txtTK.Focus();
+                    return;
+                }
 
                 Program.userName = Program.myReader.GetString(0);
                 Program.mHoTen = Program.myReader.GetString(1);
@@ -130,7 +136,7 @@ namespace QLDSV_HTC
                 Program.MLoginDN = Program.MLogin;
                 Program.MPassDN = Program.MPass;
 
-                string strLenh = "EXEC SP_DANGNHAP '" + Program.MLogin + "','',''";
+                string strLenh = "EXEC SP_DANGNHAP '" + Program.MLogin + "'";
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null) return;
 
@@ -158,7 +164,6 @@ namespace QLDSV_HTC
                     = Program.frmMain.barBtnDiem.Enabled 
                     = Program.frmMain.barBtnLopTinChi.Enabled 
                     = Program.frmMain.barBtnDangKyLTC.Enabled
-                    = Program.frmMain.barBtnTaoLogin.Enabled 
                     = false;
                 Program.frmMain.rbBaoCao.Visible = false;
             }
@@ -204,10 +209,19 @@ namespace QLDSV_HTC
             try
             {
                 Program.ServerName = cmbKhoa.SelectedValue.ToString();
+                if(cmbKhoa.SelectedIndex == 2)
+                {
+                    chkSV.Checked = false;
+                    chkSV.Enabled = false;
+                }
+                else
+                {
+                    chkSV.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi khong co chi nhanh tron db" + ex.ToString());
+                MessageBox.Show("Loi khong co chi nhanh nay" + ex.ToString());
             }
         }
 

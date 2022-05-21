@@ -66,6 +66,9 @@
     <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -91,6 +94,11 @@
     </Compile>
     <Compile Include="Forms\frmBaoCaoBangDiem.Designer.cs">
       <DependentUpon>frmBaoCaoBangDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmDangKyLTC.cs">
       <SubType>Form</SubType>
@@ -121,6 +129,18 @@
     </Compile>
     <Compile Include="Forms\frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTaoLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTaoLogin.Designer.cs">
+      <DependentUpon>frmTaoLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\tmp.Designer.cs">
+      <DependentUpon>tmp.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\XrptBangDiemMonHoc.cs">
       <SubType>Component</SubType>
@@ -158,6 +178,30 @@
     <EmbeddedResource Include="Forms\frmBaoCaoBangDiem.resx">
       <DependentUpon>frmBaoCaoBangDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ReportsForms\frpt_DSLTC_NK_HK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForms\frpt_DSLTC_NK_HK.Designer.cs">
+      <DependentUpon>frpt_DSLTC_NK_HK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForms\frpt_DSSV_DANGKY_LTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForms\frpt_DSSV_DANGKY_LTC.Designer.cs">
+      <DependentUpon>frpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\xrpt_DSLTC_NK_HK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\xrpt_DSLTC_NK_HK.Designer.cs">
+      <DependentUpon>xrpt_DSLTC_NK_HK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\xrpt_DSSV_DANGKY_LTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\xrpt_DSSV_DANGKY_LTC.Designer.cs">
+      <DependentUpon>xrpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\frmDangKyLTC.resx">
       <DependentUpon>frmDangKyLTC.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLopTinChi.resx">
       <DependentUpon>frmLopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTaoLogin.resx">
+      <DependentUpon>frmTaoLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -199,6 +246,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportsForms\frpt_DSLTC_NK_HK.resx">
+      <DependentUpon>frpt_DSLTC_NK_HK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForms\frpt_DSSV_DANGKY_LTC.resx">
+      <DependentUpon>frpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\xrpt_DSLTC_NK_HK.resx">
+      <DependentUpon>xrpt_DSLTC_NK_HK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\xrpt_DSSV_DANGKY_LTC.resx">
+      <DependentUpon>xrpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
       <DependentUpon>DS.xsd</DependentUpon>
@@ -234,6 +293,8 @@
     <None Include="Resources\allowuserstoeditranges.svg" />
     <None Include="Resources\financial_32x32.png" />
     <None Include="Resources\financial_16x16.png" />
+    <None Include="Resources\editname_32x32.png" />
+    <None Include="Resources\editname_16x16.png" />
     <Content Include="Resources\log-out.png" />
     <Content Include="Resources\main-icon.png" />
   </ItemGroup>

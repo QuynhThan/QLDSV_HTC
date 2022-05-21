@@ -49,11 +49,15 @@ namespace QLDSV_HTC.Forms
         }
         private void frmLop_Load(object sender, EventArgs e)
         {
-            
-            
-
             fillData();
             
+            //Load data NK
+            for(int i = 2010; i <= Convert.ToInt32(DateTime.Now.Year.ToString()) + 20; i++)
+            {
+                cmbNKBegin.Items.Add(i);
+                cmbNKEnd.Items.Add(i);
+            }
+            //
             if (bdsLop.Count == 0)
             {
                 barBtnXoa.Enabled = false;
@@ -118,31 +122,64 @@ namespace QLDSV_HTC.Forms
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(this.cmbKhoa.SelectedIndex != thisKhoa && unduStack.Count > 0)
+            
+            if (this.cmbKhoa.SelectedIndex != thisKhoa)
             {
-                if(MessageBox.Show("Chuyển khoa sẽ không thể phục hồi lại!!\nBạn có muốn chuyển khoa??","",MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                if (!barBtnThem.Enabled || !barBtnSua.Enabled)
                 {
-                    this.cmbKhoa.SelectedIndex = thisKhoa;
-                    return;
+                    if (txtMaLop.Text.Trim() != "" || txtTenLop.Text.Trim() != ""
+                        || txtKhoaHoc.Text.Trim() != "")
+                    {
+                        if (MessageBox.Show("Bạn có chắc chắn muốn chuyển khoa?\nCác thông tin vừa nhập sẽ không được lưu!",
+                        "frmLop", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                        {
+                            return;
+                        }
+                    }
+                    setBtnEnable(false);
+                    if (action == "add")
+                        bdsLop.RemoveCurrent();
+                    if (action == "edit")
+                        bdsLop.CancelEdit();
+                }
+                if (unduStack.Count > 0)
+                {
+                    if (MessageBox.Show("Chuyển khoa sẽ không thể phục hồi lại!!\nBạn có muốn chuyển khoa??", "frmLop", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    {
+                        this.cmbKhoa.SelectedIndex = thisKhoa;
+                        return;
+                    }
+                    else
+                    {
+
+                        unduStack.Clear();
+                        barBtnPhucHoi.Enabled = false;
+                    }
+                }
+                thisKhoa = this.cmbKhoa.SelectedIndex;
+                //chuyen site
+
+                Lib.CmbHelper(this.cmbKhoa);
+                if (Program.KetNoi() == 0)
+                {
+                    MessageBox.Show("Lỗi Kết Nỗi Với Server Khác!!", "LỖI", MessageBoxButtons.OK);
+                    this.cmbKhoa.SelectedIndex = Program.MKhoa;
                 }
                 else
                 {
-                    unduStack.Clear();
-                    barBtnPhucHoi.Enabled = false;
-                }
-            }
-            thisKhoa = this.cmbKhoa.SelectedIndex;
+                    fillData();
 
-            //chuyen site
-            Lib.CmbHelper(this.cmbKhoa);
-            if (Program.KetNoi() == 0)
-            {
-                MessageBox.Show("Loi ket noi voi server khac!!");
-                this.cmbKhoa.SelectedIndex = Program.MKhoa;
-            }
-            else
-            {
-                fillData();
+                    /*setBtnEnable(false);
+
+                    if (action == "add")
+                        bdsLop.RemoveCurrent();
+                    *//*bdsLop.AddNew();
+                     this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
+                    txtMaLop.Focus();*//*
+                    if (action == "edit")
+                        bdsLop.CancelEdit();*/
+
+                }
             }
 
         }
@@ -150,13 +187,12 @@ namespace QLDSV_HTC.Forms
         //         ======================= btn even    ===================
         private void barBtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-  
+            positionLop = bdsLop.Position;
             action = "add";
             setBtnEnable(true);
             bdsLop.AddNew();
-
-            this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
+            this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString(); 
+            txtMaLop.Focus();
         }
        
         private void btnXong_Click(object sender, EventArgs e)
@@ -172,7 +208,7 @@ namespace QLDSV_HTC.Forms
     
             bdsLop.RemoveCurrent();
             setBtnEnable(false);
- 
+            bdsLop.Position = positionLop;
         }
 
         private void barBtnGhi_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -183,6 +219,11 @@ namespace QLDSV_HTC.Forms
             }
             //==========Thêm Lệnh SQL Kiểm Tra Trùng MALOP TENLOP trogn tat ca sites
             if (action == "add" && !checkInfoLop() )
+            {
+                return;
+            }
+
+            if (action == "edit" &&  !checkInfoLop()) //(oldMaLop!=txtMaLop.Text.Trim() || oldTenLop != txtTenLop.Text.Trim()) &&
             {
                 return;
             }
@@ -224,7 +265,7 @@ namespace QLDSV_HTC.Forms
                if(action == "edit")
                 {
                     setBtnEnable(false);
-                    //
+                    bdsLop.Position = positionLop;
                 }
             }
 
@@ -250,8 +291,11 @@ namespace QLDSV_HTC.Forms
                 }
             }
             setBtnEnable(false);
-            bdsLop.CancelEdit();
-            fillData();
+            if(action == "add")
+                bdsLop.RemoveCurrent();
+            if (action == "edit")
+                bdsLop.CancelEdit();
+            bdsLop.Position = positionLop;
            // 
 
         }
@@ -289,11 +333,11 @@ namespace QLDSV_HTC.Forms
                     this.LOPTableAdapter.Update(DS.LOP);
                     unduStack.Push(string.Format("INSERT INTO LOP(MALOP,TENLOP,KHOAHOC,MAKHOA) " +
                         "VALUES(N'{0}', N'{1}',N'{2}',N'{3}')", oldMaLop, oldTenLop, oldKhoaHoc, oldMaKhoa));
-
+                        
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi xóa LỚP!!\n Vui lòng thử lại!" + ex.Message, "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa LỚP!!\n Vui lòng thử lại!\n" + ex.Message, "", MessageBoxButtons.OK);
                     fillData();
                     bdsLop.Position = positionLop;
                     return;
@@ -306,10 +350,13 @@ namespace QLDSV_HTC.Forms
         }
         private void barBtnSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            /*DataRow row = ((DataSet) this.bdsLop.DataSource).Tables[this.bdsLop.DataMember].Rows[this.bdsLop.Position];
+            Console.WriteLine(row["TENLOP"].ToString().Trim());*/
             oldMaLop = txtMaLop.Text.Trim();
             oldTenLop = txtTenLop.Text.Trim();
             oldKhoaHoc = txtKhoaHoc.Text.Trim();
             oldMaKhoa = txtMaKhoa.Text.Trim();
+            positionLop = bdsLop.Position;
             action = "edit";
             setBtnEnable(true);
         }
@@ -320,11 +367,50 @@ namespace QLDSV_HTC.Forms
            
         }
 
+        private void cmbNKBegin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(txtKhoaHoc.Enabled)
+                txtKhoaHoc.Text = cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim();
+            //Console.WriteLine(cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim());
+        }
+
+        private void cmbNKEnd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(txtKhoaHoc.Enabled)
+              txtKhoaHoc.Text = cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim();
+
+        }
+
+        private void txtKhoaHoc_EditValueChanged(object sender, EventArgs e)
+        {
+          //  string[] tmp = txtKhoaHoc.Text.Split('-');
+            //  ======================== conf loixo =================================
+            /*if(txtKhoaHoc.Text.Length > 8)
+            {
+                cmbNKBegin.Text = txtKhoaHoc.Text.Substring(0, 4);
+                cmbNKEnd.Text = txtKhoaHoc.Text.Substring(5, 4);
+            }*/
+        }
+
+        private void gvLop_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (!txtKhoaHoc.Enabled)
+            {
+                DataRowView drv = (DataRowView)gvLop.GetFocusedRow();
+                if (drv == null)
+                    return;
+                DataRow dr = drv.Row;
+                cmbNKBegin.SelectedIndex = cmbNKBegin.FindStringExact(dr["KHOAHOC"].ToString().Substring(0, 4));
+                cmbNKEnd.SelectedIndex = cmbNKEnd.FindStringExact(dr["KHOAHOC"].ToString().Substring(5, 4));
+                Console.WriteLine(dr["KHOAHOC"].ToString().Substring(5, 4));
+            }
+        }
+
         private void barBtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (unduStack.Count > 0 && MessageBox.Show("Thoát sẽ không thể phục hồi lại!!\nBạn có muốn chuyển thoát??", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+            if (unduStack.Count > 0 && MessageBox.Show("Thoát sẽ không thể phục hồi lại!!\nBạn có muốn thoát??", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
             {
-                this.cmbKhoa.SelectedIndex = thisKhoa;
+               // this.cmbKhoa.SelectedIndex = thisKhoa;
                 return;
             }
             this.Close();
@@ -332,8 +418,10 @@ namespace QLDSV_HTC.Forms
         //============Ham ho tro==================
 
         //kiem tra thong tin txt da diem du thong tin chua
-        private Boolean isFillAllInfoLop()
+        private bool isFillAllInfoLop()
         {
+            txtKhoaHoc.Text = cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim();
+            Console.WriteLine(txtKhoaHoc.Text);
             if (txtMaLop.Text.Trim() == "")
             {
                 MessageBox.Show("Mã lớp không được bỏ trống!", "", MessageBoxButtons.OK);
@@ -352,12 +440,14 @@ namespace QLDSV_HTC.Forms
                 txtKhoaHoc.Focus();
                 return false;
             }
+            
             return true;
         }
         private bool checkInfoLop()
         {
+
             //check độ dài
-            if(txtMaLop.Text.Trim().Length > 10)
+            if (txtMaLop.Text.Trim().Length > 10)
             {
                 MessageBox.Show("Mã Lớp tối đa 10 kí tự!!!", "", MessageBoxButtons.OK);
                 txtMaLop.Focus();
@@ -375,73 +465,98 @@ namespace QLDSV_HTC.Forms
                 txtKhoaHoc.Focus();
                 return false;
             }
-            //
-            string strLenh1 = "EXEC SP_CHECKMALOP '" +txtMaLop.Text +"'";
-            int check = Lib.checkData(strLenh1);
-            if ( check == -1)
+            if (string.Compare(cmbNKBegin.Text.Trim(),cmbNKEnd.Text.Trim()) == 1)
             {
-                MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Khóa học không hợp  lệ!!\n", "", MessageBoxButtons.OK);
+                txtKhoaHoc.Focus();
                 return false;
             }
-            if (check == 1)
+
+            //
+            if (action != "edit" || oldMaLop != txtMaLop.Text.Trim())
             {
-                if (bdsLop.Find("MALOP", txtMaLop.Text) != -1 )
+                string strLenh1 = "EXEC SP_CHECKMALOP '" + txtMaLop.Text.Trim() + "'";
+                int check = Lib.checkData(strLenh1);
+                if (check == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (check == 1)
                 {
                     //return true;
                     MessageBox.Show("Mã Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
                     txtMaLop.Focus();
                     return false;
-                }
-                
-            }
-            if(check == 2)
-            {
-                MessageBox.Show("Mã Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
-                txtMaLop.Focus();
-                return false;
-            }
 
-            check = bdsLop.Find("MALOP", txtMaLop.Text);
-            if(check != -1)
-            {
-                MessageBox.Show("Mã Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
-                txtMaLop.Focus();
-                return false;
+                }
+                if (check == 2)
+                {
+                    MessageBox.Show("Mã Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
+                    txtMaLop.Focus();
+                    return false;
+                }
+                //kiem tra lại trong bds (khi trên server xóa lớp nhưng trong bds chưa update)
+                check = bdsLop.Find("MALOP", txtMaLop.Text);
+                if (check != -1)
+                {
+                    //ghi lai thong tin va fill laij data truongwf hop 'add' and 'edit'
+                    /*if(action == "add")
+                    {
+                        oldMaLop = txtMaLop.Text.Trim();
+                        oldTenLop = txtTenLop.Text.Trim();
+                        oldKhoaHoc = txtKhoaHoc.Text.Trim();
+                        oldMaKhoa = txtMaKhoa.Text.Trim();
+
+                        fillData();
+
+                        bdsLop.AddNew();
+                        this.txtMaKhoa.Text = ((DataRowView)bdsLop[0])["MAKHOA"].ToString();
+                        txtMaLop.Text = oldMaLop;
+                        txtTenLop.Text = oldTenLop;
+                        txtKhoaHoc.Text = oldKhoaHoc;
+                        txtMaKhoa.Text = oldMaKhoa;
+                    }*/
+                    MessageBox.Show("Mã Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
+                    txtMaLop.Focus();
+                    return false;
+                }
             }
             // kiem tra tenlop =========================================
-            string strLenh2 = "EXEC SP_CHECKTENLOP N'" + txtTenLop.Text + "'";
-            check = Lib.checkData(strLenh2);
-            if (check == -1)
+            if(action != "edit" || oldTenLop != txtTenLop.Text.Trim())
             {
-                MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
+                string strLenh2 = "EXEC SP_CHECKTENLOP N'" + txtTenLop.Text.Trim() + "'";
+                int check = Lib.checkData(strLenh2);
+                if (check == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối CSDL!", "", MessageBoxButtons.OK);
 
-                return false;
-            }
-            if (check == 1)
-            {
-                if (bdsLop.Find("TENLOP", txtTenLop.Text) != -1)
+                    return false;
+                }
+                if (check == 1)
                 {
                     MessageBox.Show("Tên Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
                     txtTenLop.Focus();
 
                     return false;
                 }
-            }
-            if (check == 2)
-            {
-                MessageBox.Show("Tên Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
-                txtTenLop.Focus();
+                if (check == 2)
+                {
+                    MessageBox.Show("Tên Lớp đã tồn tại trong khoa khác!", "", MessageBoxButtons.OK);
+                    txtTenLop.Focus();
 
-                return false;
+                    return false;
+                }
+                check = bdsLop.Find("TENLOP", txtTenLop.Text);
+                if (check != -1)
+                {
+                    MessageBox.Show("Tên Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
+                    txtTenLop.Focus();
+                    return false;
+                    //fillData();
+                }
             }
-            check = bdsLop.Find("TENLOP", txtTenLop.Text);
-            if (check != -1)
-            {
-                MessageBox.Show("Tên Lớp đã tồn tại trong khoa này!", "", MessageBoxButtons.OK);
-                txtTenLop.Focus();
-                return false;
-            }
-            
+
             return true;
         }
 

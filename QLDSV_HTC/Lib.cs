@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//to usse TextInfo
+using System.Globalization;
 
 namespace QLDSV_HTC
 {
@@ -46,6 +48,8 @@ namespace QLDSV_HTC
 
         public static int checkData(string cmd)
         {
+            // return 1 site hien tai
+            //return 2 site khac
             SqlDataReader dataReader = Program.ExecSqlDataReader(cmd);
 
             if (dataReader == null) return -1;
@@ -54,6 +58,11 @@ namespace QLDSV_HTC
             int result = int.Parse(dataReader.GetValue(0).ToString());
             dataReader.Close();
             return result;
+        }
+
+        public static string ToCapitalize(string str)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
         }
 
     }
