@@ -44,13 +44,13 @@ namespace QLDSV_HTC.Forms
             if (Program.myReader == null)
             {
                 MessageBox.Show("Lỗi load data!!!", "", MessageBoxButtons.OK);
-                Program.myReader.Close();
+                //Program.myReader.Close();
                 return "";
             }
             else if(Program.myReader.HasRows == false)
             {
                 MessageBox.Show("Mã sinh viên không tồn tại", "", MessageBoxButtons.OK);
-                Program.myReader.Close();
+                //Program.myReader.Close();
                 return "";
             }
             DataTable dt = new DataTable();

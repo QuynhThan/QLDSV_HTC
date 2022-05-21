@@ -716,7 +716,7 @@ namespace QLDSV_HTC.Forms
             // lblSoSVSo
             // 
             this.lblSoSVSo.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DIEM_CC])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataSource.RowCount]")});
             this.lblSoSVSo.LocationFloat = new DevExpress.Utils.PointFloat(117.7084F, 9.999974F);
             this.lblSoSVSo.Multiline = true;
             this.lblSoSVSo.Name = "lblSoSVSo";
@@ -724,7 +724,7 @@ namespace QLDSV_HTC.Forms
             this.lblSoSVSo.SizeF = new System.Drawing.SizeF(28.12497F, 23F);
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.lblSoSVSo.Summary = xrSummary1;
-            this.lblSoSVSo.TextFormatString = "{0:#,#}";
+            this.lblSoSVSo.TextFormatString = "{0:#}";
             // 
             // DIEM_HM
             // 

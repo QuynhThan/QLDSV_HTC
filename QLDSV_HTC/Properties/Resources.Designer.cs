@@ -263,6 +263,16 @@ namespace QLDSV_HTC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage printallpages2 {
+            get {
+                object obj = ResourceManager.GetObject("printallpages2", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage text {
             get {
                 object obj = ResourceManager.GetObject("text", resourceCulture);

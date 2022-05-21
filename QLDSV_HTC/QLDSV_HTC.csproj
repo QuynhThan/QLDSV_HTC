@@ -131,12 +131,6 @@
     <Compile Include="Forms\frmTaoLogin.Designer.cs">
       <DependentUpon>frmTaoLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\tmp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\tmp.Designer.cs">
-      <DependentUpon>tmp.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\XrptBangDiemMonHoc.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -279,6 +273,7 @@
   <ItemGroup>
     <Content Include="Resources\4082.9-class-icon-iconbunny.jpg" />
     <Content Include="Resources\add-login.png" />
+    <None Include="Resources\printallpages2.svg" />
     <None Include="Resources\printallpages1.svg" />
     <None Include="Resources\morefunctions_16x16.png" />
     <None Include="Resources\morefunctions_32x32.png" />
