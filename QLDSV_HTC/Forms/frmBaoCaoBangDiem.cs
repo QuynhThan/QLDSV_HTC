@@ -85,6 +85,7 @@ namespace QLDSV_HTC.Forms
             }
         }
 
+
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
             Lib.CmbHelper(cmbKhoa);
