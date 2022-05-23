@@ -1,7 +1,7 @@
 USE [QLDSV_HTC]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SP_DSLTC_NIENKHOAHOCKY]    Script Date: 4/23/2022 1:50:25 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_DSLTC_NIENKHOAHOCKY]    Script Date: 5/23/2022 6:22:08 PM ******/
 SET ANSI_NULLS ON
 GO
 

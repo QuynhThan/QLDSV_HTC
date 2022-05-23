@@ -1,8 +1,12 @@
 USE [QLDSV_HTC]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SP_CHECKMALOP]    Script Date: 3/24/2022 3:09:51 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_CHECKMALOP]    Script Date: 5/23/2022 6:18:57 PM ******/
+SET ANSI_NULLS ON
+GO
 
+SET QUOTED_IDENTIFIER ON
+GO
 
 CREATE PROC [dbo].[SP_CHECKMALOP]
 @MLOP NCHAR(10)
@@ -21,5 +25,4 @@ ELSE
 
 
 GO
-
 

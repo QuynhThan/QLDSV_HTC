@@ -1,7 +1,7 @@
 USE [QLDSV_HTC]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SP_CHECKMASINHVIEN]    Script Date: 4/23/2022 1:48:40 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_CHECKMASINHVIEN]    Script Date: 5/23/2022 6:19:11 PM ******/
 SET ANSI_NULLS ON
 GO
 

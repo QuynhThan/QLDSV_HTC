@@ -1,8 +1,12 @@
 USE [QLDSV_HTC]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SP_CHECKTENLOP]    Script Date: 3/24/2022 3:10:15 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_CHECKTENLOP]    Script Date: 5/23/2022 6:20:04 PM ******/
+SET ANSI_NULLS ON
+GO
 
+SET QUOTED_IDENTIFIER ON
+GO
 
 CREATE PROC [dbo].[SP_CHECKTENLOP]
 @TLOP NVARCHAR(50)
