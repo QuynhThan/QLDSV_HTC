@@ -148,6 +148,9 @@
   <data name="editname_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editname_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="printallpages3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printallpages3.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="delete_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,14 +163,17 @@
   <data name="trackingchanges_trackchanges_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trackingchanges_trackchanges_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="printallpages2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printallpages2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="printallpages1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printallpages1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="add-login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\add-login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4082.9-class-icon-iconbunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\4082.9-class-icon-iconbunny.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addchartpane_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addchartpane_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kisspng-google-classroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\kisspng-google-classroom.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,10 +190,10 @@
   <data name="editname_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editname_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addchartpane_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addchartpane_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4082.9-class-icon-iconbunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\4082.9-class-icon-iconbunny.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="printallpages2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printallpages2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="printallpages4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printallpages4.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
 </root>

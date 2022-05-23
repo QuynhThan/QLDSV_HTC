@@ -37,7 +37,7 @@ namespace QLDSV_HTC.Forms
         private void loadData()
         {
 
-            
+            Console.WriteLine(Program.Connstr + "  -day la frm sinh vien ");
 
             DS.EnforceConstraints = false;
             try

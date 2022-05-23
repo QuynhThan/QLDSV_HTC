@@ -165,7 +165,13 @@ namespace QLDSV_HTC
                     = Program.frmMain.barBtnLopTinChi.Enabled 
                     = Program.frmMain.barBtnDangKyLTC.Enabled
                     = false;
-                Program.frmMain.rbBaoCao.Visible = false;
+                //Program.frmMain.rbBaoCao.Visible = false;
+                Program.frmMain.barBtnDSLTC.Enabled
+                    = Program.frmMain.barBtnDSSV_DKLTC.Enabled
+                    = Program.frmMain.barBtnBDMH.Enabled
+                    = Program.frmMain.barBtnPhieuDiem.Enabled
+                    = Program.frmMain.barBtnDiemTK.Enabled
+                    = false;
             }
             if (Program.mGroup == Program.quyen[2])
             {
@@ -187,11 +193,13 @@ namespace QLDSV_HTC
                     = Program.frmMain.barBtnSinhVien.Enabled 
                     = Program.frmMain.barBtnMonHoc.Enabled
                     = Program.frmMain.barBtnDiem.Enabled 
-                    = Program.frmMain.barBtnHocPhi.Enabled
                     = Program.frmMain.barBtnTaoLogin.Enabled 
                     = Program.frmMain.barBtnLopTinChi.Enabled 
                     = true;
-                Program.frmMain.barBtnDangKyLTC.Enabled = false;
+                Program.frmMain.barBtnDangKyLTC.Enabled 
+                    = Program.frmMain.barbtnDSHPLop.Enabled
+                    = Program.frmMain.barBtnHocPhi.Enabled
+                    = false;
                 Program.frmMain.rbBaoCao.Visible = true;
             }
             Program.frmMain.Enabled = true;

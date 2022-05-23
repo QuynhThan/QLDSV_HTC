@@ -33,6 +33,7 @@ namespace QLDSV_HTC.Forms
            
             try
             {
+                Console.WriteLine(Program.Connstr);
                 this.LOPTableAdapter.Connection.ConnectionString = Program.Connstr;
                 this.SINHVIENTableAdapter.Connection.ConnectionString = Program.Connstr;
                 
@@ -402,7 +403,7 @@ namespace QLDSV_HTC.Forms
                 DataRow dr = drv.Row;
                 cmbNKBegin.SelectedIndex = cmbNKBegin.FindStringExact(dr["KHOAHOC"].ToString().Substring(0, 4));
                 cmbNKEnd.SelectedIndex = cmbNKEnd.FindStringExact(dr["KHOAHOC"].ToString().Substring(5, 4));
-                Console.WriteLine(dr["KHOAHOC"].ToString().Substring(5, 4));
+             //   Console.WriteLine(dr["KHOAHOC"].ToString().Substring(5, 4));
             }
         }
 
@@ -410,9 +411,10 @@ namespace QLDSV_HTC.Forms
         {
             if (unduStack.Count > 0 && MessageBox.Show("Thoát sẽ không thể phục hồi lại!!\nBạn có muốn thoát??", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
             {
-               // this.cmbKhoa.SelectedIndex = thisKhoa;
+                // this.cmbKhoa.SelectedIndex = thisKhoa;
                 return;
             }
+            this.unduStack.Clear();
             this.Close();
         }
         //============Ham ho tro==================
@@ -421,7 +423,7 @@ namespace QLDSV_HTC.Forms
         private bool isFillAllInfoLop()
         {
             txtKhoaHoc.Text = cmbNKBegin.Text.Trim() + "-" + cmbNKEnd.Text.Trim();
-            Console.WriteLine(txtKhoaHoc.Text);
+        //    Console.WriteLine(txtKhoaHoc.Text);
             if (txtMaLop.Text.Trim() == "")
             {
                 MessageBox.Show("Mã lớp không được bỏ trống!", "", MessageBoxButtons.OK);

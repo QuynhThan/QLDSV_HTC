@@ -46,6 +46,8 @@ namespace QLDSV_HTC
             this.barBtnBDMH = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhieuDiem = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPhieuDiem = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDiemTK = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnDSHPLop = new DevExpress.XtraBars.BarButtonItem();
             this.rbQuanTri = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupQuanTri = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -85,10 +87,12 @@ namespace QLDSV_HTC
             this.barBtnDSSV_DKLTC,
             this.barBtnBDMH,
             this.btnPhieuDiem,
-            this.barBtnPhieuDiem});
+            this.barBtnPhieuDiem,
+            this.barBtnDiemTK,
+            this.barbtnDSHPLop});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(28, 35, 28, 35);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbQuanTri,
@@ -161,6 +165,7 @@ namespace QLDSV_HTC
             this.barBtnDiem.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.trackingchanges_trackchanges_32x32;
             this.barBtnDiem.LargeWidth = 75;
             this.barBtnDiem.Name = "barBtnDiem";
+            this.barBtnDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDiem_ItemClick);
             // 
             // barBtnHocPhi
             // 
@@ -170,6 +175,7 @@ namespace QLDSV_HTC
             this.barBtnHocPhi.ImageOptions.LargeImage = global::QLDSV_HTC.Properties.Resources.financial_32x32;
             this.barBtnHocPhi.LargeWidth = 75;
             this.barBtnHocPhi.Name = "barBtnHocPhi";
+            this.barBtnHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnHocPhi_ItemClick);
             // 
             // barBtnLopTinChi
             // 
@@ -223,6 +229,24 @@ namespace QLDSV_HTC
             this.barBtnPhieuDiem.Name = "barBtnPhieuDiem";
             this.barBtnPhieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPhieuDiem_ItemClick);
             // 
+            // barBtnDiemTK
+            // 
+            this.barBtnDiemTK.Caption = "Bảng điểm tổng kết";
+            this.barBtnDiemTK.Id = 18;
+            this.barBtnDiemTK.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages3;
+            this.barBtnDiemTK.LargeWidth = 80;
+            this.barBtnDiemTK.Name = "barBtnDiemTK";
+            this.barBtnDiemTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDiemTK_ItemClick);
+            // 
+            // barbtnDSHPLop
+            // 
+            this.barbtnDSHPLop.Caption = "Danh sách học phí lớp";
+            this.barbtnDSHPLop.Id = 19;
+            this.barbtnDSHPLop.ImageOptions.SvgImage = global::QLDSV_HTC.Properties.Resources.printallpages4;
+            this.barbtnDSHPLop.LargeWidth = 80;
+            this.barbtnDSHPLop.Name = "barbtnDSHPLop";
+            this.barbtnDSHPLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnDSHPLop_ItemClick);
+            // 
             // rbQuanTri
             // 
             this.rbQuanTri.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -255,6 +279,8 @@ namespace QLDSV_HTC
             this.ribbonPageGroup2.ItemLinks.Add(this.barBtnDSSV_DKLTC);
             this.ribbonPageGroup2.ItemLinks.Add(this.barBtnBDMH);
             this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPhieuDiem);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnDiemTK);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barbtnDSHPLop);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "BÁO CÁO";
             // 
@@ -371,7 +397,6 @@ namespace QLDSV_HTC
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDangXuat;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private DevExpress.XtraBars.BarButtonItem barBtnDSLTC;
         public System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.ToolStripStatusLabel lblMaSV;
         public System.Windows.Forms.ToolStripStatusLabel lblHoTen;
@@ -386,14 +411,17 @@ namespace QLDSV_HTC
         public DevExpress.XtraBars.BarButtonItem barBtnTaoLogin;
         public DevExpress.XtraBars.BarButtonItem barBtnSinhVien;
         public DevExpress.XtraBars.BarButtonItem barBtnDangKyLTC;
-        private DevExpress.XtraBars.BarButtonItem barBtnDSSV_DKLTC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barBtnBDMH;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnPhieuDiem;
-        private DevExpress.XtraBars.BarButtonItem barBtnPhieuDiem;
+        public DevExpress.XtraBars.BarButtonItem barBtnDSLTC;
+        public DevExpress.XtraBars.BarButtonItem barBtnDSSV_DKLTC;
+        public DevExpress.XtraBars.BarButtonItem barBtnBDMH;
+        public DevExpress.XtraBars.BarButtonItem barBtnPhieuDiem;
+        public DevExpress.XtraBars.BarButtonItem barBtnDiemTK;
+        public DevExpress.XtraBars.BarButtonItem barbtnDSHPLop;
     }
 }
 

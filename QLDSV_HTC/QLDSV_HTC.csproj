@@ -89,10 +89,22 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Forms\frmBaoCaoBangDiem.cs">
+    <Compile Include="Forms\frmHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmBaoCaoBangDiem.Designer.cs">
+    <Compile Include="Forms\frmHocPhi.designer.cs">
+      <DependentUpon>frmHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForms\frmBangDiemTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForms\frmBangDiemTK.designer.cs">
+      <DependentUpon>frmBangDiemTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForms\frmBaoCaoBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForms\frmBaoCaoBangDiem.Designer.cs">
       <DependentUpon>frmBaoCaoBangDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmDangKyLTC.cs">
@@ -113,11 +125,17 @@
     <Compile Include="Forms\frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmBaoCaoPhieuDiem.cs">
+    <Compile Include="ReportsForms\frmBaoCaoPhieuDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmBaoCaoPhieuDiem.Designer.cs">
+    <Compile Include="ReportsForms\frmBaoCaoPhieuDiem.Designer.cs">
       <DependentUpon>frmBaoCaoPhieuDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNhapDiem.designer.cs">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmSinhVien.cs">
       <SubType>Form</SubType>
@@ -131,16 +149,22 @@
     <Compile Include="Forms\frmTaoLogin.Designer.cs">
       <DependentUpon>frmTaoLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\XrptBangDiemMonHoc.cs">
+    <Compile Include="ReportsForms\frmDSHPLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForms\frmDSHPLop.Designer.cs">
+      <DependentUpon>frmDSHPLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XrptBangDiemMonHoc.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\XrptBangDiemMonHoc.Designer.cs">
+    <Compile Include="Reports\XrptBangDiemMonHoc.Designer.cs">
       <DependentUpon>XrptBangDiemMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\XrptPhieuDiem.cs">
+    <Compile Include="Reports\XrptPhieuDiem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\XrptPhieuDiem.Designer.cs">
+    <Compile Include="Reports\XrptPhieuDiem.Designer.cs">
       <DependentUpon>XrptPhieuDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Lib.cs" />
@@ -164,9 +188,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmBaoCaoBangDiem.resx">
+    <EmbeddedResource Include="Forms\frmHocPhi.resx">
+      <DependentUpon>frmHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForms\frmBangDiemTK.resx">
+      <DependentUpon>frmBangDiemTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForms\frmBaoCaoBangDiem.resx">
       <DependentUpon>frmBaoCaoBangDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Reports\frmRpDSHPLop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\frmRpDSHPLop.designer.cs">
+      <DependentUpon>frmRpDSHPLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportsForms\frpt_DSLTC_NK_HK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +214,18 @@
     </Compile>
     <Compile Include="ReportsForms\frpt_DSSV_DANGKY_LTC.Designer.cs">
       <DependentUpon>frpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rpDSHPLop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpDSHPLop.designer.cs">
+      <DependentUpon>rpDSHPLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XrpDSDiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XrpDSDiem.designer.cs">
+      <DependentUpon>XrpDSDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\xrpt_DSLTC_NK_HK.cs">
       <SubType>Component</SubType>
@@ -203,6 +251,9 @@
     <EmbeddedResource Include="Forms\frmLopTinChi.resx">
       <DependentUpon>frmLopTinChi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNhapDiem.resx">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTaoLogin.resx">
       <DependentUpon>frmTaoLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,16 +263,19 @@
     <EmbeddedResource Include="Forms\frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmBaoCaoPhieuDiem.resx">
+    <EmbeddedResource Include="ReportsForms\frmBaoCaoPhieuDiem.resx">
       <DependentUpon>frmBaoCaoPhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\XrptBangDiemMonHoc.resx">
+    <EmbeddedResource Include="ReportsForms\frmDSHPLop.resx">
+      <DependentUpon>frmDSHPLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XrptBangDiemMonHoc.resx">
       <DependentUpon>XrptBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\XrptPhieuDiem.resx">
+    <EmbeddedResource Include="Reports\XrptPhieuDiem.resx">
       <DependentUpon>XrptPhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -235,11 +289,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\frmRpDSHPLop.resx">
+      <DependentUpon>frmRpDSHPLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportsForms\frpt_DSLTC_NK_HK.resx">
       <DependentUpon>frpt_DSLTC_NK_HK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForms\frpt_DSSV_DANGKY_LTC.resx">
       <DependentUpon>frpt_DSSV_DANGKY_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpDSHPLop.resx">
+      <DependentUpon>rpDSHPLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XrpDSDiem.resx">
+      <DependentUpon>XrpDSDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\xrpt_DSLTC_NK_HK.resx">
       <DependentUpon>xrpt_DSLTC_NK_HK.cs</DependentUpon>
@@ -273,6 +336,8 @@
   <ItemGroup>
     <Content Include="Resources\4082.9-class-icon-iconbunny.jpg" />
     <Content Include="Resources\add-login.png" />
+    <None Include="Resources\printallpages4.svg" />
+    <None Include="Resources\printallpages3.svg" />
     <None Include="Resources\printallpages2.svg" />
     <None Include="Resources\printallpages1.svg" />
     <None Include="Resources\morefunctions_16x16.png" />

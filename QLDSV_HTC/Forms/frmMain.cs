@@ -131,5 +131,29 @@ namespace QLDSV_HTC
             ShowMdiChildren(typeof(frmBaoCaoBangDiem));
 
         }
+
+        private void barBtnHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmHocPhi));
+
+        }
+
+        private void barBtnDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmNhapDiem));
+
+        }
+
+        private void barBtnDiemTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmBangDiemTK));
+
+        }
+
+        private void barbtnDSHPLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frmDSHPLop));
+
+        }
     }
 }
