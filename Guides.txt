@@ -1,0 +1,17 @@
+ - Site học phí(3) :SP_CTHOCPHI; SP_DANGNHAP; 
+SP_DSHOCPHI; SP_DSHPLOP; SP_TAO_LOGIN
+
+- Site CNTT&VT (1,2) :SP_DANGNHAP; SP_TAO_LOGIN;V_LAY_NIENKHOA
+và các SP còn lại.
+
+- V_getSubscribe chỉ có ở site chủ.
+
+----------------------------------------------------------------
+
+- Nếu lỗi data, connect to sql -> xóa DS tạo lại
+	+ Kiểm tra Connstr_pub trong file program
+	+ Kiểm tra ConnectionString trong App.config
+	+ DataSet trong project cần thêm SP_DSLTC_NIENKHOAHOCKY;
+	SP_DSLTCDADANGKY; SP_CTHOCPHI; 
+	SP_DSHOCPHI; SP_DIEMTC; SP_LTC dạng TableAdapter
+	+ còn lỗi thì mua máy mới cài lại là hết lỗi nhé :v

@@ -1,8 +1,0 @@
- - Site học phí(3) :SP_CTHOCPHI; SP_DANGNHAP; 
-SP_DSHOCPHI; SP_DSHPLOP; SP_TAO_LOGIN
-
-- Site CNTT&VT (1,2) :SP_DANGNHAP; SP_TAO_LOGIN;V_LAY_NIENKHOA
-và các SP còn lại.
-
-- V_getSubscribe chỉ có ở site chủ.
-
