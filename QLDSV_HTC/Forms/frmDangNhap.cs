@@ -157,7 +157,10 @@ namespace QLDSV_HTC
             //PHAN QUYEN TREN DAY
             if (Program.mGroup == Program.quyen[3])
             {
-                Program.frmMain.barBtnHocPhi.Enabled = true;
+                Program.frmMain.barBtnHocPhi.Enabled 
+                    = Program.frmMain.barbtnDSHPLop.Enabled
+                    = Program.frmMain.rbBaoCao.Visible
+                    = true;
                 Program.frmMain.barBtnLop.Enabled 
                     = Program.frmMain.barBtnSinhVien.Enabled 
                     = Program.frmMain.barBtnMonHoc.Enabled
@@ -189,6 +192,13 @@ namespace QLDSV_HTC
             }
             if (Program.mGroup == Program.quyen[0] || Program.mGroup == Program.quyen[1])
             {
+                Program.frmMain.barBtnDSLTC.Enabled
+                    = Program.frmMain.barBtnDSSV_DKLTC.Enabled
+                    = Program.frmMain.barBtnBDMH.Enabled
+                    = Program.frmMain.barBtnPhieuDiem.Enabled
+                    = Program.frmMain.barBtnDiemTK.Enabled
+                    = true;
+
                 Program.frmMain.barBtnLop.Enabled 
                     = Program.frmMain.barBtnSinhVien.Enabled 
                     = Program.frmMain.barBtnMonHoc.Enabled

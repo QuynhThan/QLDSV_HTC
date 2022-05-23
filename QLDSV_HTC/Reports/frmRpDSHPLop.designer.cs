@@ -48,10 +48,10 @@ namespace QLDSV_HTC.Forms
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrlbGV = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlbKhoa = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlbMaLop = new DevExpress.XtraReports.UI.XRLabel();
             this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrlbGV = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -77,7 +77,7 @@ namespace QLDSV_HTC.Forms
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "QLDSV_HTCConnectionString4";
+            this.sqlDataSource1.ConnectionName = "QLDSV_HTC.Properties.Settings.QLDSV_HTCConnectionString4";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "SP_DSHPLOP";
             queryParameter1.Name = "@MALOP";
@@ -186,16 +186,6 @@ namespace QLDSV_HTC.Forms
             this.ReportHeader.HeightF = 110.5F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // xrlbGV
-            // 
-            this.xrlbGV.LocationFloat = new DevExpress.Utils.PointFloat(397.4999F, 47.00002F);
-            this.xrlbGV.Multiline = true;
-            this.xrlbGV.Name = "xrlbGV";
-            this.xrlbGV.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlbGV.SizeF = new System.Drawing.SizeF(179.1667F, 22.99999F);
-            this.xrlbGV.StylePriority.UseTextAlignment = false;
-            this.xrlbGV.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // xrlbKhoa
             // 
             this.xrlbKhoa.LocationFloat = new DevExpress.Utils.PointFloat(5F, 52.19434F);
@@ -225,6 +215,16 @@ namespace QLDSV_HTC.Forms
             this.label1.StylePriority.UseTextAlignment = false;
             this.label1.Text = "DANH SÁCH SINH VIÊN ĐÓNG HỌC PHÍ";
             this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrlbGV
+            // 
+            this.xrlbGV.LocationFloat = new DevExpress.Utils.PointFloat(397.4999F, 47.00002F);
+            this.xrlbGV.Multiline = true;
+            this.xrlbGV.Name = "xrlbGV";
+            this.xrlbGV.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrlbGV.SizeF = new System.Drawing.SizeF(179.1667F, 22.99999F);
+            this.xrlbGV.StylePriority.UseTextAlignment = false;
+            this.xrlbGV.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // GroupHeader1
             // 
